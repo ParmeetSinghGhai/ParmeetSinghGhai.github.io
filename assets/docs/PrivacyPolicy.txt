@@ -1,0 +1,62 @@
+Privacy Policy
+
+We value your privacy. In this Privacy Policy ("Policy"), we describe how we collect, use, and disclose information that we obtain about the users of the Program.
+
+
+WHICH COUNTRIES ARE CURRENTLY NOT SUPPORTED?
+
+India, Afghanistan, United Arab Emirates (the), Åland Islands, Albania, Algeria, Armenia, Azerbaijan, Bahrain, Bangladesh, Bhutan, Cyprus, Egypt, Iran (Islamic Republic of), Iraq, Israel, Jordan, Kazakhstan, Kyrgyzstan, Kuwait, Lao People's Democratic Republic (the), Latvia, Lebanon, Liberia, Oman, State of Palestine, Pakistan, Qatar, Sri Lanka, Syrian Arab Republic, Saudi Arabia, Turkey,Turkmenistan,Yemen.
+
+
+WHAT IS THE ROLE OF THIRD PARTY SERVICES?
+
+We not provide any warranties with respect to any Third Party Applications or services, whether or not such Third Party Applications are listed on or accessed in or through the Product, or designated by us as “certified”, “approved”, “recommended” or otherwise, or the services are provided by a third party that is a member of our partner program. Any use by You of any Third-Party Applications or services is solely between You and/or your organization and the applicable third-party provider.
+
+
+WHAT DATA WE COLLECT?
+
+Data is collected only during the license installation process. Listed below are the data items which are collected during the license activation process along with the life span of that data item.
+
+1) Your Google Email Address, linked to your google drive account, is saved in persistent storage only to keep track of your current license which is required for continual usage of the Program. When you choose to delete or remove your license then that data gets removed from persistent storage as well. 
+
+2) Your Paypal Transaction Details namely: Transaction Id, Transaction Start Date, Transaction Amount and Payer Email Address are saved in persistent storage only to keep track of your current license which is required for continual usage of the Program. When you choose to delete or remove your license then that data gets removed from persistent storage as well. 
+
+
+WHAT DATA WE USE BUT NEVER COLLECT?
+
+This Data is also used during the license installation process but unlike the data that we collect, this data is never saved in persistent storage. Listed below are the data items which are used during the license activation process along with the life span of that data item.
+
+1) Your Public IP Address is obtained from a 3rd party service namely http://checkip.dyndns.org when you try to sign in into your google account either to install a new license or download an existing license from persistent storage. This IP Address is then sent to http://proxycheck.io, another 3rd party service, to check if your machine is connected to a VPN (Virtual Private Network) or a Proxy Server which is not allowed during license installation. Finally the IP Address is sent to https://ipinfo.io, another 3rd party service, to check if this IP Address's originating country is not one of the unsupported countries mentioned above.
+
+2) Your Paypal Transaction's Payer Country Code found under the 'payer_info' section of transaction details . This information is used to check if the transaction's originating country is not one of the unsupported countries mentioned above.
+
+
+WHEN IS MY DATA COLLECTED?
+
+Your data is collected only during the license activation process to keep track of your current license which is required for continual usage of the Program.
+
+
+HOW WE USE YOUR DATA?
+
+Your data is only used to keep track of your current license which is required for continual usage of the Program. Program's functions are disabled as soon as the license expires, in which case you are requested to purchase another license if you choose to continue using the Program.
+
+
+WHERE IS MY DATA STORED?
+
+Persistent storage mentioned above is our personal Google Drive Account which is backed up by Google's 2 Factor Authentication Login Process. 
+
+
+HOW LONG DO WE RETAIN YOUR DATA?
+
+As long as you are using our licensed product. When you choose to delete or remove your license then that data gets removed from persistent storage as well. 
+
+
+WHEN WILL YOU CHANGE YOUR PRIVACY POLICY?
+
+We may update the privacy policy from time to time. Any changes we make to our privacy policy in the future will be posted on this page and, where appropriate, notified to you by e-mail or post.
+Please check back frequently to see any updates or changes to our privacy policy.
+
+
+HOW DO I CONTACT YOU WITH FEEDBACK?
+
+Questions, comments and requests regarding this privacy policy are welcomed and should be addressed to parmeet.s.ghai@gmail.com

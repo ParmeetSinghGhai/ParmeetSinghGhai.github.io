@@ -1,0 +1,124 @@
+END USER LICENCE AGREEMENT
+
+PLEASE READ THIS END USER LICENCE AGREEMENT CAREFULLY. This End User License Agreement (“EULA”) governs your use of the application, software, their associated upgrades, patches, and updates and related services (the “Product”) currently provided or which will be provided by Parmeet Singh Ghai (the "Vendor")
+
+This EULA sets out the basis on which Parmeet Singh Ghai (the "Vendor") makes the Products available to you (“User” or ”You”) and on which You may use them. By installing or using the Product, You agree to accept and to be bound by this EULA. If You do not agree with one of these, please do not install or use the Product.
+
+Parmeet Singh Ghai (the "Vendor") reserves the right to change, modify, add or delete articles in this EULA at any time, in accordance with the procedures described below in Section 10.
+
+Capitalized terms used in this EULA without definition shall have the meanings specified in the Terms of Use.
+
+1. DEFINITIONS
+
+1.1 “Vendor”, "We", "Us" means Parmeet Singh ghai ,the creator/owner/publisher of the software application PSGDriveSync. 
+
+1.1 “Activated” means that an appropriate License key has been entered allowing the Program to fully operate.
+
+1.2 “Computer” means a computer, workstation, terminal or device.
+
+1.3 “Documentation” means the user guide, help information, content and/or other documentation and materials accompanying and associated with the Software, including associated media, printed materials and any online or electronic documentation provided by Freedom for use with the Software.
+
+1.4 “End User” means You or anyone permitted to access the Program in accordance with this EULA.
+
+1.5 "Licensee" means You or anyone permitted to access the Program in accordance with this EULA.
+
+1.6 “License” means the license to use the Program as set forth in this EULA, as may be supplemented by any applicable License, and in any document or confirmation issued, agreed or otherwise confirmed by the Vendor that contains the specifics of the type of license to use the Program.
+
+1.7 “Program” means, collectively, the Software, Updates, all related Documentation, and any Upgrades provided under this EULA.
+
+1.8 “Software” means any computer program (in object code) of the Vendor provided to and downloaded, installed or accessed by an End User pursuant to this EULA.
+
+1.9 “Upgrade” means any new version of the Software delivered to You pursuant to this EULA or an applicable License.
+
+1.10 “Update” means any patch, bug fix or any other update of the Software delivered to You pursuant to this EULA or an applicable License.
+
+2. LICENSE
+
+2.1 Under this End User License Agreement (the "Agreement"), Parmeet Singh Ghai (the "Vendor") grants to the user (the "Licensee") a non-exclusive and non-transferable license (the "License") to use PSGDriveSync (the "Software").
+
+2.2. "Software" includes the executable computer programs and any related printed, electronic and online documentation and any other files that may accompany the product.
+
+2.3. Title, copyright, intellectual property rights and distribution rights of the Software remain exclusively with the Vendor. Intellectual property rights include the look and feel of the Software. This Agreement constitutes a license for use only and is not in any way a transfer of ownership rights to the Software.
+
+2.4. The rights and obligations of this Agreement are personal rights granted to the Licensee only. The Licensee may not transfer or assign any of the rights or obligations granted under this Agreement to any other person or legal entity. The Licensee may not make available the Software for use by one or more third parties.
+
+2.5. The Software may not be modified, reverse-engineered, or de-compiled in any manner through current or future available technologies.
+
+2.6. This License confers no title or ownership in the Product and should not be construed as a sale of any rights in the Product.
+
+2.7. Failure to comply with any of the terms under the License section will be considered a material breach of this Agreement.
+
+3. LICENSE FEE
+
+3.1 Your use of the Software is subject to payment of any License fee or renewal fee (if applicable) for any subsequent Term. Except as otherwise set forth in any applicable License, the Vendor may change any fee for a renewal Term in its sole discretion. To maintain the License under this EULA, You must timely pay any applicable License fee or renewal fee. Except as otherwise set forth in any applicable License, failure to pay any such applicable fee shall be grounds for termination of the License by Freedom without any notice required, and You agree that failure to timely pay the applicable License fee or renewal fee will result in termination of the License.
+
+3.2 No Refunds. Payments referred to herein shall not be refundable under any circumstances, including but not limited to the termination of this Agreement for whatever reason.
+
+4. THIRD PARTY WEB SITES, PRODUCTS AND SERVICES
+
+The Vendor may offer certain Third-Party Applications in and through the Product. Any use of such Third-Party Applications by You shall be subject to the terms specified in Third Party Applications. In addition, The Vendor, in or through the Product, or certain third-party providers may offer links to other websites, resources, Third Party Applications or services, including implementation, customization and other consulting services related to Your use of the Product. The Vendor does not provide any warranties with respect to any such Third Party Applications or services, whether or not such Third Party Applications are listed on or accessed in or through the Product, or designated by the Vendor as “certified”, “approved”, “recommended” orotherwise, or the services are provided by a third party that is a member of a the Vendor partner program. Any use by You of any Third-Party Applications or services is solely between You and/or your organization and the applicable third-party provider.
+
+The Vendor is not responsible for the availability or the quality, accuracy, integrity, fitness, safety, reliability, legality, or any other aspect of such Third Party Applications or services that You
+(and/or your organization) may purchase or connect to through the Product, or any descriptions, promises or other information related to the foregoing. If You install or enable Third Party
+Applications or services for use with the Product, You agree that the Vendor may allow such third party providers to access Personal Information as required for the interoperation of such Third Party
+Applications with the Product, and any exchange of data or other interaction between You, your organization and a third party provider is solely between You, your organization and such third
+party provider. The Vendor shall not be responsible for any disclosure, modification or deletion of Personal Information resulting from any such access by Third Party Applications or third-party
+providers. No purchase of such Third-Party Applications or services is required to use the Product.
+
+5. INFORMATION USE
+
+The Vendor Information Use Policy is incorporated herein by reference. This Policy describes the permissible use of the content accessed via the Product and may be changed at the discretion of the Vendor.
+
+6. LIMITATION OF LIABILITY
+
+6.1 The Software is provided by the Vendor and accepted by the Licensee "as is". Liability of the Vendor will be limited to a maximum of the original purchase price of the Software. The Vendor will not be liable for any general, special, incidental or consequential damages including, but not limited to, loss of production, loss of profits, loss of revenue, loss of data, or any other business or economic disadvantage suffered by the Licensee arising out of the use or failure to use the Software.
+
+6.2 The Vendor makes no warranty expressed or implied regarding the fitness of the Software for a particular purpose or that the Software will be suitable or appropriate for the specific requirements of the Licensee.
+
+6.3 The Vendor does not warrant that use of the Software will be uninterrupted or error-free. The Licensee accepts that software in general is prone to bugs and flaws within an acceptable level as determined in the industry.
+
+6.4 The Vendor works hard to ensure that the Software does not contain any “back door,” “time bomb,” “Trojan horse,” “worm,” “drop dead device,” “virus”, “preventative routines,” “disabling code,” “cookie” or other computer software routines or programming devices designed to (i) permit unauthorized persons to access the Software, (ii) intentionally disable, modify, destroy or damage the Software, and/or (iii) make the Software inaccessible or delayed.
+
+7. WARRANTS AND REPRESENTATIONS
+
+The Vendor warrants and represents that it is the copyright holder of the Software. The Vendor warrants and represents that granting the license to use this Software is not in violation of any other agreement, copyright or applicable statute.
+
+8. ACCEPTANCE
+
+All terms, conditions and obligations of this Agreement will be deemed to be accepted by the Licensee ("Acceptance") on registration of the Software with the Vendor.
+
+9. USER SUPPORT
+
+No user support or maintenance is provided as part of this Agreement.
+
+10. TERM
+
+The term of this Agreement will begin on Acceptance and is perpetual.
+
+11. TERMINATION
+
+This Agreement will be terminated and the License forfeited where the Licensee has failed to comply with any of the terms of this Agreement or is in breach of this Agreement. On termination of this Agreement for any reason, the Licensee will promptly destroy the Software or return the Software to the Vendor.
+
+12. FORCE MAJEURE
+
+The Vendor will be free of liability to the Licensee where the Vendor is prevented from executing its obligations under this Agreement in whole or in part due to Force Majeure, such as earthquake, typhoon, flood, fire, and war or any other unforeseen and uncontrollable event where the Vendor has taken any and all appropriate action to mitigate such an event.
+
+13. CHANGES TO THIS EULA OR TO THE SOFTWARE
+
+The Vendor reserves the right, in its sole and absolute discretion, to revise, update, change, modify, add to, supplement, or delete certain terms of this EULA for security, legal, best practice or regulatory reasons. Such changes will be effective with or, as applicable, without prior notice to You. You can review the most current version of this EULA by clicking on the “EULA” link located on the Product. You are responsible for checking this EULA periodically for changes. If any future changes to this EULA are unacceptable to You or cause You to no longer be in agreement or compliance with this EULA, You may terminate this EULA in accordance with Section 8 and must immediately uninstall the Product and destroy all copies of the Product. Your continued use of the Product following any revision to this EULA constitutes Your complete and irrevocable acceptance of any and all such changes.
+
+The Vendor may modify the Product for any reason or without any specific reason, at any time and at its entire discretion, in particular for technical reasons such as updates, maintenance operations and/or resets to improve and/or optimize the Product. You agree that the Product may install or download the modifications automatically. You agree that the Vendor may stop to support previous versions of the Product upon availability of an updated version. The Vendor’s channel partners and associated service providers shall have no obligation to furnish any maintenance or customer support with respect to the Product.
+
+14. MISCELLANEOUS 
+
+14.1 This Agreement does not create or imply any relationship in agency or partnership between the Vendor and the Licensee.
+
+14.2 Headings are inserted for the convenience of the parties only and are not to be considered when interpreting this Agreement. Words in the singular mean and include the plural and vice versa. Words in the masculine gender include the feminine gender and vice versa. Words in the neuter gender include the masculine gender and the feminine gender and vice versa.
+
+14.3 If any term, covenant, condition or provision of this Agreement is held by a court of competent jurisdiction to be invalid, void or unenforceable, it is the parties' intent that such provision be reduced in scope by the court only to the extent deemed necessary by that court to render the provision reasonable and enforceable and the remainder of the provisions of this Agreement will in no way be affected, impaired or invalidated as a result.
+
+14.4 This Agreement contains the entire agreement between the parties. All understandings have been included in this Agreement. Representations which may have been made by any party to this Agreement may in some way be inconsistent with this final written Agreement. All such statements are declared to be of no value in this Agreement. Only the written terms of this Agreement will bind the parties.
+
+14.5 This Agreement and the terms and conditions contained in this Agreement apply to and are binding upon the Vendor's successors and assigns.
+
+For any question concerning this End User License Agreement, you may contact the Vendor at the following address: parmeet.s.ghai@gmail.com
