@@ -1,0 +1,93 @@
+<html>
+<head>
+    <script>
+        function LoadPage(id)
+        {
+            var display = document.getElementById("Display");
+            var srcPage = id.toLowerCase() +".html"; 
+            var suboptions = document.getElementById(id+"Options");
+
+            var hide = false;
+            if(suboptions.style.display == "none")
+            {
+                suboptions.style.display= "block";
+                hide = false;
+            }
+            else if(suboptions.style.display == "block")
+            {
+                suboptions.style.display= "none";
+                hide = true;
+            }
+
+            if(hide)
+            {
+                display.src = "";
+                display.loadedPage = ""
+            }
+            else
+            {
+                display.src = srcPage;
+                display.loadedPage = srcPage;
+            }
+        }
+
+        function LoadSection(id)
+        {
+            var display = document.getElementById("Display");
+            var srcPage = id.toLowerCase() +".html"; 
+            display.src = srcPage;
+            display.loadedPage = srcPage;
+        }
+    </script>
+</head>
+<body>
+<table style = "border-style: double;width:100%;height:100%">
+<tr style = "height:10%;">
+    <td style = "border-style: double;width: 100%;padding: 0%;">
+        <p> Help Guide</p>
+    </td>
+</tr>
+<tr>
+    <td>
+        <table style = "border-style: double;width:100%;height:100%">
+            <tr>
+                <td style = "width:10%;height:100%;border-style: double;">
+                    <ul>
+                        <li><button id="Licenses" onclick="LoadPage(this.id)">Licenses</button>
+                            <ul id="LicensesOptions" style = "display: none;">
+                                <li><button id = "AddLicense" onclick="LoadSection(this.id)">Add License</button></li>
+                                <li><button id = "SaveLicense" onclick="LoadSection(this.id)">Save License</button></li>
+                                <li><button id = "DeleteLicense" onclick="LoadSection(this.id)">Delete License</button></li>
+                                <li><button id = "DownloadLicense" onclick="LoadSection(this.id)">Download License</button></li>
+                                <li><button id = "RefreshLicense" onclick="LoadSection(this.id)">Refresh License</button></li>
+                            </ul>
+                        </li>
+                        <li><button id="Drives" onclick="LoadPage(this.id)">Drives</button>
+                            <ul id="DrivesOptions" style = "display: none;">
+                                <li><button id = "AddRemoteDrive" onclick="LoadSection(this.id)">Add Remote Drive</button></li>
+                                <li><button id = "AddLocalDrive" onclick="LoadSection(this.id)">Add Local Drive</button></li>
+                                <li><button id = "SaveDrive" onclick="LoadSection(this.id)">Save Drive</button></li>
+                                <li><button id = "DeleteDrive" onclick="LoadSection(this.id)">Delete Drive</button></li>
+                                <li><button id = "MountUnmountDrive" onclick="LoadSection(this.id)">Mount & Unmount Drive</button></li>
+                                <li><button id = "DockUndockDrive" onclick="LoadSection(this.id)">Dock & Undock Drive</button></li>     
+                                <li><button id = "AutoSyncDrive" onclick="LoadSection(this.id)">Enable Auto Sync On Drive</button></li>  
+                                <li><button id = "ColorDrive" onclick="LoadSection(this.id)">Assign Color to Drive</button></li>                           
+                            </ul>
+                        </li>
+                        <li><button id="Files" onclick="LoadPage(this.id)">Files</button></li>
+                        <li><button id="Encryption" onclick="LoadPage(this.id)">Encryption</button></li>
+                        <li><button id="Filters" onclick="LoadPage(this.id)">Filters</button></li>
+                    </ul> 
+                </td>
+                <td style = "width:90%;height:100%;border-style: double;" loadedPage = "">
+                    <iframe id="Display" width="100%" height ="100%" style = "overflow: scroll; overflow-x: scroll; overflow-y: scroll;">
+                        
+                    </iframe>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+</table>
+</body>
+</html>
