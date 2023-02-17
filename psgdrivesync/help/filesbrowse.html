@@ -1,0 +1,84 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <table>
+            <tr style = "width: 100%; height:100%">
+                <td style = "width:50% ; height:100%">
+                    <img src = "../assets/img/filesbrowse/filesbrowse.png" width="100%" height = "100%">
+                </td>
+                <td style = "width:50% ; height:100%">
+                    <p>
+                        The "Files" window is where the majority of the work takes place in this application. The Files window functionality is split into two modes namely Browse Mode and 
+                        Sync Mode<br/>
+                    </p>
+                </td>
+            </tr>
+            <tr>     
+                <td style = "width:50% ; height:100% ;border: 1px solid black; padding:2%">  
+                    <p>Browse Mode</p>
+                    <p>
+                        This mode allows the user to see drive properties namely total disk space, free disk space, used disk space and trash disk space. For google Drives
+                        you also get to see user photo as well. Besides this you also get to see all the files and folders contained in the drive in a hierarchical tree like
+                        structure.<br/>
+                        The browse mode also allows you to perform the following real time file operations<br/>
+                        <ul>
+                            <li>Create New File & Folder</li>
+                            <li>Cut, Copy and Paste File(s) & Folder(s)</li>
+                            <li>Delete File(s) & Folder(s)</li>
+                            <li>Rename File(s) & Folder(s)</li>
+                            <li>Select All File(s) & Folder(s)</li>
+                            <li>View File & Folder Properties</li>
+                            <li>Encrypt File(s) & Folder(s)</li>
+                            <li>Decrypt File(s) & Folder(s)</li>
+                            <li>Compare File(s) & Folder(s)</li>
+                            <li>Search For Encrypted Files</li>
+                            <li>Send Files & Folders to Filters Window</li>
+                        </ul>
+                    </p> 
+                </td>
+                <td style = "width:50% ; height:100% ;border: 1px solid black; padding: 2%;">
+                    <p>Sync Mode</p>
+                    <p>
+                        This mode allows the user to setup files and folders for automated sync operations and then start and stop these sync operations as well.
+                        There are two main terminologies used to describe the things that files windows allows the user to do in this mode namely: Sync Containers and 
+                        Sync Items.<br/>
+                        Only Folders are referred to as Sync Containers while Files and Folders both can be referred to as Sync Items. Please keep this in mind these are 
+                        just files and folders present on a drive however they are termed differently based on how you choose to look at them.
+                        <ul>
+                            <li>
+                                <p>Sync Containers</p>
+                                <p>
+                                    Sync Containers are always Folders and never Files<br/>
+                                    These are folders present on the Drive that you are currently viewing in the "Files" window either in the dock left position
+                                    or the dock right position that you have setup for syncing. By default these folders acts as the destination for all the other files
+                                    and folders from other drives
+                                    which are being synced with this drive where those files and folders are referred to as Sync Items.<br/><br/> For example Drive A 
+                                    has been setup to have Drive B's file "File B" synced to Drive A's Folder "Folder A". When the syncing completes then Drive A's Folder
+                                    "Folder A" will contain Drive B's file "File B". If you mount and then dock Drive A in the "Files" window then "Folder A" will show
+                                    as a Sync Container while "File B" will show as a Sync Item. 
+                                </p>
+                            </li>
+                            <li>
+                                <p>Sync Items</p>
+                                <p>
+                                    Sync Items can be both Files and Folders<br/>
+                                    These are files and folders present on the Drive that you have set for syncing with some other drive where that some other drive is the 
+                                    drive that you are currently viewing in the "Files" window. By default these files and folders act as the source for the Sync Container 
+                                    that they are linked to from other drives.<br/><br/> For example Drive A has been setup to have Drive B's file "File B" synced to Drive A's
+                                    Folder "Folder A". When the syncing completes then Drive A's Folder "Folder A" will contain Drive B's file "File B". If you mount and
+                                    then dock
+                                    Drive B in the "Files" window then neither "Folder A" or "File B" will show up in sync mode because a Sync Item is linked to a Sync Container
+                                    and will only show along side its linked Sync Container. In this example, the Sync Container "Folder A" belongs to Drive A and Sync Item 
+                                    "File B" is linked to Sync Container "Folder A" which is why these things will only show inside Drive A when you mount and dock Drive A in 
+                                    Sync Mode.
+                                </p>
+                            </li>
+                        </ul>
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

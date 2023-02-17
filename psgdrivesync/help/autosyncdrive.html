@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <style>
+            table, th, td 
+            {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+        </style>
+    </head>
+    <body>
+        <p>
+            AutoSync allows a drive saved in the application to be mounted automatically and have its sync operations started right after. This allows the drive to 
+            sync its files and folders with other drives even though those drives themselves do not have "Auto Sync" enabled on them<br/><br/>.For example, If Drive A has been set to 
+            sync its file "File A" with Drive B and Drive B has been set to sync its file "File B" with Drive A and "Auto Sync" has only been enabled on Drive A but not Drive B
+            then the following actions will take place 
+            <ul>
+                <li>Drive A will be mounted automatically and its sync operations will start immediately</li>
+                <li>Drive B will not be mounted and will remain idle</li>
+                <li>Drive A will sync its file "File A" with Drive B so Drive B will end up having file "File A" from Drive A</li>
+                <li>Drive B's file "File B" will remain on Drive B and will not sync to Drive A unless its sync operations are also started</li>
+            </ul>
+        <p/>
+
+        <table>
+            <tr>
+                <td>
+                    <p>1</p>
+                </td>
+                <td>
+                    <p>
+                        In order to enable "Auto Sync" on a drive, you need to select the drive first and then put a check mark in the box labelled as "Auto Sync". After that 
+                        you can save the drive settings and the same should reflect in system messages.
+                    </p>
+                </td>
+                <td>
+                    <img src="../assets/img/drives/autosync1.png">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>2</p>
+                </td>
+                <td>
+                    <p>
+                        In order to disable "Auto Sync" on a drive, you need to select the drive first and then uncheck the box labelled as "Auto Sync". After that 
+                        you can save the drive settings and the same should reflect in system messages.
+                    </p>
+                </td>
+                <td>
+                    <img src="../assets/img/drives/autosync2.png">
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
