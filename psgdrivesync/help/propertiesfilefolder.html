@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <style>
+            table, th, td 
+            {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+        </style>
+    </head>
+    <body>
+        <p>
+            The Properties windows the same as it does in most windows operation systems. It allows you to see some of the important properties related to a
+            file or folder.
+            
+            <br/><br/>Following is a list of File properties which can be viewed under the properties window 
+            <ul">
+                <li>Drive that the file belongs to.</li>
+                <li>Full name of the file.</li>
+                <li>Path of the file. Path for local files is their absolute path while for google files its a unique alpha numeric code.</li>
+                <li>Size of the file.</li>
+                <li>Path of the parent folder which will be absolute path for local folder and alpha numeric code for google folder</li>
+                <li>Last modified time.</li>
+                <li>SHA256 hash of the contents of the file</li>
+                <li>File resource is mostly used for google files to keep track of their sync status. Its a http link to the incomplete file on google servers 
+                    which has yet to complete syncing. 
+                </li>
+                <li>Last write position is used to keep track of sync status for both local and remote files and represents the total number of bytes which have 
+                    been synced so far.
+                </li>
+                <li>
+                    Encryption status lets you know if a file is encrypted or not. If the encryption status shows "Encrypted" then clicking on "Show Encryption Information"
+                    button will give out the following details 
+                    <ul>
+                        <li>Key tag is name of the encryption key used to encrypt this file</li>
+                        <li>Iv is a unique series of bytes used in the encryption process and is used during the decryption process</li>
+                        <li>Salt is a unique series of bytes used in the encryption process and is used during the decryption process</li>
+                        <li>Hash salt is a unique series of bytes used in the hash generation process and is used during the decryption process but not 
+                            to decrypt the file rather to verify the integrity of the file before it gets decrypted. so that ways files which have been 
+                            compromised can be stopped from getting decrypted because they cause any damage.
+                        </li>
+                        <li>Hmac is the name of the file on the local machine that contains the hash of the all the byte chunks of a file. This file is 
+                            used during the decryption process to verify the integrity of the file. The path of the local folder that contains all such files 
+                            ,is listed in the file "Settings.json" under the settings "SignatureLocation".
+                        </li>
+                        <li>Final Padding is an encryption setting used during encrypting a file and is also used to decrypt the file.</li>
+                    </ul>
+                </li>
+            </ul>
+            <br/>Following is a list of Folder properties which can be viewed under the properties window 
+            <ul>
+                <li>Drive that the folder belongs to.</li>
+                <li>Full name of the folder.</li>
+                <li>Path of the folder. Path for local folder is their absolute path while for google folders its a unique alpha numeric code.</li>
+                <li>Size of the folder. This size is calculated by adding up the size of the files in this folders and files contained in its sub folders.</li>
+                <li>Path of the parent folder which will be absolute path for local folder and alpha numeric code for google folder.</li>
+                <li>Last modified time.</li>
+            </ul>
+            <br/><br/>Following are the steps needed to be performed in order to view properties of a file or folder.
+        </p>
+        <table>
+            <tr>
+                <td>
+                    <p>1</p>
+                </td>
+                <td>
+                    <p>
+                        Right click on any file or folder of your choosing and then click on "Properties" in the right click menu
+                    </p>
+                </td>
+                <td>
+                    <img src="../assets/img/filesbrowse/propertiesfilefolder1.png">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>2</p>
+                </td>
+                <td>
+                    <p>
+                       Properties window should open up next containing all the details of the file or folder that you right clicked on.
+                       If the properties windows was opened for a file then you can also click on "Show Encryption Status" to view encryption details of the 
+                       file.
+                    </p>
+                </td>
+                <td>
+                    <img src="../assets/img/filesbrowse/propertiesfilefolder2.png">
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

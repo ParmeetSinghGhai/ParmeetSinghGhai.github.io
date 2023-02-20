@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <style>
+            table, th, td 
+            {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+        </style>
+    </head>
+    <body>
+        <p>
+            Decryption process is the exact opposite of encryption process where it lets us get the original unencrypted data back from an encrypted file using the encryption key tag 
+            and the file's signature file that was created during the encryption process. Following are the scenarios which describes what to do when either or 
+            both of the encryption key tag and signature files go missing. 
+            <ul>
+                <li>When encryption key tag used to encrypt the file goes missing due to accidental database deletion or application deletion
+                    <ul>
+                        <li>
+                            If the file is set for automated syncing as a sync item then try to create an encryption key tag with the same name as the key 
+                            tag used to encrypt the file in the encryption window and have its value set exactly the same as it was before. Without the value 
+                            being the same there is no way to decrypt the file and the data contained in it will be lost.<br/>
+                            When the new encryption key tag has been created then the sync file operation will automatically pickup the new encryption key tag from database and
+                            decrypt the file during the sync operations.
+                        </li>
+                        <li>
+                            If the file was encrypted using real time file operations under "Files" window browse mode then you can create encryption tag of any name however the  
+                            its value needs to be set exactly the same as it was before. Without the value being the same there is no way to decrypt the file and the data contained
+                            in it will be lost.<br/>
+                            When the new encryption tag has been created then during the file decryption process you can select the new encryption tag and that should let you decrypt
+                            your file.  
+                        </li>
+                    </ul>
+                </li>
+                <br/>
+                <li>When signature file created during the encryption process goes missing
+                    <ul>
+                        <li>
+                            If the file is set for automated syncing as a sync item then the file sync operation will fail and you would have to manually decrypt the file by following the 
+                            method described below
+                        </li>
+                        <li>
+                            If the file was encrypted using real time file operations under "Files" window browse mode then you can either find the missing signature file and place it in 
+                            the same directory as the encrypted file and then decrypt the file or you can decrypt the file by choosing to skip the integrity check by first checking the box saying 
+                            "I understand the security risk(s) involved in skipping integrity check while encrypting or decrypting a file" and then clicking on the button saying "Skip Integrity Check".
+                            As long as the encryption key tag value is the same as before, this process will generate a decrypted file however there is no way to tell if the file has been tampered 
+                            with due to the missing signature file.<br/>
+                            <img src="../assets/img/filesbrowse/decryptfilefolder1.png">
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <br/>
+            <br/>
+            Following are the steps needed to be performed in order to decrypt a file.
+        </p>
+       
+        <table>
+            <tr>
+                <td>
+                    <p>1</p>
+                </td>
+                <td>
+                    <p>
+                        Right click on the file or folder that you would like to decrypt and then click on "Decrypt" in the right click menu.
+                    </p>
+                </td>
+                <td>
+                    <img src="../assets/img/filesbrowse/decryptfilefolder2.png">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>2</p>
+                </td>
+                <td>
+                    <p>
+                        If either the encryption key tag or the signature file goes missing then please follow the steps mentioned above otherwise a progress window will 
+                        pop open displaying the progress of the decryption process. Once it completes then you click on "Close".
+                    </p>
+                </td>
+                <td>
+                    <img src="../assets/img/filesbrowse/decryptfilefolder3.png">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>3</p>
+                </td>
+                <td>
+                    <p>
+                        The decrypted file should show up in the same directory or folder as the original file however it will have a number appended to it 
+                        so as to distinguish it from the original encrypted file.You can also right click on the new decrypted file and click on "Properties" in the
+                        right click menu to verify its encryption status as "not encrypted". 
+                    </p>
+                </td>
+                <td>
+                    <img src="../assets/img/filesbrowse/decryptfilefolder4.png">
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

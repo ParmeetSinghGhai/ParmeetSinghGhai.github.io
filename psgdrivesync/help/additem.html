@@ -1,0 +1,123 @@
+<html>
+    <head>
+        <style>
+            table, th, td 
+            {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+        </style>
+    </head>
+    <body>
+        <p>
+            Sync containers are always folders while sync items can be both files and folders. These are just terminologies given to files and folders during sync operations
+            to help control the sync operations. A Sync operations always exists between two drives. One drive will act as an destination while the other drive will act as a
+            source. Files and folders get transferred from the source drive to a destination drive and sometimes, due to both ways syncing, from the destination drive to 
+            source drive.<br/>
+            No matter what the scenario is, only a folder can contain files and other folders which is why folders on the destination drives are termed as "Sync Containers" while 
+            all other files and folders from the source drive are termed as "Sync Items". Sync Items themselves cannot exist on their own. They need a Sync Container to be linked
+            to so they may exist linked to that sync container. If a sync container is deleted then its linked sync items are also deleted.<br/>
+            Relationship between Sync Containers and Sync Items can be many to many which means that one Sync Container can contain multiple Sync Items and one Sync Item can be 
+            linked to multiple Sync Containers.<br/>
+            Sync Items can be added to an already existing Sync Container through the "Files" window Sync Mode and Browse Mode.
+        <p/>
+
+        <ul>
+        <br/><li> Following are the steps needed to be performed in order to add a Sync Item to an Existing Sync Container through the Browse Mode
+        <table>
+            <tr>
+                <td>
+                    <p>1</p>
+                </td>
+                <td>
+                    <p>
+                        Both the Source Drive and the Destination Drive are needed to remain open in Browse Mode.
+                    </p>
+                </td>
+                <td>
+                    <img src="../assets/img/filessync/additem1.png">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>2</p>
+                </td>
+                <td>
+                    <p>
+                        Drag the Sync Item from the Source Drive over to a Folder in the Destination Drive which is the Sync Container that you need to add the Sync Item to. 
+                    </p>
+                </td>
+                <td>
+                    <img src="../assets/img/filessync/additem2.png">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>2</p>
+                </td>
+                <td>
+                    <p>
+                        Save either the individual Sync Item or the entire Sync Container.
+                    </p>
+                </td>
+                <td>
+                    <img src="../assets/img/filessync/additem3.png">
+                </td>
+            </tr>
+        </table>
+        </li>
+
+        <br/><br/><li> Following are the steps needed to be performed in order to add a Sync Item to an Existing Sync Container through the Sync Mode
+            <table>
+                <tr>
+                    <td>
+                        <p>1</p>
+                    </td>
+                    <td>
+                        <p>
+                            Source Drive is needed to remain open in Browse Mode while Destination Drive is needed to remain open in Sync Mode.
+                        </p>
+                    </td>
+                    <td>
+                        <img src="../assets/img/filessync/additem4.png">
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>
+                        <p>2</p>
+                    </td>
+                    <td>
+                        <p>
+                            Select the Sync Container of your choosing from the list of Sync Containers and then drag and drop the Sync Item into the 
+                            list of Sync Items
+                        </p>
+                    </td>
+                    <td>
+                        <img src="../assets/img/filessync/additem5.png">
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>
+                        <p>2</p>
+                    </td>
+                    <td>
+                        <p>
+                            Save either the individual Sync Item or the entire Sync Container.
+                        </p>
+                    </td>
+                    <td>
+                        <img src="../assets/img/filessync/additem6.png">
+                    </td>
+                </tr>
+            </table>
+            </li>
+
+
+
+        </ul>
+    </body>
+</html>

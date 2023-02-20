@@ -42,19 +42,24 @@
                     <p>Sync Mode</p>
                     <p>
                         This mode allows the user to setup files and folders for automated sync operations and then start and stop these sync operations as well.
-                        There are two main terminologies used to describe the things that files windows allows the user to do in this mode namely: Sync Containers and 
+                        There are two main terminologies used to describe the things that "Files" windows allows the user to do in this mode namely: Sync Containers and 
                         Sync Items.<br/>
-                        Only Folders are referred to as Sync Containers while Files and Folders both can be referred to as Sync Items. Please keep this in mind these are 
-                        just files and folders present on a drive however they are termed differently based on how you choose to look at them.
+                        Sync containers are always folders while sync items can be both files and folders. These are just terminologies given to files and folders during sync operations
+                        to help control the sync operations. A Sync operations always exists between two drives. One drive will act as the destination while the other drive will act as the
+                        source. Files and folders get transferred from the source drive to a destination drive and sometimes, due to both ways syncing, from the destination drive to 
+                        source drive.<br/>
+                        No matter what the scenario is, only a folder can contain files and other folders which is why folders on the destination drives are termed as "Sync Containers" while 
+                        all other files and folders from the source drive are termed as "Sync Items". Sync Items themselves cannot exist on their own. They need a Sync Container to be linked
+                        to as a parent object. If a sync container is deleted then its linked sync items are also deleted.<br/>
+                        Relationship between Sync Containers and Sync Items is of type many to many which means that one Sync Container can contain multiple Sync Items and one Sync Item can be 
+                        linked to multiple Sync Containers.<br/>
                         <ul>
                             <li>
                                 <p>Sync Containers</p>
                                 <p>
                                     Sync Containers are always Folders and never Files<br/>
-                                    These are folders present on the Drive that you are currently viewing in the "Files" window either in the dock left position
-                                    or the dock right position that you have setup for syncing. By default these folders acts as the destination for all the other files
-                                    and folders from other drives
-                                    which are being synced with this drive where those files and folders are referred to as Sync Items.<br/><br/> For example Drive A 
+                                    These are folders present on the destination drive that acts as destination for files and folders from other drives during sync operations.
+                                    <br/><br/> For example Drive A 
                                     has been setup to have Drive B's file "File B" synced to Drive A's Folder "Folder A". When the syncing completes then Drive A's Folder
                                     "Folder A" will contain Drive B's file "File B". If you mount and then dock Drive A in the "Files" window then "Folder A" will show
                                     as a Sync Container while "File B" will show as a Sync Item. 
@@ -64,12 +69,10 @@
                                 <p>Sync Items</p>
                                 <p>
                                     Sync Items can be both Files and Folders<br/>
-                                    These are files and folders present on the Drive that you have set for syncing with some other drive where that some other drive is the 
-                                    drive that you are currently viewing in the "Files" window. By default these files and folders act as the source for the Sync Container 
-                                    that they are linked to from other drives.<br/><br/> For example Drive A has been setup to have Drive B's file "File B" synced to Drive A's
+                                    These are files and folders present on the source drive which act as source files and folders during sync operations.
+                                    <br/><br/> For example Drive A has been setup to have Drive B's file "File B" synced to Drive A's
                                     Folder "Folder A". When the syncing completes then Drive A's Folder "Folder A" will contain Drive B's file "File B". If you mount and
-                                    then dock
-                                    Drive B in the "Files" window then neither "Folder A" or "File B" will show up in sync mode because a Sync Item is linked to a Sync Container
+                                    then dock Drive B in the "Files" window then neither "Folder A" or "File B" will show up in sync mode because a Sync Item is linked to a Sync Container
                                     and will only show along side its linked Sync Container. In this example, the Sync Container "Folder A" belongs to Drive A and Sync Item 
                                     "File B" is linked to Sync Container "Folder A" which is why these things will only show inside Drive A when you mount and dock Drive A in 
                                     Sync Mode.
