@@ -1,0 +1,88 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <table>
+            <tr style = "width: 100%; height:100%">
+                <td style = "width:50% ; height:100%">
+                    <img src = "../assets/img/filters/filters.png" width="100%" height = "100%">
+                </td>
+                <td style = "width:50% ; height:100%">
+                    <p>
+                        "Filters" is an application functionality that allows for conditional syncing to take place. This functionality works only in sync operations
+                        and not real time file operations. After a filter has been created then it needs to be attached to a file or folder to take effect. These files or 
+                        folders which have filtered attached to them are termed as "Filtered Files".<br/>
+                        The relationship between Filters and Filtered files is many to many where one Filter can be attached to many filtered files and one filtered file 
+                        can be multiple filters attached to it. Filters are of 4 types namely
+                        <ul>
+                            <li>Time - This type of filter contains the following properties
+                                <ul>
+                                    <li>Current Date - current system date on your computer in YYYY-MM-DD HH:mm:ss format</li>
+                                    <li>Month of the Year - full name of one of the months of the year. E.g January, February etc</li>
+                                    <li>Day of the Month - numeric value between 1 - 31 representating the number of days in a month</li>
+                                    <li>Day of the Week - full name of one of the days of the week. E.g Monday, Tuesday etc</li>
+                                    <li>Hour of the Day - numeric value between 1 - 23 representating the number of hours in a day</li>
+                                    <li>Minute of an Hour- numeric value between 1 - 59 representating the number of minutes in an hour</li>
+                                </ul>
+                            </li><br/>
+                            <li>Drive - This type of filter contains the following properties linked to a drive 
+                                <ul>
+                                    <li>Name - name assigned to the drive</li>
+                                    <li>Type - type of the drive i.e local or remote</li>
+                                    <li>Total Space - total space of a drive in bytes</li>
+                                    <li>Used Space - used space of a drive in bytes</li>
+                                    <li>Free Space - free space of a drive in bytes</li>
+                                </ul>
+                            </li><br/>
+                            <li>File - This type of filter contains the following properties linked to a file
+                                <ul>
+                                    <li>Drive - name of the drive the file belongs to</li>
+                                    <li>Name - name of the file</li>
+                                    <li>Type - type of the file i.e local or remote</li>
+                                    <li>Path - absolute path of the file for local file or alpha numeric code of the file for remote file</li>
+                                    <li>Size - size of the file in bytes</li>
+                                    <li>Hash - SHA-256 hash of the contents of the file</li>
+                                    <li>Modified Time - last modified time of the file in YYYY-MM-DD HH:mm:ss format</li>
+                                </ul>
+                            </li><br/>
+                            <li>Folder - This type of filter contains the following properties linked to a folder
+                                <ul>
+                                    <li>Drive - name of the drive the folder belongs to</li>
+                                    <li>Name - name of the folder</li>
+                                    <li>Type - type of the folder i.e local or remote</li>
+                                    <li>Path - absolute path of the folder for local folder or alpha numeric code of the folder for remote folder</li>
+                                    <li>Modified Time - last modified time of the folder in YYYY-MM-DD HH:mm:ss format</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <br/><br/>
+                        Filter operations can be used with any filter type and carry the same meaning that their analog in math operations do. For example, a time filter setup with "Current Date" property and 
+                        "Less than" operator will check if the current date on your computer is less than the date specified as the value of the filter and sync the file or folder that its linked to if the 
+                        result of the comparison is true otherwise false. Following is a list of operators which can be assigned to "Filters"
+                        <ul>
+                            <li>Equal to</li>
+                            <li>Not Equal to</li>
+                            <li>Contains</li>
+                            <li>Less than</li>
+                            <li>Less than or equal to</li>
+                            <li>Greater than</li>
+                            <li>Greater than or equal to</li>
+                        </ul>
+                        <br/><br/>
+                        Besides this filters can also be set as "Inheritable" however this can only be done during setting up of Filtered Files in the "Filters" window.Besides that the Filtered File which is being setup 
+                        must be a Folder.Filter marked as "Inheritable" do not apply to the folder which is its linked filtered file instead those kind of filters apply to all the child files and folders contained in the 
+                        folder itself.<br/>
+                        For example: A filter has been set as "Folder" type with its property set to "Name", Operator set to "Equal to" and Value set to "Test" and has been linked to a folder named "Folder123". This 
+                        Filter has also been set as "Inheritable". When this filter runs on the folder "Folder123" then it will not fail even though its value is "Test" which is different from the folder name "Folder123"
+                        instead it will continue to run on all the child folders contained in the folder "Folder123". Any child folder which has its name same as filter value "Test" will pass the filter test and sync
+                        while others which do not will not sync.
+                        <br/><br/>
+                        If multiple filters are linked to a filtered file or folder then for that file or folder to pass the filter test and sync successfully, all the filters attached to it should pass. even if one 
+                        filter fails then the file or folder will not sync.
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

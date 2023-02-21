@@ -53,12 +53,19 @@
             <tr>
                 <td style = "width:10%;height:100%;border-style: double;">
                     <ul>
-                        <li><button id="UserInterface" onclick="LoadPage(this.id)">General User Interface</button></li>
-                        <li><button id="MasterKey" onclick="LoadPage(this.id)">Master Key</button></li>
-                        <ul id="MasterKeyOptions" style = "display: none;">
-                            <li><button id = "NewMasterKey" onclick="LoadSection(this.id)">New Master Key</button></li>
-                            <li><button id = "ChangeMasterKey" onclick="LoadSection(this.id)">Change Master Key</button></li>
-                        </ul>
+                        <li><button id="UserInterface" onclick="LoadPage(this.id)">General User Interface</button>
+                            <ul id="UserInterfaceOptions" style = "display: none;">
+                                <li><button id = "GeneralSaveOption" onclick="LoadSection(this.id)">General Save Option</button></li>
+                                <li><button id = "GeneralDeleteOption" onclick="LoadSection(this.id)">General Delete Option</button></li>
+                                <li><button id = "SystemMessages" onclick="LoadSection(this.id)">System Messages</button></li>
+                            </ul>
+                        </li>
+                        <li><button id="MasterKey" onclick="LoadPage(this.id)">Master Key</button>
+                            <ul id="MasterKeyOptions" style = "display: none;">
+                                <li><button id = "NewMasterKey" onclick="LoadSection(this.id)">New Master Key</button></li>
+                                <li><button id = "ChangeMasterKey" onclick="LoadSection(this.id)">Change Master Key</button></li>
+                            </ul>
+                        </li>
                         <li><button id="Licenses" onclick="LoadPage(this.id)">Licenses</button>
                             <ul id="LicensesOptions" style = "display: none;">
                                 <li><button id = "AddLicense" onclick="LoadSection(this.id)">Add License</button></li>
@@ -109,9 +116,9 @@
                         </li>                        
                         <li><button id="Encryption" onclick="LoadPage(this.id)">Encryption</button>
                             <ul id="EncryptionOptions" style = "display: none;">
-                                <li><button id = "AddKey" onclick="LoadSection(this.id)">Add Encryption Key</button></li>
-                                <li><button id = "SaveKey" onclick="LoadSection(this.id)">Save Encryption Key</button></li>
-                                <li><button id = "DeleteKey" onclick="LoadSection(this.id)">Delete Encryption Key</button></li>
+                                <li><button id = "AddKey" onclick="LoadSection(this.id)">Add Encryption Key Tag</button></li>
+                                <li><button id = "SaveKey" onclick="LoadSection(this.id)">Save Encryption Key Tag</button></li>
+                                <li><button id = "DeleteKey" onclick="LoadSection(this.id)">Delete Encryption Key Tag</button></li>
                             </ul>
                         </li>
                         <li><button id="Filters" onclick="LoadPage(this.id)">Filters</button>
@@ -122,7 +129,8 @@
                                 <li><button id = "AddFilteredFile" onclick="LoadSection(this.id)">Add Filtered File(s)</button></li>
                                 <li><button id = "SaveFilteredFile" onclick="LoadSection(this.id)">Save Filtered File(s)</button></li>
                                 <li><button id = "DeleteFilteredFile" onclick="LoadSection(this.id)">Delete Filtered File(s)</button></li>
-                                <li><button id = "FindFilteredFiles" onclick="LoadSection(this.id)">Find Filtered Files For A Filter</button></li>
+                                <li><button id = "TestFilter" onclick="LoadSection(this.id)">Test Filters Linked To Filtered File(s)</button></li>
+                                <li><button id = "FindFilteredFile" onclick="LoadSection(this.id)">Find Filtered Files For A Filter</button></li>
                                 <li><button id = "EnableInheritance" onclick="LoadSection(this.id)">Setting Filter As Inheritable In A Filtered File</button></li>
                             </ul>
                         </li>
