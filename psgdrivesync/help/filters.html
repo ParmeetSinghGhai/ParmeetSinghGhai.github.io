@@ -1,6 +1,6 @@
 <html>
     <head>
-
+        <link rel="stylesheet" href="../assets/css/help.css">
     </head>
     <body>
         <table>
@@ -20,10 +20,10 @@
                                 <ul>
                                     <li>Current Date - current system date on your computer in YYYY-MM-DD HH:mm:ss format</li>
                                     <li>Month of the Year - full name of one of the months of the year. E.g January, February etc</li>
-                                    <li>Day of the Month - numeric value between 1 - 31 representating the number of days in a month</li>
+                                    <li>Day of the Month - numeric value between 1 - 31 representing the number of days in a month</li>
                                     <li>Day of the Week - full name of one of the days of the week. E.g Monday, Tuesday etc</li>
-                                    <li>Hour of the Day - numeric value between 1 - 23 representating the number of hours in a day</li>
-                                    <li>Minute of an Hour- numeric value between 1 - 59 representating the number of minutes in an hour</li>
+                                    <li>Hour of the Day - numeric value between 1 - 23 representing the number of hours in a day</li>
+                                    <li>Minute of an Hour- numeric value between 1 - 59 representing the number of minutes in an hour</li>
                                 </ul>
                             </li><br/>
                             <li>Drive - This type of filter contains the following properties linked to a drive 
@@ -59,7 +59,7 @@
                         <br/><br/>
                         Filter operations can be used with any filter type and carry the same meaning that their analog in math operations do. For example, a time filter setup with "Current Date" property and 
                         "Less than" operator will check if the current date on your computer is less than the date specified as the value of the filter and sync the file or folder that its linked to if the 
-                        result of the comparison is true otherwise false. Following is a list of operators which can be assigned to "Filters"
+                        result of the comparison is true otherwise the file or folder wont get synced. Following is a list of operators which can be assigned to "Filters"
                         <ul>
                             <li>Equal to</li>
                             <li>Not Equal to</li>
@@ -70,9 +70,9 @@
                             <li>Greater than or equal to</li>
                         </ul>
                         <br/><br/>
-                        Besides this filters can also be set as "Inheritable" however this can only be done during setting up of Filtered Files in the "Filters" window.Besides that the Filtered File which is being setup 
-                        must be a Folder.Filter marked as "Inheritable" do not apply to the folder which is its linked filtered file instead those kind of filters apply to all the child files and folders contained in the 
-                        folder itself.<br/>
+                        Filters can also be set as "Inheritable" however this can only be done during setting up of Filtered Files in the "Filters" window.The Filtered File which is being setup 
+                        must be a Folder in order for the attached filters to be setup as "Inheritable".Filter marked as "Inheritable" do not apply to their linked Folder instead those kind of
+                        filters apply to all the child files and folders contained in the folder itself.<br/>
                         For example: A filter has been set as "Folder" type with its property set to "Name", Operator set to "Equal to" and Value set to "Test" and has been linked to a folder named "Folder123". This 
                         Filter has also been set as "Inheritable". When this filter runs on the folder "Folder123" then it will not fail even though its value is "Test" which is different from the folder name "Folder123"
                         instead it will continue to run on all the child folders contained in the folder "Folder123". Any child folder which has its name same as filter value "Test" will pass the filter test and sync

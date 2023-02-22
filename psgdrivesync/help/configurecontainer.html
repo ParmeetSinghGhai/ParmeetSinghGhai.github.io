@@ -1,0 +1,119 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../assets/css/help.css">
+    </head>
+    <body>
+        <p>
+            Sync Containers themselves do not have any configurable properties however the Sync Items which are attached to these Sync Containers do have the following configurable properties
+            which can be changed anytime. 
+            <ul>
+                <li>Sync Mode - the options available for this setting are: One Way or Both Ways.
+                    <ul>
+                        <li>One Way sync mode restricts the transfer of files and folders from Sync Item to Sync Container. Files will never be transferred the other way around no matter what</li>
+                        <li>Both Ways sync mode allows for transfer of files and folders between Sync Container and Sync Item where files and folders are transferred based on existential status and last modified time.
+                            For example: We have "File A" from drive "Drive A" set as the Sync Item while "Folder B" from drive "Drive B" is set as the Sync Container. If "File A" does not exist in "Folder B" then 
+                            "File A" will be transferred to "Folder B". if "File A" already exists in "Folder B" but was recently modified then "File A" from "Folder B" in "Drive B" will replace "File A" from "Drive A".
+                            This is why this mode is named as "Both Ways" because this mode allows files and folders set for syncing to remain synced on both drives.
+                        </li>
+                    </ul>
+                </li>
+                <br/>
+                <li>
+                    Encryption Mode - the options available for this setting are: Encrypt, Decrypt and Do Nothing.
+                    <ul>
+                        <li>Encrypt - this option allows the files or folders set as Sync Items to be encrypted during syncing so the destination folder / Sync Container will end up having
+                            encrypted versions of these files or folders. This Option can only be set in "One Way" sync mode. 
+                        </li>
+                        <li>Decrypt - this option allows the files or folders set as Sync Items to be decrypted during syncing so the destination folder / Sync Container will end up having
+                            decrypted versions of these files or folders. This Option can only be set in "One Way" sync mode. 
+                        </li>
+                        <li>Do Nothing - this option allows the files or folders set as Sync Items to be synced as it without the files or folders getting encrypted or decrypted. This option 
+                            is the default setting for "Both Ways" syncing.
+                        </li> 
+                    </ul>
+                </li>
+                <br/>
+                <li>
+                    Encryption Key - this settings is only needed when "Encryption Mode" has been set to "Encrypt" otherwise it can be left blank. This is the encryption key that is used to 
+                    encrypt the select file or folder set as Sync Item.
+                </li>
+            </ul>
+            <br/>
+            Following are the steps needed to be performed in order to configure a Sync Item inside a Sync Container. 
+        <p/>
+
+        <table>
+            <tr>
+                <td>
+                    <p>1</p>
+                </td>
+                <td>
+                    <p>
+                        Open the Drive in Sync Mode and Select any one of the Sync Containers from the list of Sync Containers. This should also populate all the Sync Items linked to this 
+                        Sync Container. Select one of the Sync Item which you would like to configure. 
+                    </p>
+                </td>
+                <td>
+                    <img src="../assets/img/filessync/configurecontainer1.png">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>2</p>
+                </td>
+                <td>
+                    <p>
+                        Set the sync mode as either One Way or Both Ways.
+                    </p>
+                </td>
+                <td>
+                    <img src="../assets/img/filessync/configurecontainer2.png">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>3</p>
+                </td>
+                <td>
+                    <p>
+                        Set the encryption mode as Encrypt, Decrypt or Do Nothing. Encryption mode "Encrypt" and "Decrypt" can only be set in "One Way" sync mode.
+                    </p>
+                </td>
+                <td>
+                    <img src="../assets/img/filessync/configurecontainer3.png">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>4</p>
+                </td>
+                <td>
+                    <p>
+                        Select one of the encryption keys from the list of encryption keys. Its only required when the encryption mode has been set as "Encrypt" otherwise 
+                        it can be left blank.
+                    </p>
+                </td>
+                <td>
+                    <img src="../assets/img/filessync/configurecontainer4.png">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>5</p>
+                </td>
+                <td>
+                    <p>
+                        Save the Sync Item using the "Save" option. The result of the save operation should show in system messages.
+                    </p>
+                </td>
+                <td>
+                    <img src="../assets/img/filessync/configurecontainer5.png">
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
