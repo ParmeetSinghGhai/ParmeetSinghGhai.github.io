@@ -31,7 +31,7 @@ p {
 
 /* Links */
 a {
-    color: white;
+    color: orange;
     word-wrap: break-word;
     
     -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
@@ -43,9 +43,11 @@ a {
 
 a:hover,
 a:focus {
-    color: orange;
+    background-color:   orange;
+    color: white;
     text-decoration: none;
     outline: 0;
+    border-spacing: 2px;
 }
 
 a:before,
