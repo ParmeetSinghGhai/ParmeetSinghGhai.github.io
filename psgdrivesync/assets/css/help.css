@@ -3,11 +3,40 @@ table
     border-spacing: 20px;
 }
 
-td
+table tr td p:nth-child(2)
 {
-    border-bottom-style:groove;
-    border-bottom-width: 5px;
-    border-bottom-color: purple;
+    border-style:groove;
+    border-width: 5px;
+    border-color: black;
+    border-spacing: 5px;
+    padding:10px
 }
+
+table tr td p:first-child
+{
+    border-style:groove;
+    border-width: 5px;
+    border-color: black;
+    border-spacing:5px;
+    padding:10px;
+}
+
+img
+{
+    border-style:groove;
+    border-width: 5px;
+    border-color: black;
+}
+
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+li{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
 
 

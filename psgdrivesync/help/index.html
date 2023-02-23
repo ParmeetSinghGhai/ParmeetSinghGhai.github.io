@@ -40,34 +40,29 @@
         }
     </script>
     <style>
-        #logo
+        html,body
         {
-            position:relative;
-            left:50%;
-            right:50%;
-        }
-        #platform{
-            width:100%;
-            height:100%;
-        }
-        #heading{
-           height:10%;
-           background-color: white;
-        }
-        #header{
-            position: relative;
-            left:40%;
-            right:60%;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 30px;
+            width: 100%;
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+            overflow-x: hidden;
         }
         #content
         {
-            height:90%;
-        }
-        #content_table{
             width:100%;
             height:100%;
+        }
+        #logo
+        {
+            position:relative;
+            left:20%;
+        }
+        #header{
+            position: relative;
+            left:0%;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
         }
         #index{
             width:auto;
@@ -80,120 +75,120 @@
         button{
             font-family: Arial, Helvetica, sans-serif;
             font-size: 15px;
+            background-color:white;
+            color:black
+        }
+        button:hover{
+            background-color: burlywood;
+            color:black
+        }
+        button:focus{
+            background-color: darkgray;
+            color:white
         }
     </style>
 </head>
 <body>
-<table id = "platform">
-    <tr id="heading">
-        <td>
-            <img id = "logo" src = "../assets/img/applogo.png">
-            <p id = "header"> PSGDriveSync Application Manual</p>
-        </td>
-    </tr>
-    <tr id ="content">
-        <td>
-            <table id = "content_table">
-                <tr>
-                    <td id = "index">
-                        <ul>
-                            <li><button id="UserInterface" onclick="LoadPage(this.id)">General User Interface</button>
-                                <ul id="UserInterfaceOptions" style = "display: none;">
-                                    <li><button id = "ApplicationMenuBar" onclick="LoadSection(this.id)">Application Menu Bar</button></li>
-                                    <li><button id = "ControlBar" onclick="LoadSection(this.id)">Control Bars</button></li>
-                                    <li><button id = "NavigationBar" onclick="LoadSection(this.id)">Navigation Bars</button></li>
-                                    <li><button id = "ResizeBar" onclick="LoadSection(this.id)">Resize Bars</button></li>
-                                    <li><button id = "KeyboardShortcuts" onclick="LoadSection(this.id)">Keyboard Shortcuts</button></li>
-                                    <li><button id = "SaveOption" onclick="LoadSection(this.id)">Ways to Save Items</button></li>
-                                    <li><button id = "DeleteOption" onclick="LoadSection(this.id)">Ways to Delete Items</button></li>
-                                    <li><button id = "SystemMessages" onclick="LoadSection(this.id)">System Messages</button></li>
-                                </ul>
-                            </li>
-                            <li><button id="MasterKey" onclick="LoadPage(this.id)">Master Key</button>
-                                <ul id="MasterKeyOptions" style = "display: none;">
-                                    <li><button id = "NewMasterKey" onclick="LoadSection(this.id)">New Master Key</button></li>
-                                    <li><button id = "ChangeMasterKey" onclick="LoadSection(this.id)">Change Master Key</button></li>
-                                </ul>
-                            </li>
-                            <li><button id="Licenses" onclick="LoadPage(this.id)">Licenses</button>
-                                <ul id="LicensesOptions" style = "display: none;">
-                                    <li><button id = "AddLicense" onclick="LoadSection(this.id)">Add License</button></li>
-                                    <li><button id = "SaveLicense" onclick="LoadSection(this.id)">Save License</button></li>
-                                    <li><button id = "DeleteLicense" onclick="LoadSection(this.id)">Delete License</button></li>
-                                    <li><button id = "DownloadLicense" onclick="LoadSection(this.id)">Download License</button></li>
-                                </ul>
-                            </li>
-                            <li><button id="Drives" onclick="LoadPage(this.id)">Drives</button>
-                                <ul id="DrivesOptions" style = "display: none;">
-                                    <li><button id = "AddRemoteDrive" onclick="LoadSection(this.id)">Add Remote Drive</button></li>
-                                    <li><button id = "AddLocalDrive" onclick="LoadSection(this.id)">Add Local Drive</button></li>
-                                    <li><button id = "SaveDrive" onclick="LoadSection(this.id)">Save Drive</button></li>
-                                    <li><button id = "DeleteDrive" onclick="LoadSection(this.id)">Delete Drive</button></li>
-                                    <li><button id = "MountDrive" onclick="LoadSection(this.id)">Mount & Unmount Drive</button></li>
-                                    <li><button id = "DockDrive" onclick="LoadSection(this.id)">Dock & Undock Drive</button></li>     
-                                    <li><button id = "AutoSyncDrive" onclick="LoadSection(this.id)">Enable & Disable Auto Sync On Drive</button></li>  
-                                    <li><button id = "ColorDrive" onclick="LoadSection(this.id)">Assign Color to Drive</button></li>                           
-                                </ul>
-                            </li>
-                            <li><button id="FilesBrowse" onclick="LoadPage(this.id)">Files - Browse Mode</button>
-                                <ul id="FilesBrowseOptions" style = "display: none;">
-                                    <li><button id = "SwitchToSync" onclick="LoadSection(this.id)">Switch To Sync Window</button></li>
-                                    <li><button id = "NewFileFolder" onclick="LoadSection(this.id)">Create New File or Folder</button></li>
-                                    <li><button id = "CutCopyPasteFileFolder" onclick="LoadSection(this.id)">Cut, Copy, Paste Files & Folders</button></li>
-                                    <li><button id = "DeleteFileFolder" onclick="LoadSection(this.id)">Delete Files & Folders</button></li>
-                                    <li><button id = "RenameFileFolder" onclick="LoadSection(this.id)">Rename Files & Folders</button></li>
-                                    <li><button id = "SelectAllFileFolder" onclick="LoadSection(this.id)">Select All Files & Folders</button></li>     
-                                    <li><button id = "PropertiesFileFolder" onclick="LoadSection(this.id)">File & Folder Properties</button></li>  
-                                    <li><button id = "EncryptFileFolder" onclick="LoadSection(this.id)">Encrypt File & Folder</button></li>  
-                                    <li><button id = "DecryptFileFolder" onclick="LoadSection(this.id)">Decrypt File & Folder</button></li>    
-                                    <li><button id = "CompareFileFolder" onclick="LoadSection(this.id)">Compare Files & Folders</button></li>   
-                                    <li><button id = "SearchForEncryptedFiles" onclick="LoadSection(this.id)">Search for Encrypted Files</button></li>  
-                                    <li><button id = "SendToFilters" onclick="LoadSection(this.id)">Send Files & Folders To Filters Window</button></li>                    
-                                </ul>
-                            </li>
-                            <li><button id="FilesSync" onclick="LoadPage(this.id)">Files - Sync Mode</button>
-                                <ul id="FilesSyncOptions" style = "display: none;">
-                                    <li><button id = "SwitchToBrowse" onclick="LoadSection(this.id)">Switch To Browse Window</button></li>
-                                    <li><button id = "StartSync" onclick="LoadSection(this.id)">Start Sync</button></li>
-                                    <li><button id = "StopSync" onclick="LoadSection(this.id)">Stop Sync</button></li>
-                                    <li><button id = "AddContainer" onclick="LoadSection(this.id)">Add Sync Containers & Sync Items</button></li>
-                                    <li><button id = "AddItem" onclick="LoadSection(this.id)">Add Sync Items to an Existing Sync Container</button></li>
-                                    <li><button id = "SaveContainer" onclick="LoadSection(this.id)">Save Sync Container & Sync Items</button></li>
-                                    <li><button id = "ConfigureContainer" onclick="LoadSection(this.id)">Configure Sync Container & Sync Items</button></li>                                
-                                    <li><button id = "DeleteContainer" onclick="LoadSection(this.id)">Delete Sync Containers & Sync Items</button></li>
-                                </ul>
-                            </li>                        
-                            <li><button id="Encryption" onclick="LoadPage(this.id)">Encryption</button>
-                                <ul id="EncryptionOptions" style = "display: none;">
-                                    <li><button id = "AddKey" onclick="LoadSection(this.id)">Add Encryption Key Tag</button></li>
-                                    <li><button id = "SaveKey" onclick="LoadSection(this.id)">Save Encryption Key Tag</button></li>
-                                    <li><button id = "DeleteKey" onclick="LoadSection(this.id)">Delete Encryption Key Tag</button></li>
-                                </ul>
-                            </li>
-                            <li><button id="Filters" onclick="LoadPage(this.id)">Filters</button>
-                                <ul id="FiltersOptions" style = "display: none;">
-                                    <li><button id = "AddFilter" onclick="LoadSection(this.id)">Add Filter</button></li>
-                                    <li><button id = "SaveFilter" onclick="LoadSection(this.id)">Save Filter</button></li>
-                                    <li><button id = "DeleteFilter" onclick="LoadSection(this.id)">Delete Filter</button></li>
-                                    <li><button id = "AddFilteredFile" onclick="LoadSection(this.id)">Add Filtered File(s)</button></li>
-                                    <li><button id = "SaveFilteredFile" onclick="LoadSection(this.id)">Save Filtered File(s)</button></li>
-                                    <li><button id = "DeleteFilteredFile" onclick="LoadSection(this.id)">Delete Filtered File(s)</button></li>
-                                    <li><button id = "TestFilter" onclick="LoadSection(this.id)">Test Filters Linked To Filtered File(s)</button></li>
-                                    <li><button id = "FindFilteredFile" onclick="LoadSection(this.id)">Find Filtered Files For A Filter</button></li>
-                                    <li><button id = "EnableInheritance" onclick="LoadSection(this.id)">Setting Filter As Inheritable In A Filtered File</button></li>
-                                </ul>
-                            </li>
-                        </ul> 
-                    </td>
-                    <td id = "book" loadedPage = "">
-                        <iframe id="Display" width="100%" height ="100%" style = "overflow: scroll; overflow-x: scroll; overflow-y: scroll;">
-                            
-                        </iframe>
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-</table>
+    <table id = "content">
+        <tr>
+            <td id = "index">
+                <img id = "logo" src = "../assets/img/applogo.png">
+                <p id = "header"> PSGDriveSync Application Manual</p>
+                <ul>
+                    <li><button id="UserInterface" onclick="LoadPage(this.id)">General User Interface</button>
+                        <ul id="UserInterfaceOptions" style = "display: none;">
+                            <li><button id = "ApplicationMenuBar" onclick="LoadSection(this.id)">Application Menu Bar</button></li>
+                            <li><button id = "ControlBar" onclick="LoadSection(this.id)">Control Bars</button></li>
+                            <li><button id = "NavigationBar" onclick="LoadSection(this.id)">Navigation Bars</button></li>
+                            <li><button id = "ResizeBar" onclick="LoadSection(this.id)">Resize Bars</button></li>
+                            <li><button id = "KeyboardShortcuts" onclick="LoadSection(this.id)">Keyboard Shortcuts</button></li>
+                            <li><button id = "SaveOption" onclick="LoadSection(this.id)">Ways to Save Items</button></li>
+                            <li><button id = "DeleteOption" onclick="LoadSection(this.id)">Ways to Delete Items</button></li>
+                            <li><button id = "SystemMessages" onclick="LoadSection(this.id)">System Messages</button></li>
+                        </ul>
+                    </li>
+                    <li><button id="MasterKey" onclick="LoadPage(this.id)">Master Key</button>
+                        <ul id="MasterKeyOptions" style = "display: none;">
+                            <li><button id = "NewMasterKey" onclick="LoadSection(this.id)">New Master Key</button></li>
+                            <li><button id = "ChangeMasterKey" onclick="LoadSection(this.id)">Change Master Key</button></li>
+                        </ul>
+                    </li>
+                    <li><button id="Licenses" onclick="LoadPage(this.id)">Licenses</button>
+                        <ul id="LicensesOptions" style = "display: none;">
+                            <li><button id = "AddLicense" onclick="LoadSection(this.id)">Add License</button></li>
+                            <li><button id = "SaveLicense" onclick="LoadSection(this.id)">Save License</button></li>
+                            <li><button id = "DeleteLicense" onclick="LoadSection(this.id)">Delete License</button></li>
+                            <li><button id = "DownloadLicense" onclick="LoadSection(this.id)">Download License</button></li>
+                        </ul>
+                    </li>
+                    <li><button id="Drives" onclick="LoadPage(this.id)">Drives</button>
+                        <ul id="DrivesOptions" style = "display: none;">
+                            <li><button id = "AddRemoteDrive" onclick="LoadSection(this.id)">Add Remote Drive</button></li>
+                            <li><button id = "AddLocalDrive" onclick="LoadSection(this.id)">Add Local Drive</button></li>
+                            <li><button id = "SaveDrive" onclick="LoadSection(this.id)">Save Drive</button></li>
+                            <li><button id = "DeleteDrive" onclick="LoadSection(this.id)">Delete Drive</button></li>
+                            <li><button id = "MountDrive" onclick="LoadSection(this.id)">Mount & Unmount Drive</button></li>
+                            <li><button id = "DockDrive" onclick="LoadSection(this.id)">Dock & Undock Drive</button></li>     
+                            <li><button id = "AutoSyncDrive" onclick="LoadSection(this.id)">Enable & Disable Auto Sync On Drive</button></li>  
+                            <li><button id = "ColorDrive" onclick="LoadSection(this.id)">Assign Color to Drive</button></li>                           
+                        </ul>
+                    </li>
+                    <li><button id="FilesBrowse" onclick="LoadPage(this.id)">Files - Browse Mode</button>
+                        <ul id="FilesBrowseOptions" style = "display: none;">
+                            <li><button id = "SwitchToSync" onclick="LoadSection(this.id)">Switch To Sync Window</button></li>
+                            <li><button id = "NewFileFolder" onclick="LoadSection(this.id)">Create New File or Folder</button></li>
+                            <li><button id = "CutCopyPasteFileFolder" onclick="LoadSection(this.id)">Cut, Copy, Paste Files & Folders</button></li>
+                            <li><button id = "DeleteFileFolder" onclick="LoadSection(this.id)">Delete Files & Folders</button></li>
+                            <li><button id = "RenameFileFolder" onclick="LoadSection(this.id)">Rename Files & Folders</button></li>
+                            <li><button id = "SelectAllFileFolder" onclick="LoadSection(this.id)">Select All Files & Folders</button></li>     
+                            <li><button id = "PropertiesFileFolder" onclick="LoadSection(this.id)">File & Folder Properties</button></li>  
+                            <li><button id = "EncryptFileFolder" onclick="LoadSection(this.id)">Encrypt File & Folder</button></li>  
+                            <li><button id = "DecryptFileFolder" onclick="LoadSection(this.id)">Decrypt File & Folder</button></li>    
+                            <li><button id = "CompareFileFolder" onclick="LoadSection(this.id)">Compare Files & Folders</button></li>   
+                            <li><button id = "SearchForEncryptedFiles" onclick="LoadSection(this.id)">Search for Encrypted Files</button></li>  
+                            <li><button id = "SendToFilters" onclick="LoadSection(this.id)">Send Files & Folders To Filters Window</button></li>                    
+                        </ul>
+                    </li>
+                    <li><button id="FilesSync" onclick="LoadPage(this.id)">Files - Sync Mode</button>
+                        <ul id="FilesSyncOptions" style = "display: none;">
+                            <li><button id = "SwitchToBrowse" onclick="LoadSection(this.id)">Switch To Browse Window</button></li>
+                            <li><button id = "StartSync" onclick="LoadSection(this.id)">Start Sync</button></li>
+                            <li><button id = "StopSync" onclick="LoadSection(this.id)">Stop Sync</button></li>
+                            <li><button id = "AddContainer" onclick="LoadSection(this.id)">Add Sync Containers & Sync Items</button></li>
+                            <li><button id = "AddItem" onclick="LoadSection(this.id)">Add Sync Items to an Existing Sync Container</button></li>
+                            <li><button id = "SaveContainer" onclick="LoadSection(this.id)">Save Sync Container & Sync Items</button></li>
+                            <li><button id = "ConfigureContainer" onclick="LoadSection(this.id)">Configure Sync Container & Sync Items</button></li>                                
+                            <li><button id = "DeleteContainer" onclick="LoadSection(this.id)">Delete Sync Containers & Sync Items</button></li>
+                        </ul>
+                    </li>                        
+                    <li><button id="Encryption" onclick="LoadPage(this.id)">Encryption</button>
+                        <ul id="EncryptionOptions" style = "display: none;">
+                            <li><button id = "AddKey" onclick="LoadSection(this.id)">Add Encryption Key Tag</button></li>
+                            <li><button id = "SaveKey" onclick="LoadSection(this.id)">Save Encryption Key Tag</button></li>
+                            <li><button id = "DeleteKey" onclick="LoadSection(this.id)">Delete Encryption Key Tag</button></li>
+                        </ul>
+                    </li>
+                    <li><button id="Filters" onclick="LoadPage(this.id)">Filters</button>
+                        <ul id="FiltersOptions" style = "display: none;">
+                            <li><button id = "AddFilter" onclick="LoadSection(this.id)">Add Filter</button></li>
+                            <li><button id = "SaveFilter" onclick="LoadSection(this.id)">Save Filter</button></li>
+                            <li><button id = "DeleteFilter" onclick="LoadSection(this.id)">Delete Filter</button></li>
+                            <li><button id = "AddFilteredFile" onclick="LoadSection(this.id)">Add Filtered File(s)</button></li>
+                            <li><button id = "SaveFilteredFile" onclick="LoadSection(this.id)">Save Filtered File(s)</button></li>
+                            <li><button id = "DeleteFilteredFile" onclick="LoadSection(this.id)">Delete Filtered File(s)</button></li>
+                            <li><button id = "TestFilter" onclick="LoadSection(this.id)">Test Filters Linked To Filtered File(s)</button></li>
+                            <li><button id = "FindFilteredFile" onclick="LoadSection(this.id)">Find Filtered Files For A Filter</button></li>
+                            <li><button id = "EnableInheritance" onclick="LoadSection(this.id)">Setting Filter As Inheritable In A Filtered File</button></li>
+                        </ul>
+                    </li>
+                </ul> 
+            </td>
+            <td id = "book" loadedPage = "">
+                <iframe id="Display" width="100%" height ="100%" style = "overflow: scroll; overflow-x: scroll; overflow-y: scroll;">
+                    
+                </iframe>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>
