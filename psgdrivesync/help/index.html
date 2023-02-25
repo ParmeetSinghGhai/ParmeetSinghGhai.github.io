@@ -8,6 +8,7 @@
             var suboptions = document.getElementById(id+"Options");
 
             var hide = false;
+            if(suboptions)
             if(suboptions.style.display == "none")
             {
                 suboptions.style.display= "block";
@@ -95,6 +96,9 @@
                 <img id = "logo" src = "../assets/img/applogo.png">
                 <p id = "header"> PSGDriveSync Application Manual</p>
                 <ul>
+                    <li><button id="Settings" onclick="LoadPage(this.id)">Application Settings</button>
+                        <p id="SettingsOptions" hidden></p>
+                    </li>
                     <li><button id="UserInterface" onclick="LoadPage(this.id)">General User Interface</button>
                         <ul id="UserInterfaceOptions" style = "display: none;">
                             <li><button id = "ApplicationMenuBar" onclick="LoadSection(this.id)">Application Menu Bar</button></li>
