@@ -1,8 +1,15 @@
-<a href="https://www.flaticon.com/free-icons/books" title="books icons">Books icons created by Freepik - Flaticon</a>
-<a href="https://www.flaticon.com/free-icons/factory" title="factory icons">Factory icons created by Smashicons - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/home-button" title="home button icons">Home button icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/education" title="education icons">Education icons created by amonrat rungreangfangsai - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/bag" title="bag icons">Bag icons created by Dimitry Miroliubov - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/c-sharp" title="c sharp icons">C sharp icons created by Freepik - Flaticon</a>
 <a href="https://www.flaticon.com/free-icons/skills" title="skills icons">Skills icons created by Freepik - Flaticon</a>
-<a href="https://www.flaticon.com/free-icons/project" title="project icons">Project icons created by Freepik - Flaticon</a>
-<a href="https://www.flaticon.com/free-icons/trophy" title="trophy icons">Trophy icons created by Freepik - Flaticon</a>
-<a href="https://www.flaticon.com/free-icons/hobby" title="hobby icons">Hobby icons created by Backwoods - Flaticon</a>
-<a href="https://www.flaticon.com/free-icons/chinese" title="chinese icons">Chinese icons created by Freepik - Flaticon</a>
-<a href="https://www.flaticon.com/free-icons/email" title="email icons">Email icons created by Flat Icons - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/game-boy-advance" title="game boy advance icons">Game boy advance icons created by mynamepong - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/language" title="language icons">Language icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/contact" title="contact icons">Contact icons created by Cuputo - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/line" title="line icons">Line icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/location" title="location icons">Location icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/gmail" title="gmail icons">Gmail icons created by Pixel perfect - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/phone" title="phone icons">Phone icons created by Pixel perfect - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/thank-you" title="thank you icons">Thank you icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/hamburger" title="hamburger icons">Hamburger icons created by Pixel perfect - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/up-arrow-upload" title="up arrow upload icons">Up arrow upload icons created by NajmunNahar - Flaticon</a>
