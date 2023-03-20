@@ -5,42 +5,38 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <script src="assets/js/jquery.js"></script>
     <script src="assets/js/bootstrap.js"></script>
-    <script src="assets/js/poppers.js"></script>
+    
     <script>
     var glowItem = null;
     var glowImage = null;
     var sinwaveWorker = null;
-    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
-    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) 
+    var isMenuOpened = false;
+    var showTimer = null;
+    var showInProgress = false;
+
+    function StartSinWave()
     {
-      return new bootstrap.Popover(popoverTriggerEl);
-    });
-      
-    console.log(popoverlist.length);
-    sinwaveWorker = new Worker("assets/js/sinwave.js");
-    sinwaveWorker.onmessage = (event)=>
-    {
-        var COL = event.data;
-        if(glowItem != null)
+        sinwaveWorker = new Worker("assets/js/sinwave.js");
+        sinwaveWorker.onmessage = (event)=>
         {
-            glowItem.style.backgroundColor = "rgb(" + COL[0][0] + "," + COL[0][1] + "," + COL[0][2] + ")";
-            glowImage.style.backgroundColor = "rgb(" + COL[0][0] + "," + COL[0][1] + "," + COL[0][2] + ")";
-            glowItem.style.color = "white";
-        }
-        document.getElementById("menuButton").style.backgroundColor = "rgb(" + COL[1][0] + "," + COL[1][1] + "," + COL[1][2] + ")";
-        document.getElementById("gotopButton").style.backgroundColor = "rgb(" + COL[1][0] + "," + COL[1][1] + "," + COL[1][2] + ")";
-    };
+            var COL = event.data;
+            if(glowItem != null)
+            {
+                glowItem.style.backgroundColor = "rgb(" + COL[0][0] + "," + COL[0][1] + "," + COL[0][2] + ")";
+                glowImage.style.backgroundColor = "rgb(" + COL[0][0] + "," + COL[0][1] + "," + COL[0][2] + ")";
+                glowItem.style.color = "white";
+            }
+            document.getElementById("menuButton").style.backgroundColor = "rgb(" + COL[1][0] + "," + COL[1][1] + "," + COL[1][2] + ")";
+            document.getElementById("homeButton").style.backgroundColor = "rgb(" + COL[1][0] + "," + COL[1][1] + "," + COL[1][2] + ")";
+        };
+    }
     function Glow(id,navigateThere = true)
     {
         item = document.getElementById(id);
         if(item != null)
         {
             image = document.getElementById(id+"Image");
-            if(navigateThere)
-                window.location.href = "#"+item.id+"Display";
-
             if(glowItem != null)
             {
                 var previousItemId = glowItem.id;
@@ -61,64 +57,133 @@
     }
     function SkillShow()
     {
-        const barcollection = document.getElementsByClassName("progressbar");
-        const countercollection = document.getElementsByClassName("progresscounter");
-        for(var i = 0;i<barcollection.length;i++)
-        {
-            barcollection[i].rows[0].cells[0].style.width = "0%";
-            barcollection[i].rows[0].cells[1].style.width = "100%";
-        }
+        if(showInProgress)
+            return;
 
-        var w = new Worker("assets/js/progresswave.js");
-        w.onmessage=(event)=>
+        if(showTimer !== null) 
         {
+            clearTimeout(showTimer);        
+        }
+        showTimer = setTimeout(function() 
+        {
+            showInProgress = true;
+            const barcollection = document.getElementsByClassName("progressbar");
+            const countercollection = document.getElementsByClassName("progresscounter");
             for(var i = 0;i<barcollection.length;i++)
             {
-                var value = Math.min(event.data,barcollection[i].getAttribute("progress"));
-                barcollection[i].rows[0].cells[0].style.width =value+"%";
-                barcollection[i].rows[0].cells[1].style.width =(100-value)+"%";
-                countercollection[i].innerHTML= value+"%";
+                barcollection[i].rows[0].cells[0].style.width = "0%";
+                barcollection[i].rows[0].cells[1].style.width = "100%";
             }
-        }
+
+            var progresswaveWorker = new Worker("assets/js/progresswave.js");
+            progresswaveWorker.onmessage=(event)=>
+            {
+                for(var i = 0;i<barcollection.length;i++)
+                {
+                    const value = Math.min(event.data,barcollection[i].getAttribute("progress"));
+                    barcollection[i].rows[0].cells[0].style.width =value+"%";
+                    barcollection[i].rows[0].cells[1].style.width =(100-value)+"%";
+                    countercollection[i].innerHTML= value+"%";
+                }
+            }
+            showInProgress = false;
+        }, 500);
     }
     function CreditShow()
     {
-        let myModal = new bootstrap.Modal(document.getElementById('creditDisplay'), {});
+        var myModal = new bootstrap.Modal(document.getElementById('creditDisplay'), {});
         myModal.show();
     }
     function ShowMenu()
     {
-        /*
-        var sidebar = document.getElementsByClassName("my-sidebar");
-        sidebar[0].style.position="absolute";
-        sidebar[0].style.display="inline";
-        */
+        var sidebar = document.getElementById("sidebar");
+        var menuButton = document.getElementById("menuButton");
+        if(sidebar.style.display=="block")
+        {
+            sidebar.style.display="none";
+            isMenuOpened = false; 
+            menuButton.src="assets/img/menu.png";
+        }    
+        else
+        {
+            sidebar.style.display="block";
+            sidebar.style.backgroundColor="black";
+            isMenuOpened = true;
+            menuButton.src="assets/img/close.png";
+        }  
     }
-    function GoTop()
+    function NavigateSection(id = undefined)
     {
-        window.location="#";
+        if(id == undefined)
+            window.location.href = "#";
+        else
+            window.location.href = "#"+id+"Display";
     }
+    function WindowResized()
+    {
+        var sidebar = document.getElementById("sidebar");
+        var menuButton = document.getElementById("menuButton");
+        if(window.innerWidth <= 730)
+        {
+            menuButton.style.display="block";
+            menuButton.src="assets/img/menu.png";
+            sidebar.style.display="none";
+        }
+        else if(window.innerWidth > 730)
+        {
+            menuButton.style.display="none";
+            sidebar.style.display="block";
+            sidebar.style.backgroundColor="black";
+        }
+    }
+   
+    StartSinWave();
     </script>
+
     <style>
-        .my-sidebar 
+        .my-menubar-container
         {
             -ms-flex: 0 0 230px;
             flex: 0 0 230px;
-        } 
-        @media (max-width: 800px) 
+        }
+        .my-menubar
         {
-            .my-sidebar
-            {
-                display:none;
-            }
+            background-color: black;
+            position:fixed;
+            top:0;
+            bottom:0;
+            left:0;
+            width:230px;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+        .my-menubutton
+        {
+            position:fixed;
+            right:0;
+            top:0;
+            width:32px;
+            height:32px;
+            border-style: none;
+        }
+        .my-homebutton
+        {
+            position:fixed;
+            right:0;
+            bottom:0;
+            width:32px;
+            height:32px;
+            border-style: none;
         }
         .navigation-brand
         {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-Size:20px;
             font-weight: bolder;
             color:white;
             text-align:center;
+            padding:0px;
+            margin:0px;
         }
         .navigation-brand-img
         {
@@ -134,7 +199,8 @@
             font-size:15px;
             color: rgb(168, 169, 180);
             padding:8px;
-            background-size:100% 100%;
+            background-size:100% 105%;
+            background-repeat: no-repeat;
             background-image:url(assets/img/transparentbutton.png);
             text-align: center;
         }
@@ -166,7 +232,7 @@
         }
         .section-title1
         {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-Size:20px;
             font-weight: bolder;
             color:black;
@@ -178,16 +244,16 @@
             font-Size:15px;
             font-weight: normal;
             color:black;
-            text-align:center;
+            text-align:left;
             background-color:rgb(200, 200, 255);
         }
         .section-title3
         {
             font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-Size:15px;
+            font-Size:18px;
             font-weight: lighter;
-            font-style: italic;
-            color:black;
+            font-style:normal;
+            color:rgb(142, 142, 142);
             text-align:left;
         }
         .section-info
@@ -210,58 +276,63 @@
         }
         .progressbar-foreground
         {
-            background-color:rgb(0, 13, 253);
+            background-color:rgb(20, 157, 221);
             width:0%;
         }
         .progressbar-background
         {
-            background-color:rgb(98, 98, 98);
+            background-color:rgb(220, 232, 248);
             width:100%;
         }
     </style>
 </head>
-<body onload="SkillShow()">
+<body onload="SkillShow();WindowResized();" onresize="WindowResized()">
 <div class="container-fluid">
     <div class="row">
         <!--********************************************************************-->
         <!--NAVIGATION COLUMN -->
-        <div class="col my-sidebar px-0" style="background-color: black;">
-            <div class="menu sticky-top">
+        <div id="sidebar" class="col my-menubar-container px-0" style="background-color: black;">
+            <div class="my-menubar">
                 <img src="assets/img/photo-frammed.png" class="navigation-brand-img">
                 <br/>
                 <div class ="navigation-brand">
                     Parmeet Singh Ghai
                 </div>
+                <div class="text-center">
+                    <a href="mailto:parmeet.s.ghai@gmail.com"><img class="px-2" src="assets/img/email.png"></a>
+                    <a href="tel:+91981287905"><img class="px-2" src="assets/img/call.png" ></a>
+                </div>
                 
-                <div class = "navigation-item" id="aboutme" onmousedown="Glow(this.id)">
+                <br/>
+                <div class = "navigation-item" id="aboutme" onmousedown="Glow(this.id);NavigateSection(this.id)">
                     <img class ="navigation-item-image" id="aboutmeImage" src="assets/img/home.png">
                     About
                 </div>
-                <div class = "navigation-item" id="education" onmousedown="Glow(this.id)">
+                <div class = "navigation-item" id="education" onmousedown="Glow(this.id);NavigateSection(this.id)">
                     <img class ="navigation-item-image" id="educationImage" src="assets/img/education.png">
                     Education
                 </div>
-                <div class = "navigation-item" id="workexperience" onmousedown="Glow(this.id)">
+                <div class = "navigation-item" id="workexperience" onmousedown="Glow(this.id);NavigateSection(this.id)">
                     <img class ="navigation-item-image" id="workexperienceImage" src="assets/img/workexperience.png">
                     Work Experience
                 </div>
-                <div class = "navigation-item" id="projects" onmousedown="Glow(this.id)">
+                <div class = "navigation-item" id="projects" onmousedown="Glow(this.id);NavigateSection(this.id)">
                     <img class ="navigation-item-image" id="projectsImage" src="assets/img/projects.png">
                     Projects
                 </div>
-                <div class = "navigation-item" id="skills" onmousedown="Glow(this.id)">
+                <div class = "navigation-item" id="skills" onmousedown="Glow(this.id);NavigateSection(this.id)">
                     <img class ="navigation-item-image" id="skillsImage" src="assets/img/skills.png">
                     Skills
                 </div>    
-                <div class = "navigation-item" id="contact" onmousedown="Glow(this.id)">
+                <div class = "navigation-item" id="contact" onmousedown="Glow(this.id);NavigateSection(this.id)">
                     <img class ="navigation-item-image" id="contactImage" src="assets/img/contact.png">
                     Contact
                 </div>  
-                <div class = "navigation-item" id="download" onmousedown="Glow(this.id)">
+                <div class = "navigation-item" id="download" onmousedown="Glow(this.id);NavigateSection(this.id)">
                     <img class ="navigation-item-image" id="downloadImage" src="assets/img/download.png">
                     Download Resume
                 </div>
-                <div class = "navigation-item" id="credits" onmousedown="Glow(this.id);CreditShow();">
+                <div class = "navigation-item" id="credits" onmousedown="Glow(this.id);CreditShow();NavigateSection(this.id)">
                     <img class ="navigation-item-image" id="creditsImage" src="assets/img/credit.png">
                     Credits
                 </div>
@@ -270,25 +341,17 @@
         <!--********************************************************************-->
 
 
+
+
         <!--********************************************************************-->
         <!--CONTENT COLUMN -->
         <div class="col" >
-            <button type="button" class="btn btn-secondary" data-container="body" data-bs-toggle="popover" data-placement="left" data-content="jkdfhsdjfjsdkfsdk">
-                Popover on left
-            </button>
-
-            <!-- SHOW MENU BUTTON -->
-            <div class="menu sticky-top" style="display:flex;float:right">
-                <button id="menuButton" style="background:url(assets/img/menu.png);background-repeat: none;width:32px;height:32px;border-style: none;" onclick="ShowMenu()">
-                </button>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
+            <!-- MENU TOGGLE BUTTON -->
+            <img id="menuButton" class = "my-menubutton" src="assets/img/menu.png" onclick="ShowMenu()">
 
             <!-- ABOUT ME -->
             <section>
-                <div class="container section-light" id ="educationDisplay" onmouseenter = "Glow(aboutme.id,false)">
+                <div class="container section-light pb-5" id ="aboutmeDisplay" onmouseenter = "Glow(aboutme.id)">
                     <h2 class="section-header">
                         About Me
                         <br/>
@@ -353,10 +416,10 @@
             
                 </div>
             </section>
-
+            
             <!-- EDUCATION -->
             <section>
-                <div class="container section-light" id ="educationDisplay"  onmouseenter = "Glow(education.id,false)">
+                <div class="container section-light pb-5" id ="educationDisplay"  onmouseenter = "Glow(education.id,false)">
                     <h2 class="section-header">
                         Education
                         <br/>
@@ -366,7 +429,7 @@
                     <div class ="row">
                         <div class="col">
                             <div class="col section-title1">Master Of Computer Applications</div>
-                            <div class="col-sm-2 section-title2">2016-2021</div>
+                            <div class="col-sm-1 section-title2">2016-2021</div>
                             <div class="col section-title3">Lovely Professional University, Phagware, Punjab</div>
                             <hr/>
                             <div class="col section-info">Acquired an aggregate of 85%</div>
@@ -376,7 +439,7 @@
                     <div class ="row">
                         <div class="col">
                             <div class="col section-title1">Foundation Level Certification in Software Testing</div>
-                            <div class="col-sm-2 section-title2">2014</div>
+                            <div class="col-sm-1 section-title2">2014</div>
                             <div class="col section-title3">International Software Testing Qualifications Board</div>
                             <hr/>
                             <div class="col section-info">Acquired an aggregate of 75%</div>
@@ -386,7 +449,7 @@
                     <div class ="row">
                         <div class="col">
                             <div class="col section-title1">Bachelor Of Computer Applications</div>
-                            <div class="col-sm-2 section-title2">2006-2010</div>
+                            <div class="col-sm-1 section-title2">2006-2010</div>
                             <div class="col section-title3">Guru Gobind Singh Indraprashtha University, Dwarka, New Delhi</div>
                             <hr/>
                             <div class="col section-info">Acquired an aggregate of 66%</div>
@@ -396,7 +459,7 @@
                     <div class ="row">
                         <div class="col">
                             <div class="col section-title1">All India Senior School Examination - 12th Grade</div>
-                            <div class="col-sm-2 section-title2">2004</div>
+                            <div class="col-sm-1 section-title2">2004</div>
                             <div class="col section-title3">Guru Harkrishan Public School, Punjabi Bagh, New Delhi</div>
                             <hr/>
                             <div class="col section-info">Acquired an aggregate of 66%</div>
@@ -406,7 +469,7 @@
                     <div class ="row">
                         <div class="col">
                             <div class="col section-title1">All India Secondary School Examination - 10th Grade</div>
-                            <div class="col-sm-2 section-title2">2002</div>
+                            <div class="col-sm-1 section-title2">2002</div>
                             <div class="col section-title3">Guru Harkrishan Public School, Kalkaji, New Delhi</div>
                             <hr/>
                             <div class="col section-info">Acquired an aggregate of 73%</div>
@@ -417,7 +480,7 @@
 
             <!-- WORK EXPERIENCE -->
             <section>
-                <div class="container section-dark" id ="workexperienceDisplay" onmouseenter = "Glow(workexperience.id,false)">
+                <div class="container section-dark pb-5" id ="workexperienceDisplay" onmouseenter = "Glow(workexperience.id,false)">
                     <h2 class="section-header">
                         Work Experience
                         <br/>
@@ -427,7 +490,7 @@
                     <div class ="row">
                         <div class="col">
                             <div class="col section-title1">Client Technical Support Associate</div>
-                            <div class="col-sm-2 section-title2">2008 - 2012</div>
+                            <div class="col-sm-1 section-title2">2008 - 2012</div>
                             <div class="col section-title3">Dell International Services Pvt Ltd</div>
                             <hr/>
                             <div class="col section-info">
@@ -460,7 +523,7 @@
                     <div class ="row">
                         <div class="col">
                             <div class="col section-title1">Senior Associate</div>
-                            <div class="col-sm-2 section-title2">2007 - 2008</div>
+                            <div class="col-sm-1 section-title2">2007 - 2008</div>
                             <div class="col section-title3">Wipro BPO Pvt Ltd</div>
                             <hr/>
                             <div class="section-info">
@@ -475,7 +538,7 @@
 
             <!-- PROJECTS -->
             <section>
-                <div class="container section-light" id = "projectsDisplay"  onmouseenter = "Glow(projects.id,false)" >
+                <div class="container section-light pb-5" id = "projectsDisplay"  onmouseenter = "Glow(projects.id,false)" >
                     <h2 class="section-header">
                         Projects
                         <br/>
@@ -483,9 +546,10 @@
                     </h2>
                     <div class="row">
                         <div class="col-lg-5 align-items-stretch">
-                            <div>PSGDriveSync Application</div>
-                            <div>Third Person Shooter 3D Game</div>
-                            <div>Password Generator</div>
+                            <div class="col section-title1">PSGDriveSync Application</div>
+                            <div class="col section-title3">https://github.com/ParmeetSinghGhai/PSGDriveSync</div>
+                            <hr/>
+                            <div class="col section-info">Acquired an aggregate of 66%</div>
                         </div>
                     </div>
                     
@@ -494,7 +558,7 @@
 
             <!-- SKILLS -->
             <section>
-                <div class="container section-dark" id="skillsDisplay" onmouseenter="Glow(skills.id,false);SkillShow();">
+                <div class="container section-dark pb-5" id="skillsDisplay" onmouseenter="Glow(skills.id,false);SkillShow();">
                     <h2 class="section-header">
                         Skills
                         <br/>
@@ -554,6 +618,8 @@
                         <div class="col px-5">
                             <div class="section-title1">Professional Skills</div>
                                     
+                            <br/>
+
                             <div style="display:grid;grid-template-columns: 90% 10%;"><div class="section-title3">C# Programming Language</div><div class="progresscounter"></div></div>
                             <table class="progressbar" progress="100"><tr><td class="progressbar-foreground"></td><td class="progressbar-background"></td></tr></table>
 
@@ -619,7 +685,7 @@
            
             <!-- CONTACT -->
             <section>
-                <div class="container section-light" id="contactDisplay" onmouseenter="Glow(contact.id,false)">
+                <div class="container section-light pb-5" id="contactDisplay" onmouseenter="Glow(contact.id,false)">
                     <div>
                         <h2 class="section-header">
                             Contact
@@ -678,9 +744,9 @@
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28026.725704300155!2d77.2192948629115!3d28.589553858771!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce2fca374b37d%3A0xfb139b03fed79971!2sNew%20Delhi%2C%20Delhi%20110003!5e0!3m2!1sen!2sin!4v1679058826561!5m2!1sen!2sin" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
                         </div>
 
-                        <div class="col-lg-7 align-items-stretch">
-                            <form style="background: url(assets/img/telephone.png);background-repeat: no-repeat;">
-                                <div class="section-title1">Contact Form</div>
+                        <div class="col px-5 pt-5 pb-5">
+                            <form action="https://script.google.com/macros/s/AKfycbyKhPPv6Bjko5cBVSXqXR4hCaqnxEEvaC_tHL5Tj54fSC6zPp9ip2-K89Cs6X83dmHW9g/exec" method="post" target="_blank" style="background: url(assets/img/telephone.png);background-repeat: no-repeat;">
+                                <div class="section-title1">Contact Us</div>
                                 <br/>
                                 <table>
                                     <tr>
@@ -693,21 +759,21 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <input></input>
+                                            <input  name="name"  type="text"></input>
                                         </td>
                                         <td>
-                                            <input></input>
+                                            <input  name="email" type="text"></input>
                                         </td>
                                     </tr>
                                 </table>
                                 <br/>
                                 <label>Subject</label>
                                 <br>
-                                <textarea rows="1" cols="42"></textarea>
+                                <textarea name ="subject" rows="1" cols="42"></textarea>
                                 <br><br/>
                                 <label>Message</label>
                                 <br>
-                                <textarea rows="10" cols="42"></textarea>
+                                <textarea name ="message" rows="10" cols="42"></textarea>
                                 <br><br>
                                 <input type="submit" value="Submit">
                             </form>
@@ -729,7 +795,7 @@
                     </div>
                     <div class="modal-body">
                       <div>
-                        Thanks to all the artists mentioned below from flaticon.com letting me use their icons in this website<br/>
+                        <i>Thanks to all the artists mentioned below from flaticon.com for letting me use their icons in this website</i><br/><br/>
                         <a href="https://www.flaticon.com/free-icons/home-button" title="home button icons">Home button icons created by Freepik - Flaticon</a><br/>
                         <a href="https://www.flaticon.com/free-icons/education" title="education icons">Education icons created by amonrat rungreangfangsai - Flaticon</a><br/>
                         <a href="https://www.flaticon.com/free-icons/bag" title="bag icons">Bag icons created by Dimitry Miroliubov - Flaticon</a><br/>
@@ -742,7 +808,9 @@
                         <a href="https://www.flaticon.com/free-icons/location" title="location icons">Location icons created by Freepik - Flaticon</a><br/>
                         <a href="https://www.flaticon.com/free-icons/gmail" title="gmail icons">Gmail icons created by Pixel perfect - Flaticon</a><br/>
                         <a href="https://www.flaticon.com/free-icons/phone" title="phone icons">Phone icons created by Pixel perfect - Flaticon</a><br/>
-                        <a href="https://www.flaticon.com/free-icons/thank-you" title="thank you icons">Thank you icons created by Freepik - Flaticon</a>
+                        <a href="https://www.flaticon.com/free-icons/thank-you" title="thank you icons">Thank you icons created by Freepik - Flaticon</a><br/>
+                        <a href="https://www.flaticon.com/free-icons/ui" title="ui icons">Ui icons created by Freepik - Flaticon</a><br/>
+                        <a href="https://www.flaticon.com/free-icons/close" title="close icons">Close icons created by Freepik - Flaticon</a><br/>
                       </div>
                     </div>
                     <div class="modal-footer">
@@ -752,11 +820,9 @@
                 </div>
             </div>
 
-            <!-- GO BACK TO TOP BUTTON -->
-            <div class="menu sticky-bottom" style="display:flex;float:right">
-                <button id="gotopButton" style="background:url(assets/img/uparrow.png);background-repeat: none;width:32px;height:32px;border-style: none;" onclick="GoTop()">
-                </button>
-            </div>
+            <!-- HOME BUTTON -->
+            <img id="homeButton" class = "my-homebutton" src="assets/img/uparrow.png" onclick="NavigateSection(undefined)">
+
         </div>
    </div>
 </div>
