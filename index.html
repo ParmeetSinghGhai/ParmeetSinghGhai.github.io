@@ -351,7 +351,7 @@
 
             <!-- ABOUT ME -->
             <section>
-                <div class="container section-light pb-5" id ="aboutmeDisplay" onmouseenter = "Glow(aboutme.id)">
+                <div class="container-fluid section-light pb-5" id ="aboutmeDisplay" onmouseenter = "Glow(aboutme.id)">
                     <h2 class="section-header">
                         About Me
                         <br/>
@@ -419,7 +419,7 @@
             
             <!-- EDUCATION -->
             <section>
-                <div class="container section-light pb-5" id ="educationDisplay"  onmouseenter = "Glow(education.id,false)">
+                <div class="container-fluid section-light pb-5" id ="educationDisplay"  onmouseenter = "Glow(education.id,false)">
                     <h2 class="section-header">
                         Education
                         <br/>
@@ -480,7 +480,7 @@
 
             <!-- WORK EXPERIENCE -->
             <section>
-                <div class="container section-dark pb-5" id ="workexperienceDisplay" onmouseenter = "Glow(workexperience.id,false)">
+                <div class="container-fluid section-dark pb-5" id ="workexperienceDisplay" onmouseenter = "Glow(workexperience.id,false)">
                     <h2 class="section-header">
                         Work Experience
                         <br/>
@@ -501,20 +501,13 @@
                                 Station as Technical Support Expert (Grade: A5) where provided support on both Dells branded and non-Dell
                                 branded computer H/W and S/W.
                                 <br/>
-                                Awards & Recognitions:
+                                <br/>
+                                <p>Awards & Recognitions</p>
                                 <ul>
-                                    <li>
-                                        “TQ Champ - 2008” in recognition of outstanding performance in transition queue.
-                                    </li>
-                                    <li>
-                                        “Star of the Quarter -Q2 FY09” for a consistent top scoring performance in that quarter.
-                                    </li>
-                                    <li>
-                                        “Star of the Quarter- Q3 FY09” for a consistent top scoring performance in that quarter.
-                                    </li>
-                                    <li>
-                                        Certificate of Appreciation for highest “Dell on Call” margin generated in quarter 2 FY10.
-                                    </li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>TQ Champ - 2008:</strong> <span>in recognition of outstanding performance in transition queue</span></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Star of the Quarter Q2 FY09:</strong> <span>for a consistent top scoring performance in that quarter</span></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Star of the Quarter Q3 FY09:</strong> <span>for a consistent top scoring performance in that quarter</span></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Highest Margin Quarter Q2 FY10:</strong> <span>Certificate of Appreciation for highest “Dell on Call” margin generated in quarter 2 FY10</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -538,27 +531,157 @@
 
             <!-- PROJECTS -->
             <section>
-                <div class="container section-light pb-5" id = "projectsDisplay"  onmouseenter = "Glow(projects.id,false)" >
+                <div class="container-fluid section-light pb-5" id = "projectsDisplay"  onmouseenter = "Glow(projects.id,false)" >
                     <h2 class="section-header">
                         Projects
                         <br/>
                         <img src="assets/img/line.png" class="section-header-image">
                     </h2>
+
                     <div class="row">
-                        <div class="col-lg-5 align-items-stretch">
+                        <div class="col">
                             <div class="col section-title1">PSGDriveSync Application</div>
-                            <div class="col section-title3">https://github.com/ParmeetSinghGhai/PSGDriveSync</div>
+                            <div class="col section-title3">
+                                Website <a href="https://parmeetsinghghai.github.io/psgdrivesync">https://parmeetsinghghai.github.io/psgdrivesync</a><br/>
+                                GitHub Page <a href="https://github.com/ParmeetSinghGhai/PSGDriveSync">https://github.com/ParmeetSinghGhai/PSGDriveSync</a>
+                            </div>
                             <hr/>
-                            <div class="col section-info">Acquired an aggregate of 66%</div>
+                            <div class="col section-info">
+                                PSGDriveSync application has been build on Dot Net Framework 4.8 and was programmed in C#. It is currently only supported on Windows Operation System. The Application
+                                allows users to perform real-time file transfer operations and automated sync operations between<br/><br/>
+                                <ul>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Local Drive to Local Drive</strong></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Local Drive to Google Drive</strong></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Google Drive to Local Drive</strong></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Google Drive to Google Drive</strong></li>
+                                </ul>
+                                <br/>
+                                The Application also offers AES-256 encryption standard for file and folder encryption along with conditional automated syncing among many other features.
+                                Few of the Important Features are listed below
+                                <br/>
+                                <br/>
+
+                                <div class = "row">
+                                    <div class="col-sm-3" style="border-style:solid;">
+                                        <img src="./psgdrivesync/assets/img/feature1.png" width="64px" height="64px"><br/><span class="section-title3">AES-256 Encryption Standard</span>
+                                    </div>
+                                    <div class="col section-info">
+                                        Uses Advanced Encryption Standard to Encrypt All Your Files and Folders On Local and Remote Drives. Doing so Makes Sure That Your Files and Folders Remain Secure and Protected.
+                                    </div>
+                                </div>
+
+                                <br/>
+                                <div class = "row">
+                                    <div class="col-sm-3" style="border-style:solid;">
+                                        <img src="./psgdrivesync/assets/img/feature2.png" width="64px" height="64px"><br/><span class="section-title3">Conditional Automated Syncing</span>
+                                    </div>
+                                    <div class="col section-info">
+                                        Create Filters Based On Time, Date, File Properties etc to Automatically Filter and Sync Files. You Can Setup "Filters" Based On
+                                            Current Date & Time, Drive Properties Like Name, Total Space & Available Space on the drive, File Properties like Name, Size, Hash, Last Modified Time of the file,
+                                            and Folder Properties like Name, Last Modified Time, Type etc of the folder Which Can Help You Sync Only Specific Files and Folders thus Giving You More Control Over The Automated Sync Process.
+                                    </div>
+                                </div>                                
+
+                                <br/>
+                                <div class = "row">
+                                    <div class="col-sm-3" style="border-style:solid;">
+                                        <img src="./psgdrivesync/assets/img/feature3.png" width="64px" height="64px"><br/><span class="section-title3">Real Time File Operations</span>
+                                    </div>
+                                    <div class="col section-info">
+                                        Perform Real-Time File Operations like Cut, Copy, Paste, Encrypt, Decrypt etc On the Spot. You Can Perform The Following Real Time File Operations On Any One of Your Local and Google Drives AnyTime
+
+                                        <ul>
+                                            <li>Create New File & Folder</li>
+                                            <li>Cut, Copy and Paste File(s) & Folder(s)</li>
+                                            <li>Delete File(s) & Folder(s)</li>
+                                            <li>Rename File(s) & Folder(s)</li>
+                                            <li>Select All File(s) & Folder(s)</li>
+                                            <li>View File & Folder Properties</li>
+                                            <li>Encrypt File(s) & Folder(s)</li>
+                                            <li>Decrypt File(s) & Folder(s)</li>
+                                            <li>Compare File(s) & Folder(s)</li>
+                                            <li>Search For Encrypted Files</li>
+                                            <li>Send Files & Folders to Filters Window</li>
+                                        </ul>
+                                    </div>
+                                </div>   
+
+                                <br/>
+                                <div class = "row">
+                                    <div class="col-sm-3" style="border-style:solid;">
+                                        <img src="./psgdrivesync/assets/img/feature4.png" width="64px" height="64px"><br/><span class="section-title3">Database Level Encryption</span>
+                                    </div>
+                                    <div class="col section-info">
+                                        Entire Database Gets Encrypted with AES-256 Standard Encryption With One Master Key That Only You Get To Keep. The Application Saves the Path Of Files and Folders That You Have Set For Automated Syncing In a Local Database along With Your Google Drive's Access Token Used To Access Files From Your Google Drive. In Order to Keep All This Information Safe and Protected, the Application Encrypts the Entire Database Using AES-256 Encryption Standard and a Master Key That Only You Know.
+                                        <br/>If Needed You can Always Change the Master Key by Using the Existing Master Key.
+                                    </div>
+                                </div>   
+
+                                <br/>
+                                <div class = "row">
+                                    <div class="col-sm-3" style="border-style:solid;">
+                                        <img src="./psgdrivesync/assets/img/feature6.png" width="64px" height="64px"><br/><span class="section-title3">File Integrity Check For Encrypted File</span>
+                                    </div>
+                                    <div class="col section-info">
+                                        Use HMAC-SHA256 Hash Check to Simultaneously Verify Both Data Integrity and Authenticity
+                                    </div>
+                                </div> 
+
+                                <br/>
+                                <div class = "row">
+                                    <div class="col-sm-3" style="border-style:solid;">
+                                        <img src="./psgdrivesync/assets/img/feature5.png" width="64px" height="64px"><br/><span class="section-title3">No Restrictions On Number of Drives</span>
+                                    </div>
+                                    <div class="col section-info">
+                                        Add as Many Local and Google Drives as You Want. No Restrictions on Number Of Drives That Can be Added To The Application
+                                    </div>
+                                </div> 
+                            </div>
                         </div>
                     </div>
                     
+                    <br/>
+                  
+                    <div class ="row">
+                        <div class="col">
+                            <div class="col section-title1">DoomBuggies-3D-Game </div>
+                            <div class="col section-title3">
+                                GitHub Page <a href="https://github.com/ParmeetSinghGhai/DoomBuggies-3D-Game">https://github.com/ParmeetSinghGhai/DoomBuggies-3D-Game</a>
+                            </div>
+                            <hr/>
+                            <div class="col section-info">
+                                A Simple 3D Game based on OpenGL 4.6 Graphics Library and programmed in C++. This game has been designed and built without the use of any Game Engine(s). I do admit that programming this game was a lot like re-inventing the "wheel" but I sure did learn a lot about making games
+                                from this experience.<br/><br/>
+                                The Game uses the "where's waldo" kind of effect to make the game play bit difficult as the Ground and the Game Objects look quite the Same. Its a simple 3rd person shooter game where you try to shoot all the enemy players 
+                                down before they shoot you down and to make things more challenging, the more time you take, the faster your enemies get. Here is a few screenshots from the Game Play.
+                                <br/>
+                                <br/>
+                                <div class="row">
+                                <div class="col">
+                                    <img src="./doombuggies/buggy1.png" width="400px" height="300px">
+                                </div>
+                                <br/>
+                                <br/>
+                                <div class="col">
+                                    <img src="./doombuggies/buggy2.png" width="400px" height="300px">
+                                </div>
+                                <br/>
+                                <br/>
+                                <div class="col">
+                                    <img src="./doombuggies/buggy3.png" width="400px" height="300px">
+                                </div>
+                                
+
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </section>
 
             <!-- SKILLS -->
             <section>
-                <div class="container section-dark pb-5" id="skillsDisplay" onmouseenter="Glow(skills.id,false);SkillShow();">
+                <div class="container-fluid section-dark pb-5" id="skillsDisplay" onmouseenter="Glow(skills.id,false);SkillShow();">
                     <h2 class="section-header">
                         Skills
                         <br/>
@@ -685,7 +808,7 @@
            
             <!-- CONTACT -->
             <section>
-                <div class="container section-light pb-5" id="contactDisplay" onmouseenter="Glow(contact.id,false)">
+                <div class="container-fluid section-light pb-5" id="contactDisplay" onmouseenter="Glow(contact.id,false)">
                     <div>
                         <h2 class="section-header">
                             Contact
