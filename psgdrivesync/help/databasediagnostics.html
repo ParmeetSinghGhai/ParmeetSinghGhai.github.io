@@ -1,0 +1,115 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../assets/css/help.css">
+    </head>
+    <body>
+        <p>
+            Database Connection Diagnostics basically checks if the application is able to properly access the database or not. This option can be run from the loading window and the main application window 
+            as well. The process involves running a bunch of generic database commands on the application database and then generating the result of those commands on a log file which the end user can then 
+            open to check the results of the diagnostics. The following are the steps needed to be performed in order to run database diagnostics
+        <p/>
+
+        <table>
+            <tr>
+                <td>
+                    <p>1</p>
+                </td>
+                <td>
+                    <p>
+                       On the loading page, you can click on the "System Diagnostics" tab first.
+                    </p>
+                </td>
+                <td>
+                    <img src="../assets/img/diagnostics/databasediagnostics1.png">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>2</p>
+                </td>
+                <td>
+                    <p>
+                       Click on the option for "Diagnose Database Connection".
+                    </p>
+                </td>
+                <td>
+                    <img src="../assets/img/diagnostics/databasediagnostics2.png">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>3</p>
+                </td>
+                <td>
+                    <p>
+                       You can reach the same option from the application main window as well by clicking on the "Help" tab then "System Diagnostics" and "Diagnose Database Connection".
+                    </p>
+                </td>
+                <td>
+                    <img src="../assets/img/diagnostics/databasediagnostics7.png">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>4</p>
+                </td>
+                <td>
+                    <p>
+                       On the next window saying "Select Database File to Diagnose", Select the application's database file "Database.db" on your computer and then click on "Open".
+                    </p>
+                </td>
+                <td>
+                    <img src="../assets/img/diagnostics/databasediagnostics3.png">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>5</p>
+                </td>
+                <td>
+                    <p>
+                        Click "Ok" on the results window and go to the application directory where the application executable "PSGDriveSync.exe" file exists. In that directory or folder you should see 
+                        a file by the name "DatabaseDiagnostics.log". Please go ahead and open that file in your favorite text editor program.
+                    </p>
+                </td>
+                <td>
+                    <img src="../assets/img/diagnostics/databasediagnostics4.png"><br/><br/><br/>
+                    <img src="../assets/img/diagnostics/databasediagnostics5.png">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>6</p>
+                </td>
+                <td>
+                    <p>
+                        The content of the log file should show a bunch of Database commands along with the results associated with running those commands. All the commands should be saying "PASS" to indicate that there 
+                        is no problem connecting to the database however if any one of them fail and give out an error message then you could try the following to resolve the problem
+                        <ul>
+                            <li>
+                                Make sure that PSGDriveSync is not being blocked by an Anti Virus software application. 
+                            </li>
+                            <br/>
+                            <br/>
+                            <li>
+                                Database file's read/write permissions are set correctly where most default system applications are able to access and read the file.<br/><br/>
+                                More information can be found on<br/>
+                                <a href = "https://www.dell.com/support/kbdoc/en-in/000137238/understanding-file-and-folder-permissions-in-windows"> Dell's Website</a> and 
+                                <a href ="https://learn.microsoft.com/en-us/windows/security/identity-protection/access-control/access-control">Microsoft's Website</a>
+                            </li>
+                        </ul>
+                    </p>
+                </td>
+                <td>
+                    <img src="../assets/img/diagnostics/databasediagnostics6.png">
+                </td>
+            </tr>
+
+        </table>
+    </body>
+</html>

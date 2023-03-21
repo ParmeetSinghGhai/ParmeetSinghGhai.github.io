@@ -185,6 +185,12 @@
                             <li><button id = "EnableInheritance" onclick="LoadSection(this.id)">Setting Filter As Inheritable In A Filtered File</button></li>
                         </ul>
                     </li>
+                    <li><button id="Diagnostics" onclick="LoadPage(this.id)">Diagnostics</button>
+                        <ul id="DiagnosticsOptions" style = "display: none;">
+                            <li><button id = "DatabaseDiagnostics" onclick="LoadSection(this.id)">Diagnose Database Connection</button></li>
+                            <li><button id = "InternetDiagnostics" onclick="LoadSection(this.id)">Diagnose Internet Connection</button></li>
+                        </ul>
+                    </li>
                 </ul> 
             </td>
             <td id = "book" loadedPage = "">
