@@ -29,6 +29,7 @@
             }
             document.getElementById("menuButton").style.backgroundColor = "rgb(" + COL[1][0] + "," + COL[1][1] + "," + COL[1][2] + ")";
             document.getElementById("homeButton").style.backgroundColor = "rgb(" + COL[1][0] + "," + COL[1][1] + "," + COL[1][2] + ")";
+            document.getElementById("poster").style.opacity=COL[1][0]/255;
         };
     }
     function Glow(id,navigateThere = true)
@@ -139,7 +140,6 @@
    
     StartSinWave();
     </script>
-
     <style>
         .my-menubar-container
         {
@@ -212,6 +212,18 @@
             height:24px;
             display:block;
         }
+        [class^=arr-]
+        {  /* Arrows @RCB */
+            border:       solid currentColor;
+            border-width: 0 .2em .2em 0;
+            display:      inline-block;
+            padding:      .20em;
+            color:#0d6efd;
+        }
+        .arr-right {transform:rotate(-45deg);}
+        .arr-left  {transform:rotate(135deg);}
+        .arr-up    {transform:rotate(-135deg);}
+        .arr-down  {transform:rotate(45deg);}
         .section-light
         {
             background-color:white;
@@ -284,11 +296,49 @@
             background-color:rgb(220, 232, 248);
             width:100%;
         }
+        .norton-sidebar
+        {
+            background-color:black;
+            color:white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 10px;
+        }
+        .norton-footer
+        {
+            background-color:black;
+            color:white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 12px;
+        }
+        .footer
+        {
+            width:100%;
+            height:50px;
+            background-color:black; 
+            color:white; 
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 12px;
+        }
+        .poster
+        {
+            opacity: 1.0;
+            position:fixed;
+            z-index:-1;
+            width:100%;
+            height:100%;
+            background:url(assets/img/background.png);
+            background-size:cover;
+            left:0%;
+            padding:0%;
+            margin:0%;
+        }
     </style>
 </head>
 <body onload="SkillShow();WindowResized();" onresize="WindowResized()">
 <div class="container-fluid">
     <div class="row">
+    
+    
         <!--********************************************************************-->
         <!--NAVIGATION COLUMN -->
         <div id="sidebar" class="col my-menubar-container px-0" style="background-color: black;">
@@ -336,6 +386,10 @@
                     <img class ="navigation-item-image" id="creditsImage" src="assets/img/credit.png">
                     Credits
                 </div>
+                <br/>
+                <div class="norton-sidebar">
+                    <span>Scanned by</span> <img src="assets/img/nortonlogo.svg"> <span>Norton<sup>TM</sup> Safe Web</span>
+                </div>
             </div>
         </div>
         <!--********************************************************************-->
@@ -346,6 +400,11 @@
         <!--********************************************************************-->
         <!--CONTENT COLUMN -->
         <div class="col" >
+
+             <!-- WALLPAPER POSTER -->
+             <div id="poster" class="poster">
+            </div>
+
             <!-- MENU TOGGLE BUTTON -->
             <img id="menuButton" class = "my-menubutton" src="assets/img/menu.png" onclick="ShowMenu()">
 
@@ -372,20 +431,20 @@
                         <div class="row">
                           <div class="col-lg-6">
                             <p>Personal Information</p>
-                            <ul>
-                              <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>36</span></li>
-                              <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Master of Computer Applications</span></li>
-                              <li><i class="bi bi-chevron-right"></i> <strong>Work Experience:</strong> <span>5+ Years</span></li>
-                              <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>New Delhi, India</span></li>
+                            <ul style="list-style-type: none">
+                              <li> <i class="arr-right"></i> <strong>Age:</strong> <span>36</span></li>
+                              <li> <i class="arr-right"></i> <strong>Degree:</strong> <span>Master of Computer Applications</span></li>
+                              <li> <i class="arr-right"></i> <strong>Work Experience:</strong>  <span>5+ Years</span></li>
+                              <li> <i class="arr-right"></i> <strong>City:</strong>  <span>New Delhi, India</span></li>
                             </ul>
                           </div>
                           <div class="col">
                             <p>Contact Details</p>
-                            <ul>
-                              <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>parmeet.s.ghai@gmail.com</span></li>
-                              <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+91-9871287905</span></li>
-                              <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>parmeetsinghghai.github.io</span></li>
-                              <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
+                            <ul style="list-style-type: none">
+                              <li> <i class="arr-right"></i> <strong>Email:</strong> <span>parmeet.s.ghai@gmail.com</span></li>
+                              <li> <i class="arr-right"></i> <strong>Phone:</strong> <span>+91-9871287905</span></li>
+                              <li> <i class="arr-right"></i> <strong>Website:</strong> <span>parmeetsinghghai.github.io</span></li>
+                              <li> <i class="arr-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
                             </ul>
                           </div>
                         </div>
@@ -393,21 +452,21 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <p>Languages</p>
-                                <ul>
-                                    <li><i class="bi bi-chevron-right"></i> <strong>Hindi:</strong> <span>Native (ILR Level 5)</span></li>
-                                    <li><i class="bi bi-chevron-right"></i> <strong>English:</strong> <span>Full Professional Proficiency (ILR Level 4+)</span></li>
-                                    <li><i class="bi bi-chevron-right"></i> <strong>Punjabi:</strong> <span>(ILR Level 3)</span></li>
+                                <ul style="list-style-type: none">
+                                    <li> <i class="arr-right"></i> <strong>Hindi:</strong> <span>Native (ILR Level 5)</span></li>
+                                    <li> <i class="arr-right"></i> <strong>English:</strong> <span>Full Professional Proficiency (ILR Level 4+)</span></li>
+                                    <li> <i class="arr-right"></i> <strong>Punjabi:</strong> <span>(ILR Level 3)</span></li>
                                 </ul>
                             </div>
                             <div class="col">
                                 <p>Hobbies &amp; Interests</p>
-                                <ul>
-                                    <li><i class="bi bi-chevron-right"></i> <span>Playing &amp; Reviewing Video Games</span></li>
-                                    <li><i class="bi bi-chevron-right"></i> <span>Game Development &amp; Coding</span></li>
-                                    <li><i class="bi bi-chevron-right"></i> <span>3D Modelling with Blender</span></li>
-                                    <li><i class="bi bi-chevron-right"></i> <span>Bing Watching TV Shows</span></li>
-                                    <li><i class="bi bi-chevron-right"></i> <span>Listening to Music &amp; Podcasts</span></li>
-                                    <li><i class="bi bi-chevron-right"></i> <span>Keeping Fit with Physical Exercise</span></li>
+                                <ul style="list-style-type: none">
+                                    <li><i class="arr-right"></i> <span>Playing &amp; Reviewing Video Games</span></li>
+                                    <li><i class="arr-right"></i> <span>Game Development &amp; Coding</span></li>
+                                    <li><i class="arr-right"></i> <span>3D Modelling with Blender</span></li>
+                                    <li><i class="arr-right"></i> <span>Bing Watching TV Shows</span></li>
+                                    <li><i class="arr-right"></i> <span>Listening to Music &amp; Podcasts</span></li>
+                                    <li><i class="arr-right"></i> <span>Keeping Fit with Physical Exercise</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -503,11 +562,11 @@
                                 <br/>
                                 <br/>
                                 <p>Awards & Recognitions</p>
-                                <ul>
-                                    <li><i class="bi bi-chevron-right"></i> <strong>TQ Champ - 2008:</strong> <span>in recognition of outstanding performance in transition queue</span></li>
-                                    <li><i class="bi bi-chevron-right"></i> <strong>Star of the Quarter Q2 FY09:</strong> <span>for a consistent top scoring performance in that quarter</span></li>
-                                    <li><i class="bi bi-chevron-right"></i> <strong>Star of the Quarter Q3 FY09:</strong> <span>for a consistent top scoring performance in that quarter</span></li>
-                                    <li><i class="bi bi-chevron-right"></i> <strong>Highest Margin Quarter Q2 FY10:</strong> <span>Certificate of Appreciation for highest “Dell on Call” margin generated in quarter 2 FY10</span></li>
+                                <ul style="list-style-type: none;">
+                                    <li><i class="arr-right"></i> <strong>TQ Champ - 2008:</strong> <span>in recognition of outstanding performance in transition queue</span></li>
+                                    <li><i class="arr-right"></i> <strong>Star of the Quarter Q2 FY09:</strong> <span>for a consistent top scoring performance in that quarter</span></li>
+                                    <li><i class="arr-right"></i> <strong>Star of the Quarter Q3 FY09:</strong> <span>for a consistent top scoring performance in that quarter</span></li>
+                                    <li><i class="arr-right"></i> <strong>Highest Margin Quarter Q2 FY10:</strong> <span>Certificate of Appreciation for highest “Dell on Call” margin generated in quarter 2 FY10</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -542,18 +601,18 @@
                         <div class="col">
                             <div class="col section-title1">PSGDriveSync Application</div>
                             <div class="col section-title3">
-                                Website <a href="https://parmeetsinghghai.github.io/psgdrivesync">https://parmeetsinghghai.github.io/psgdrivesync</a><br/>
-                                GitHub Page <a href="https://github.com/ParmeetSinghGhai/PSGDriveSync">https://github.com/ParmeetSinghGhai/PSGDriveSync</a>
+                                <i class="arr-right"></i> <a href="https://parmeetsinghghai.github.io/psgdrivesync">PSGDriveSync Home Page</a><br/>
+                                <i class="arr-right"></i> <a href="https://github.com/ParmeetSinghGhai/PSGDriveSync">PSGDriveSync Github Page</a>
                             </div>
                             <hr/>
                             <div class="col section-info">
                                 PSGDriveSync application has been build on Dot Net Framework 4.8 and was programmed in C#. It is currently only supported on Windows Operation System. The Application
                                 allows users to perform real-time file transfer operations and automated sync operations between<br/><br/>
                                 <ul>
-                                    <li><i class="bi bi-chevron-right"></i> <strong>Local Drive to Local Drive</strong></li>
-                                    <li><i class="bi bi-chevron-right"></i> <strong>Local Drive to Google Drive</strong></li>
-                                    <li><i class="bi bi-chevron-right"></i> <strong>Google Drive to Local Drive</strong></li>
-                                    <li><i class="bi bi-chevron-right"></i> <strong>Google Drive to Google Drive</strong></li>
+                                    <li><i class="arr-right"></i> <strong>Local Drive to Local Drive</strong></li>
+                                    <li><i class="arr-right"></i> <strong>Local Drive to Google Drive</strong></li>
+                                    <li><i class="arr-right"></i> <strong>Google Drive to Local Drive</strong></li>
+                                    <li><i class="arr-right"></i> <strong>Google Drive to Google Drive</strong></li>
                                 </ul>
                                 <br/>
                                 The Application also offers AES-256 encryption standard for file and folder encryption along with conditional automated syncing among many other features.
@@ -646,7 +705,7 @@
                         <div class="col">
                             <div class="col section-title1">DoomBuggies-3D-Game </div>
                             <div class="col section-title3">
-                                GitHub Page <a href="https://github.com/ParmeetSinghGhai/DoomBuggies-3D-Game">https://github.com/ParmeetSinghGhai/DoomBuggies-3D-Game</a>
+                                <i class="arr-right"></i> <a href="https://github.com/ParmeetSinghGhai/DoomBuggies-3D-Game">DoomBuggies Github Page</a>
                             </div>
                             <hr/>
                             <div class="col section-info">
@@ -953,8 +1012,12 @@
 
 <!--FOOTER-->
 <div class="container-fluid px-0 text-center">
-    <div style = "width:100%;height:50px;background-color:black; color:white; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 12px;">
-        <br/>Parmeet Singh Ghai (2023)
+    <div class="footer">
+        <br/>
+        Parmeet Singh Ghai (2023)
+    </div>
+    <div class="norton-footer">
+        <span>Scanned by</span> <img src="assets/img/nortonlogo.svg"> <span>Norton<sup>TM</sup> Safe Web</span>
     </div>
 </div>
 <!--FOOTER-->
