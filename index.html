@@ -116,9 +116,19 @@
     function NavigateSection(id = undefined)
     {
         if(id == undefined)
+        {
             window.location.href = "#";
+        }   
+        else if(id == "download")
+        {
+            window.open("assets/docs/ParmeetGhaiResume.pdf","_blank");
+        }
         else
             window.location.href = "#"+id+"Display";
+    }
+    function DownloadResume()
+    {
+
     }
     function WindowResized()
     {
@@ -253,11 +263,11 @@
         .section-title2
         {
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            font-Size:15px;
+            font-Size:16px;
             font-weight: normal;
-            color:black;
-            text-align:left;
-            background-color:rgb(200, 200, 255);
+            color:white;
+            text-align:center;
+            background: linear-gradient(90deg, rgba(172,178,179,1) 0%, rgba(73,117,150,1) 50%, rgba(0,236,255,1) 100%);
         }
         .section-title3
         {
@@ -401,10 +411,6 @@
         <!--CONTENT COLUMN -->
         <div class="col" >
 
-             <!-- WALLPAPER POSTER -->
-             <div id="poster" class="poster">
-            </div>
-
             <!-- MENU TOGGLE BUTTON -->
             <img id="menuButton" class = "my-menubutton" src="assets/img/menu.png" onclick="ShowMenu()">
 
@@ -417,8 +423,8 @@
                         <img src="assets/img/line.png" class="section-header-image">
                     </h2>
                     <p>
-                        I am a Customer Service Professional with 5+ years of Work Experience in one of the most challenging and fast paced part of BPO industry. I also work on Independent 
-                        Software Development projects and am hoping to use that experience in a professional environment real soon.
+                        I Have Worked in the BPO Industry for more than 5 Years and after Acquiring my Masters Degree in Computer Applications, I decided to Dedicate My Time and Efforts towards Software Development 
+                        which is something that I always wanted to do since High School.Three <a href="#projectsDisplay"> Successful Projects</a> later, Here I am Hoping to use the Valuable Experience that I have acquired in the IT Industry.
                     </p>
                   
             
@@ -427,7 +433,7 @@
                         <img src="assets/img/photo-normal.png" class="img-fluid" alt="">
                       </div>
                       <div class="col-lg-8 pt-4 pt-lg-0 content">
-                        <h3>Customer Service Professional (5+ Years) &amp; Independent Software Developer</h3>
+                        <h3>Customer Service Professional (5+ Years) &amp; Freelance Software Developer</h3>
                         <div class="row">
                           <div class="col-lg-6">
                             <p>Personal Information</p>
@@ -455,7 +461,7 @@
                                 <ul style="list-style-type: none">
                                     <li> <i class="arr-right"></i> <strong>Hindi:</strong> <span>Native (ILR Level 5)</span></li>
                                     <li> <i class="arr-right"></i> <strong>English:</strong> <span>Full Professional Proficiency (ILR Level 4+)</span></li>
-                                    <li> <i class="arr-right"></i> <strong>Punjabi:</strong> <span>(ILR Level 3)</span></li>
+                                    <li> <i class="arr-right"></i> <strong>Punjabi:</strong> <span>Basic (ILR Level 3)</span></li>
                                 </ul>
                             </div>
                             <div class="col">
@@ -464,7 +470,7 @@
                                     <li><i class="arr-right"></i> <span>Playing &amp; Reviewing Video Games</span></li>
                                     <li><i class="arr-right"></i> <span>Game Development &amp; Coding</span></li>
                                     <li><i class="arr-right"></i> <span>3D Modelling with Blender</span></li>
-                                    <li><i class="arr-right"></i> <span>Bing Watching TV Shows</span></li>
+                                    <li><i class="arr-right"></i> <span>Binge Watching TV Shows</span></li>
                                     <li><i class="arr-right"></i> <span>Listening to Music &amp; Podcasts</span></li>
                                     <li><i class="arr-right"></i> <span>Keeping Fit with Physical Exercise</span></li>
                                 </ul>
@@ -474,7 +480,7 @@
                     </div>
             
                 </div>
-            </section>
+            </section><!--Section End-->
             
             <!-- EDUCATION -->
             <section>
@@ -491,7 +497,12 @@
                             <div class="col-sm-1 section-title2">2016-2021</div>
                             <div class="col section-title3">Lovely Professional University, Phagware, Punjab</div>
                             <hr/>
-                            <div class="col section-info">Acquired an aggregate of 85%</div>
+
+                            <ul style="list-style-type: none" class="section-info">
+                                <li><i class="arr-right"></i> <span>CGPA 8.15%</span></li>
+                                <li><i class="arr-right"></i> <span>Equivalent Percentage 73.35%</span></li>
+                                <li><i class="arr-right"></i> <span>First Division</span></li>
+                            </ul>
                         </div>
                     </div>
                     <br/>
@@ -501,7 +512,10 @@
                             <div class="col-sm-1 section-title2">2014</div>
                             <div class="col section-title3">International Software Testing Qualifications Board</div>
                             <hr/>
-                            <div class="col section-info">Acquired an aggregate of 75%</div>
+                            
+                            <ul style="list-style-type: none">
+                                <li><i class="arr-right"></i> <span>Passing Percentage of 75%</span></li>
+                            </ul>
                         </div>
                     </div>
                     <br/>
@@ -511,31 +525,15 @@
                             <div class="col-sm-1 section-title2">2006-2010</div>
                             <div class="col section-title3">Guru Gobind Singh Indraprashtha University, Dwarka, New Delhi</div>
                             <hr/>
-                            <div class="col section-info">Acquired an aggregate of 66%</div>
+                            <ul style="list-style-type: none">
+                                <li><i class="arr-right"></i> <span>CPI 66.42%</span></li>
+                                <li><i class="arr-right"></i> <span>First Division</span></li>
+                            </ul>
                         </div>
                     </div>
                     <br/>
-                    <div class ="row">
-                        <div class="col">
-                            <div class="col section-title1">All India Senior School Examination - 12th Grade</div>
-                            <div class="col-sm-1 section-title2">2004</div>
-                            <div class="col section-title3">Guru Harkrishan Public School, Punjabi Bagh, New Delhi</div>
-                            <hr/>
-                            <div class="col section-info">Acquired an aggregate of 66%</div>
-                        </div>
-                    </div>
-                    <br/>
-                    <div class ="row">
-                        <div class="col">
-                            <div class="col section-title1">All India Secondary School Examination - 10th Grade</div>
-                            <div class="col-sm-1 section-title2">2002</div>
-                            <div class="col section-title3">Guru Harkrishan Public School, Kalkaji, New Delhi</div>
-                            <hr/>
-                            <div class="col section-info">Acquired an aggregate of 73%</div>
-                        </div>
-                    </div>
                 </div>
-            </section>
+            </section><!--Section End-->
 
             <!-- WORK EXPERIENCE -->
             <section>
@@ -553,16 +551,35 @@
                             <div class="col section-title3">Dell International Services Pvt Ltd</div>
                             <hr/>
                             <div class="col section-info">
-                                Provided efficient and consistent technical support to company’s U.S based B2C clientele via phone on issues
-                                related to Dell branded computer H/W ranging from laptops and desktops to printers, scanners and other
-                                multimedia devices. Got promoted to the position of Technical Support Expert (Grade: A5) within one and a
-                                half months of joining the company. Later worked as a part of Dell’s premium fee based support Dell Solution
-                                Station as Technical Support Expert (Grade: A5) where provided support on both Dells branded and non-Dell
-                                branded computer H/W and S/W.
-                                <br/>
-                                <br/>
-                                <p>Awards & Recognitions</p>
+                                <ul style="list-style-type: none;" class="section-info">
+                                    <li><i class="arr-right"></i>
+                                        <span>
+                                            Provided Efficient and Consistent Technical Support to Dell &#39; s
+                                            U.S based B2C Clientele via Phone on Issues Related to Dell
+                                            Branded Computer Hardware ranging from Laptops and
+                                            Desktops to Printers, Scanners and Other Multimedia Devices.
+                                        </span>
+                                    </li>
+
+                                    <li><i class="arr-right"></i>
+                                        <span>
+                                            Got Promoted to the Position of Technical Support Expert
+                                            (Grade: A5) within 2 Months of Joining the Company.
+                                        </span>
+                                    </li>
+
+                                    <li><i class="arr-right"></i>
+                                        <span>
+                                            Moved up to Dell&#39;s Premium Fee Based Support Called &quot; Dell
+                                            Solution Station &quot; where Supported Customers on all Kind of
+                                            Computer Hardware and Software Related Issues Including
+                                            OS Re-installation, Virus Removal, Email and Printer Setup, 3rd
+                                            Party Software Installation etc
+                                        </span>
+                                    </li>
+                                </ul>
                                 <ul style="list-style-type: none;">
+                                    <p><b>Awards & Recognitions</b></p>
                                     <li><i class="arr-right"></i> <strong>TQ Champ - 2008:</strong> <span>in recognition of outstanding performance in transition queue</span></li>
                                     <li><i class="arr-right"></i> <strong>Star of the Quarter Q2 FY09:</strong> <span>for a consistent top scoring performance in that quarter</span></li>
                                     <li><i class="arr-right"></i> <strong>Star of the Quarter Q3 FY09:</strong> <span>for a consistent top scoring performance in that quarter</span></li>
@@ -579,8 +596,24 @@
                             <div class="col section-title3">Wipro BPO Pvt Ltd</div>
                             <hr/>
                             <div class="section-info">
-                                Provided efficient and consistent technical support to U.S based B2C clientele on Dell branded Hardware and
-                                Software products
+                                <ul style="list-style-type: none;">
+                                    <li><i class="arr-right"></i>
+                                        <span>
+                                            Started Work as an Associate in Dell Expired Hardware
+                                            Warranty Support (EWS) where Provided Efficient and
+                                            Consistent Technical Support to U.S Based B2C Clientele on
+                                            Dell Branded Hardware Issues.
+                                        </span>
+                                    </li>
+
+                                    <li><i class="arr-right"></i>
+                                        <span>
+                                            Got Promoted to Senior Associate and Started Working in
+                                            Active Warranty Support Which involved Troubleshooting Dell
+                                            Branded Hardware and Software Both.
+                                        </span>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -601,8 +634,8 @@
                         <div class="col">
                             <div class="col section-title1">PSGDriveSync Application</div>
                             <div class="col section-title3">
-                                <i class="arr-right"></i> <a href="https://parmeetsinghghai.github.io/psgdrivesync">PSGDriveSync Home Page</a><br/>
-                                <i class="arr-right"></i> <a href="https://github.com/ParmeetSinghGhai/PSGDriveSync">PSGDriveSync Github Page</a>
+                                <i class="arr-right"></i> <a href="https://parmeetsinghghai.github.io/psgdrivesync" target="_blank">PSGDriveSync Home Page</a><br/>
+                                <i class="arr-right"></i> <a href="https://github.com/ParmeetSinghGhai/PSGDriveSync" target="_blank">PSGDriveSync Github Page</a>
                             </div>
                             <hr/>
                             <div class="col section-info">
@@ -705,7 +738,7 @@
                         <div class="col">
                             <div class="col section-title1">DoomBuggies-3D-Game </div>
                             <div class="col section-title3">
-                                <i class="arr-right"></i> <a href="https://github.com/ParmeetSinghGhai/DoomBuggies-3D-Game">DoomBuggies Github Page</a>
+                                <i class="arr-right"></i> <a href="https://github.com/ParmeetSinghGhai/DoomBuggies-3D-Game" target="_blank">DoomBuggies Github Page</a>
                             </div>
                             <hr/>
                             <div class="col section-info">
@@ -716,27 +749,41 @@
                                 <br/>
                                 <br/>
                                 <div class="row">
-                                <div class="col">
-                                    <img src="./doombuggies/buggy1.png" width="400px" height="300px">
+                                    <div class="col">
+                                        <img src="./doombuggies/buggy1.png" width="400px" height="300px">
+                                    </div>
+                                    <br/>
+                                    <br/>
+                                    <div class="col">
+                                        <img src="./doombuggies/buggy2.png" width="400px" height="300px">
+                                    </div>
+                                    <br/>
+                                    <br/>
+                                    <div class="col">
+                                        <img src="./doombuggies/buggy3.png" width="400px" height="300px">
+                                    </div>
                                 </div>
-                                <br/>
-                                <br/>
-                                <div class="col">
-                                    <img src="./doombuggies/buggy2.png" width="400px" height="300px">
-                                </div>
-                                <br/>
-                                <br/>
-                                <div class="col">
-                                    <img src="./doombuggies/buggy3.png" width="400px" height="300px">
-                                </div>
-                                
-
                             </div>
                         </div>
                     </div>
 
-                </div>
-            </section>
+                    <br/>
+
+                    <div class ="row">
+                        <div class="col">
+                            <div class="col section-title1">PSG Password Manager </div>
+                            <div class="col section-title3">
+                                <i class="arr-right"></i> <a href="https://github.com/ParmeetSinghGhai/PSG-Password-Manager" target="_blank">PSG Password Manager Github Page</a>
+                            </div>
+                            <hr/>
+                            <div class="col section-info">
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!---CONTAINER END-->
+            </section><!--SECTION END-->
 
             <!-- SKILLS -->
             <section>
@@ -757,7 +804,11 @@
                             </div>
                             <hr/>
                             <div class="section-info">
-                                Ability to deal with both B2C and B2B clientele at all levels via phone, email and chat and ensure successful communication every time by active listening and using probing questions.
+                                Ability to Deal With Both B2C and B2B Clientele
+                                via Phone, Email and Chat and Ensure
+                                Successful Communication Every time by Active
+                                Listening, Building Report and Trust and
+                                Showing Clarity in My Ideas and Solutions.
                             </div>
                             
                             <br/>
@@ -766,7 +817,7 @@
                             </div>
                             <hr/>
                             <div class="section-info">
-                                Ability to make critical decisions in stressful situations.
+                                Ability to Make Critical Decisions in Stressful Situations.
                             </div>
 
                             <br/>
@@ -775,7 +826,7 @@
                             </div>
                             <hr/>
                             <div class="section-info">
-                                Take every opportunity to take on new challenges and learn on my own.
+                                Make Use of Every Opportunity to Take on New Challenges and Learn on My Own.
                             </div>
 
                             <br/>
@@ -784,7 +835,10 @@
                             </div>
                             <hr/>
                             <div class="section-info">
-                                Refined Planning and Organizational skills that balance work, team support and ad-hoc responsibilities in a timely and professional manner
+                                Refined Planning and Organizational Skills that
+                                Balance Work, Team Support and Ad hoc
+                                Responsibilities in a Timely and Professional
+                                Manner.
                             </div>
 
                             <br/>
@@ -793,7 +847,7 @@
                             </div>
                             <hr/>
                             <div class="section-info">
-                                Enjoys sharing knowledge and encouraging development of others to achieve specific team goals.
+                                Enjoys Sharing Knowledge and Encouraging Development of Others to Achieve Specific Team Goals.
                             </div>
                         </div>
 
