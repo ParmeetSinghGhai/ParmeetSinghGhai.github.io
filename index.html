@@ -29,7 +29,6 @@
             }
             document.getElementById("menuButton").style.backgroundColor = "rgb(" + COL[1][0] + "," + COL[1][1] + "," + COL[1][2] + ")";
             document.getElementById("homeButton").style.backgroundColor = "rgb(" + COL[1][0] + "," + COL[1][1] + "," + COL[1][2] + ")";
-            document.getElementById("poster").style.opacity=COL[1][0]/255;
         };
     }
     function Glow(id,navigateThere = true)
@@ -134,13 +133,14 @@
     {
         var sidebar = document.getElementById("sidebar");
         var menuButton = document.getElementById("menuButton");
-        if(window.innerWidth <= 730)
+        console.log(window.innerWidth);
+        if(window.innerWidth <= 788)
         {
             menuButton.style.display="block";
             menuButton.src="assets/img/menu.png";
             sidebar.style.display="none";
         }
-        else if(window.innerWidth > 730)
+        else if(window.innerWidth > 788)
         {
             menuButton.style.display="none";
             sidebar.style.display="block";
@@ -268,6 +268,8 @@
             color:white;
             text-align:center;
             background: linear-gradient(90deg, rgba(172,178,179,1) 0%, rgba(73,117,150,1) 50%, rgba(0,236,255,1) 100%);
+            width: 100px;
+            height:25px;
         }
         .section-title3
         {
@@ -329,19 +331,6 @@
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-size: 12px;
         }
-        .poster
-        {
-            opacity: 1.0;
-            position:fixed;
-            z-index:-1;
-            width:100%;
-            height:100%;
-            background:url(assets/img/background.png);
-            background-size:cover;
-            left:0%;
-            padding:0%;
-            margin:0%;
-        }
     </style>
 </head>
 <body onload="SkillShow();WindowResized();" onresize="WindowResized()">
@@ -361,6 +350,7 @@
                 <div class="text-center">
                     <a href="mailto:parmeet.s.ghai@gmail.com"><img class="px-2" src="assets/img/email.png"></a>
                     <a href="tel:+91981287905"><img class="px-2" src="assets/img/call.png" ></a>
+                    <a href="https://github.com/parmeetsinghghai" target="_blank"><img class="px-2" src="assets/img/githublogo.png" ></a>
                 </div>
                 
                 <br/>
@@ -494,7 +484,7 @@
                     <div class ="row">
                         <div class="col">
                             <div class="col section-title1">Master Of Computer Applications</div>
-                            <div class="col-sm-1 section-title2">2016-2021</div>
+                            <div class="section-title2">2016-2021</div>
                             <div class="col section-title3">Lovely Professional University, Phagware, Punjab</div>
                             <hr/>
 
@@ -509,7 +499,7 @@
                     <div class ="row">
                         <div class="col">
                             <div class="col section-title1">Foundation Level Certification in Software Testing</div>
-                            <div class="col-sm-1 section-title2">2014</div>
+                            <div class="section-title2">2014</div>
                             <div class="col section-title3">International Software Testing Qualifications Board</div>
                             <hr/>
                             
@@ -522,7 +512,7 @@
                     <div class ="row">
                         <div class="col">
                             <div class="col section-title1">Bachelor Of Computer Applications</div>
-                            <div class="col-sm-1 section-title2">2006-2010</div>
+                            <div class="section-title2">2006-2010</div>
                             <div class="col section-title3">Guru Gobind Singh Indraprashtha University, Dwarka, New Delhi</div>
                             <hr/>
                             <ul style="list-style-type: none">
@@ -547,7 +537,7 @@
                     <div class ="row">
                         <div class="col">
                             <div class="col section-title1">Client Technical Support Associate</div>
-                            <div class="col-sm-1 section-title2">2008 - 2012</div>
+                            <div class="section-title2">2008 - 2012</div>
                             <div class="col section-title3">Dell International Services Pvt Ltd</div>
                             <hr/>
                             <div class="col section-info">
@@ -592,7 +582,7 @@
                     <div class ="row">
                         <div class="col">
                             <div class="col section-title1">Senior Associate</div>
-                            <div class="col-sm-1 section-title2">2007 - 2008</div>
+                            <div class="section-title2">2007 - 2008</div>
                             <div class="col section-title3">Wipro BPO Pvt Ltd</div>
                             <hr/>
                             <div class="section-info">
