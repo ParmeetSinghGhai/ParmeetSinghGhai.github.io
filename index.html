@@ -3,332 +3,320 @@
 <head>
     <title>Parmeet Singh Ghai's Home Page</title>
     <meta charset="utf-8">
-    <meta name="google-site-verification" content="yROjZBD3J4IbqYMWni3ZbIWKLYV9xvJnIUgfjI0SX6M" />
+    <meta name="google-site-verification" content="yROjZBD3J4IbqYMWni3ZbIWKLYV9xvJnIUgfjI0SX6M" /><!--parmeet.s.ghai@gmail.com-->
+    <meta name="google-site-verification" content="wDlcXN4fXYMa4rN0_l9rNgHVXve-RdWv4FaH8TOkrmA" /><!--admin-parmeet@parmeetsinghghai.co.in-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <script src="assets/js/bootstrap.js"></script>
-    
+
     <script>
-    var glowItem = null;
-    var glowImage = null;
-    var sinwaveWorker = null;
-    var isMenuOpened = false;
-    var showTimer = null;
-    var showInProgress = false;
+        var glowItem = null;
+        var glowImage = null;
+        var sinwaveWorker = null;
+        var isMenuOpened = false;
+        var showTimer = null;
+        var showInProgress = false;
 
-    function StartSinWave()
-    {
-        sinwaveWorker = new Worker("assets/js/sinwave.js");
-        sinwaveWorker.onmessage = (event)=>
-        {
-            var COL = event.data;
-            if(glowItem != null)
-            {
-                glowItem.style.backgroundColor = "rgb(" + COL[0][0] + "," + COL[0][1] + "," + COL[0][2] + ")";
-                glowImage.style.backgroundColor = "rgb(" + COL[0][0] + "," + COL[0][1] + "," + COL[0][2] + ")";
-                glowItem.style.color = "white";
-            }
-            document.getElementById("menuButton").style.backgroundColor = "rgb(" + COL[1][0] + "," + COL[1][1] + "," + COL[1][2] + ")";
-            document.getElementById("homeButton").style.backgroundColor = "rgb(" + COL[1][0] + "," + COL[1][1] + "," + COL[1][2] + ")";
-        };
-    }
-    function Glow(id,navigateThere = true)
-    {
-        item = document.getElementById(id);
-        if(item != null)
-        {
-            image = document.getElementById(id+"Image");
-            if(glowItem != null)
-            {
-                var previousItemId = glowItem.id;
-                var previousImageId = glowImage.id;
-                glowItem = item;
-                glowImage = image;
-                
-                document.getElementById(previousItemId).style.backgroundColor="black";
-                document.getElementById(previousItemId).style.color="rgb(168, 169, 180)";
-                document.getElementById(previousImageId).style.backgroundColor="black";
-            }
-            else
-            {
-                glowItem = item;
-                glowImage = image;
-            }
+        function StartSinWave() {
+            sinwaveWorker = new Worker("assets/js/sinwave.js");
+            sinwaveWorker.onmessage = (event) => {
+                var COL = event.data;
+                if (glowItem != null) {
+                    glowItem.style.backgroundColor = "rgb(" + COL[0][0] + "," + COL[0][1] + "," + COL[0][2] + ")";
+                    glowImage.style.backgroundColor = "rgb(" + COL[0][0] + "," + COL[0][1] + "," + COL[0][2] + ")";
+                    glowItem.style.color = "white";
+                }
+                document.getElementById("menuButton").style.backgroundColor = "rgb(" + COL[1][0] + "," + COL[1][1] + "," + COL[1][2] + ")";
+                document.getElementById("homeButton").style.backgroundColor = "rgb(" + COL[1][0] + "," + COL[1][1] + "," + COL[1][2] + ")";
+            };
         }
-    }
-    function SkillShow()
-    {
-        if(showInProgress)
-            return;
+        function Glow(id, navigateThere = true) {
+            item = document.getElementById(id);
+            if (item != null) {
+                image = document.getElementById(id + "Image");
+                if (glowItem != null) {
+                    var previousItemId = glowItem.id;
+                    var previousImageId = glowImage.id;
+                    glowItem = item;
+                    glowImage = image;
 
-        if(showTimer !== null) 
-        {
-            clearTimeout(showTimer);        
-        }
-        showTimer = setTimeout(function() 
-        {
-            showInProgress = true;
-            const barcollection = document.getElementsByClassName("progressbar");
-            const countercollection = document.getElementsByClassName("progresscounter");
-            for(var i = 0;i<barcollection.length;i++)
-            {
-                barcollection[i].rows[0].cells[0].style.width = "0%";
-                barcollection[i].rows[0].cells[1].style.width = "100%";
-            }
-
-            var progresswaveWorker = new Worker("assets/js/progresswave.js");
-            progresswaveWorker.onmessage=(event)=>
-            {
-                for(var i = 0;i<barcollection.length;i++)
-                {
-                    const value = Math.min(event.data,barcollection[i].getAttribute("progress"));
-                    barcollection[i].rows[0].cells[0].style.width =value+"%";
-                    barcollection[i].rows[0].cells[1].style.width =(100-value)+"%";
-                    countercollection[i].innerHTML= value+"%";
+                    document.getElementById(previousItemId).style.backgroundColor = "black";
+                    document.getElementById(previousItemId).style.color = "rgb(168, 169, 180)";
+                    document.getElementById(previousImageId).style.backgroundColor = "black";
+                }
+                else {
+                    glowItem = item;
+                    glowImage = image;
                 }
             }
-            showInProgress = false;
-        }, 500);
-    }
-    function CreditShow()
-    {
-        var myModal = new bootstrap.Modal(document.getElementById('creditDisplay'), {});
-        myModal.show();
-    }
-    function ShowMenu()
-    {
-        var sidebar = document.getElementById("sidebar");
-        var menuButton = document.getElementById("menuButton");
-        if(sidebar.style.display=="block")
-        {
-            sidebar.style.display="none";
-            isMenuOpened = false; 
-            menuButton.src="assets/img/menu.png";
-        }    
-        else
-        {
-            sidebar.style.display="block";
-            sidebar.style.backgroundColor="black";
-            isMenuOpened = true;
-            menuButton.src="assets/img/close.png";
-        }  
-    }
-    function NavigateSection(id = undefined)
-    {
-        if(id == undefined)
-        {
-            window.location.href = "#";
-        }   
-        else if(id == "download")
-        {
-            window.open("assets/docs/ParmeetGhaiResume.pdf","_blank");
         }
-        else
-            window.location.href = "#"+id+"Display";
-    }
-    function DownloadResume()
-    {
+        function SkillShow() {
+            if (showInProgress)
+                return;
 
-    }
-    function WindowResized()
-    {
-        var sidebar = document.getElementById("sidebar");
-        var menuButton = document.getElementById("menuButton");
-        console.log(window.innerWidth);
-        if(window.innerWidth <= 788)
-        {
-            menuButton.style.display="block";
-            menuButton.src="assets/img/menu.png";
-            sidebar.style.display="none";
+            if (showTimer !== null) {
+                clearTimeout(showTimer);
+            }
+            showTimer = setTimeout(function () {
+                showInProgress = true;
+                const barcollection = document.getElementsByClassName("progressbar");
+                const countercollection = document.getElementsByClassName("progresscounter");
+                for (var i = 0; i < barcollection.length; i++) {
+                    barcollection[i].rows[0].cells[0].style.width = "0%";
+                    barcollection[i].rows[0].cells[1].style.width = "100%";
+                }
+
+                var progresswaveWorker = new Worker("assets/js/progresswave.js");
+                progresswaveWorker.onmessage = (event) => {
+                    for (var i = 0; i < barcollection.length; i++) {
+                        const value = Math.min(event.data, barcollection[i].getAttribute("progress"));
+                        barcollection[i].rows[0].cells[0].style.width = value + "%";
+                        barcollection[i].rows[0].cells[1].style.width = (100 - value) + "%";
+                        countercollection[i].innerHTML = value + "%";
+                    }
+                }
+                showInProgress = false;
+            }, 500);
         }
-        else if(window.innerWidth > 788)
-        {
-            menuButton.style.display="none";
-            sidebar.style.display="block";
-            sidebar.style.backgroundColor="black";
+        function CreditShow() {
+            var myModal = new bootstrap.Modal(document.getElementById('creditDisplay'), {});
+            myModal.show();
         }
-    }
-   
-    StartSinWave();
+        function ShowMenu() {
+            var sidebar = document.getElementById("sidebar");
+            var menuButton = document.getElementById("menuButton");
+            if (sidebar.style.display == "block") {
+                sidebar.style.display = "none";
+                isMenuOpened = false;
+                menuButton.src = "assets/img/menu.png";
+            }
+            else {
+                sidebar.style.display = "block";
+                sidebar.style.backgroundColor = "black";
+                isMenuOpened = true;
+                menuButton.src = "assets/img/close.png";
+            }
+        }
+        function NavigateSection(id = undefined) {
+            if (id == undefined) {
+                window.location.href = "#";
+            }
+            else if (id == "download") {
+                window.open("assets/docs/ParmeetGhaiResume.pdf", "_blank");
+            }
+            else
+                window.location.href = "#" + id + "Display";
+        }
+        function DownloadResume() {
+
+        }
+        function WindowResized() {
+            var sidebar = document.getElementById("sidebar");
+            var menuButton = document.getElementById("menuButton");
+            console.log(window.innerWidth);
+            if (window.innerWidth <= 788) {
+                menuButton.style.display = "block";
+                menuButton.src = "assets/img/menu.png";
+                sidebar.style.display = "none";
+            }
+            else if (window.innerWidth > 788) {
+                menuButton.style.display = "none";
+                sidebar.style.display = "block";
+                sidebar.style.backgroundColor = "black";
+            }
+        }
+
+        StartSinWave();
     </script>
     <style>
-        .my-menubar-container
-        {
+        .my-menubar-container {
             -ms-flex: 0 0 230px;
             flex: 0 0 230px;
         }
-        .my-menubar
-        {
+
+        .my-menubar {
             background-color: black;
-            position:fixed;
-            top:0;
-            bottom:0;
-            left:0;
-            width:230px;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 230px;
             overflow-y: auto;
             overflow-x: hidden;
         }
-        .my-menubutton
-        {
-            position:fixed;
-            right:0;
-            top:0;
-            width:32px;
-            height:32px;
+
+        .my-menubutton {
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 32px;
+            height: 32px;
             border-style: none;
         }
-        .my-homebutton
-        {
-            position:fixed;
-            right:0;
-            bottom:0;
-            width:32px;
-            height:32px;
+
+        .my-homebutton {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            width: 32px;
+            height: 32px;
             border-style: none;
         }
-        .navigation-brand
-        {
+
+        .navigation-brand {
             font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-Size:20px;
+            font-Size: 20px;
             font-weight: bolder;
-            color:white;
-            text-align:center;
-            padding:0px;
-            margin:0px;
+            color: white;
+            text-align: center;
+            padding: 0px;
+            margin: 0px;
         }
-        .navigation-brand-img
-        {
-            margin-top:5%;
+
+        .navigation-brand-img {
+            margin-top: 5%;
             margin-left: auto;
-            margin-right:auto;
-            width:50%;
-            display:block;
+            margin-right: auto;
+            width: 50%;
+            display: block;
         }
-        .navigation-item
-        {
+
+        .navigation-item {
             font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-size:15px;
+            font-size: 15px;
             color: rgb(168, 169, 180);
-            padding:8px;
-            background-size:100% 105%;
+            padding: 8px;
+            background-size: 100% 105%;
             background-repeat: no-repeat;
-            background-image:url(assets/img/transparentbutton.png);
+            background-image: url(assets/img/transparentbutton.png);
             text-align: center;
         }
-        .navigation-item-image
-        {
+
+        .navigation-item-image {
             margin-left: auto;
-            margin-right:auto;
-            width:24px;
-            height:24px;
-            display:block;
+            margin-right: auto;
+            width: 24px;
+            height: 24px;
+            display: block;
         }
-        [class^=arr-]
-        {  /* Arrows @RCB */
-            border:       solid currentColor;
+
+        [class^=arr-] { /* Arrows @RCB */
+            border: solid currentColor;
             border-width: 0 .2em .2em 0;
-            display:      inline-block;
-            padding:      .20em;
-            color:#0d6efd;
+            display: inline-block;
+            padding: .20em;
+            color: #0d6efd;
         }
-        .arr-right {transform:rotate(-45deg);}
-        .arr-left  {transform:rotate(135deg);}
-        .arr-up    {transform:rotate(-135deg);}
-        .arr-down  {transform:rotate(45deg);}
-        .section-light
-        {
-            background-color:white;
+
+        .arr-right {
+            transform: rotate(-45deg);
         }
-        .section-dark
-        {
+
+        .arr-left {
+            transform: rotate(135deg);
+        }
+
+        .arr-up {
+            transform: rotate(-135deg);
+        }
+
+        .arr-down {
+            transform: rotate(45deg);
+        }
+
+        .section-light {
+            background-color: white;
+        }
+
+        .section-dark {
             background-color: rgb(245, 248, 253);
         }
-        .section-header
-        {
-            color:rgb(23,59,108);
-            margin-top:100px;
+
+        .section-header {
+            color: rgb(23,59,108);
+            margin-top: 100px;
         }
-        .section-header-image
-        {
-            width:100px;
-            height:50px;
+
+        .section-header-image {
+            width: 100px;
+            height: 50px;
         }
-        .section-title1
-        {
+
+        .section-title1 {
             font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-Size:20px;
+            font-Size: 20px;
             font-weight: bolder;
-            color:black;
-            text-align:left;
+            color: black;
+            text-align: left;
         }
-        .section-title2
-        {
+
+        .section-title2 {
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            font-Size:16px;
+            font-Size: 16px;
             font-weight: normal;
-            color:white;
-            text-align:center;
+            color: white;
+            text-align: center;
             background: linear-gradient(90deg, rgba(172,178,179,1) 0%, rgba(73,117,150,1) 50%, rgba(0,236,255,1) 100%);
             width: 100px;
-            height:25px;
+            height: 25px;
         }
-        .section-title3
-        {
+
+        .section-title3 {
             font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-Size:18px;
+            font-Size: 18px;
             font-weight: lighter;
-            font-style:normal;
-            color:rgb(142, 142, 142);
-            text-align:left;
+            font-style: normal;
+            color: rgb(142, 142, 142);
+            text-align: left;
         }
-        .section-info
-        {
+
+        .section-info {
             font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-Size:15px;
+            font-Size: 15px;
             font-weight: normal;
-            color:black;
-            text-align:left;
+            color: black;
+            text-align: left;
         }
-        .progresscounter
-        {
-            color:black;
-            padding:5px;
+
+        .progresscounter {
+            color: black;
+            padding: 5px;
         }
-        .progressbar
-        {
-            width:90%;
-            height:10px;
+
+        .progressbar {
+            width: 90%;
+            height: 10px;
         }
-        .progressbar-foreground
-        {
-            background-color:rgb(20, 157, 221);
-            width:0%;
+
+        .progressbar-foreground {
+            background-color: rgb(20, 157, 221);
+            width: 0%;
         }
-        .progressbar-background
-        {
-            background-color:rgb(220, 232, 248);
-            width:100%;
+
+        .progressbar-background {
+            background-color: rgb(220, 232, 248);
+            width: 100%;
         }
-        .norton-sidebar
-        {
-            background-color:black;
-            color:white;
+
+        .norton-sidebar {
+            background-color: black;
+            color: white;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-size: 10px;
         }
-        .norton-footer
-        {
-            background-color:black;
-            color:white;
+
+        .norton-footer {
+            background-color: black;
+            color: white;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-size: 12px;
         }
-        .footer
-        {
-            width:100%;
-            height:50px;
-            background-color:black; 
-            color:white; 
+
+        .footer {
+            width: 100%;
+            height: 50px;
+            background-color: black;
+            color: white;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-size: 12px;
         }
