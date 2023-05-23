@@ -172,14 +172,31 @@
             margin: 0px;
         }
 
-        .navigation-brand-img {
+        .navigation-brand-holder {
             margin-top: 5%;
             margin-left: auto;
             margin-right: auto;
-            width: 50%;
             display: block;
+            position: relative;
+            width:200px;
+            height:200px;
         }
 
+        .navigation-brand-frame {
+            position: absolute;
+            top: 6%;
+            left: 5%;
+            width: 100%;
+        }
+
+        .navigation-brand-img {
+            position: absolute;
+            top: 25%;
+            left: 25%;
+            width: 55%;
+            border-radius:50%
+        }
+                
         .navigation-item {
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-size: 15px;
@@ -330,51 +347,56 @@
         <!--NAVIGATION COLUMN -->
         <div id="sidebar" class="col my-menubar-container px-0" style="background-color: black;">
             <div class="my-menubar">
-                <img src="assets/img/photo-frammed.png" class="navigation-brand-img">
-                <br/>
-                <div class ="navigation-brand">
+                
+                <div class="navigation-brand-holder">
+                    <img src="assets/img/photo-normal.png" class="navigation-brand-img">
+                    <img src="assets/img/frame.png" class="navigation-brand-frame">
+                </div>
+             
+                <br />
+                <div class="navigation-brand">
                     Parmeet Singh Ghai
                 </div>
                 <div class="text-center">
                     <a href="mailto:parmeet.s.ghai@gmail.com"><img class="px-2" src="assets/img/email.png"></a>
-                    <a href="tel:+91981287905"><img class="px-2" src="assets/img/call.png" ></a>
-                    <a href="https://github.com/parmeetsinghghai" target="_blank"><img class="px-2" src="assets/img/githublogo.png" ></a>
+                    <a href="tel:+91981287905"><img class="px-2" src="assets/img/call.png"></a>
+                    <a href="https://github.com/parmeetsinghghai" target="_blank"><img class="px-2" src="assets/img/githublogo.png"></a>
                 </div>
-                
-                <br/>
-                <div class = "navigation-item" id="aboutme" onmousedown="Glow(this.id);NavigateSection(this.id)">
-                    <img class ="navigation-item-image" id="aboutmeImage" src="assets/img/home.png">
+
+                <br />
+                <div class="navigation-item" id="aboutme" onmousedown="Glow(this.id);NavigateSection(this.id)">
+                    <img class="navigation-item-image" id="aboutmeImage" src="assets/img/home.png">
                     About
                 </div>
-                <div class = "navigation-item" id="education" onmousedown="Glow(this.id);NavigateSection(this.id)">
-                    <img class ="navigation-item-image" id="educationImage" src="assets/img/education.png">
+                <div class="navigation-item" id="education" onmousedown="Glow(this.id);NavigateSection(this.id)">
+                    <img class="navigation-item-image" id="educationImage" src="assets/img/education.png">
                     Education
                 </div>
-                <div class = "navigation-item" id="workexperience" onmousedown="Glow(this.id);NavigateSection(this.id)">
-                    <img class ="navigation-item-image" id="workexperienceImage" src="assets/img/workexperience.png">
+                <div class="navigation-item" id="workexperience" onmousedown="Glow(this.id);NavigateSection(this.id)">
+                    <img class="navigation-item-image" id="workexperienceImage" src="assets/img/workexperience.png">
                     Work Experience
                 </div>
-                <div class = "navigation-item" id="projects" onmousedown="Glow(this.id);NavigateSection(this.id)">
-                    <img class ="navigation-item-image" id="projectsImage" src="assets/img/projects.png">
+                <div class="navigation-item" id="projects" onmousedown="Glow(this.id);NavigateSection(this.id)">
+                    <img class="navigation-item-image" id="projectsImage" src="assets/img/projects.png">
                     Projects
                 </div>
-                <div class = "navigation-item" id="skills" onmousedown="Glow(this.id);NavigateSection(this.id)">
-                    <img class ="navigation-item-image" id="skillsImage" src="assets/img/skills.png">
+                <div class="navigation-item" id="skills" onmousedown="Glow(this.id);NavigateSection(this.id)">
+                    <img class="navigation-item-image" id="skillsImage" src="assets/img/skills.png">
                     Skills
-                </div>    
-                <div class = "navigation-item" id="contact" onmousedown="Glow(this.id);NavigateSection(this.id)">
-                    <img class ="navigation-item-image" id="contactImage" src="assets/img/contact.png">
+                </div>
+                <div class="navigation-item" id="contact" onmousedown="Glow(this.id);NavigateSection(this.id)">
+                    <img class="navigation-item-image" id="contactImage" src="assets/img/contact.png">
                     Contact
-                </div>  
-                <div class = "navigation-item" id="download" onmousedown="Glow(this.id);NavigateSection(this.id)">
-                    <img class ="navigation-item-image" id="downloadImage" src="assets/img/download.png">
+                </div>
+                <div class="navigation-item" id="download" onmousedown="Glow(this.id);NavigateSection(this.id)">
+                    <img class="navigation-item-image" id="downloadImage" src="assets/img/download.png">
                     Download Resume
                 </div>
-                <div class = "navigation-item" id="credits" onmousedown="Glow(this.id);CreditShow();NavigateSection(this.id)">
-                    <img class ="navigation-item-image" id="creditsImage" src="assets/img/credit.png">
+                <div class="navigation-item" id="credits" onmousedown="Glow(this.id);CreditShow();NavigateSection(this.id)">
+                    <img class="navigation-item-image" id="creditsImage" src="assets/img/credit.png">
                     Credits
                 </div>
-                <br/>
+                <br />
                 <div class="norton-sidebar">
                     <span>Scanned by</span> <img src="assets/img/nortonlogo.svg"> <span>Norton<sup>TM</sup> Safe Web</span>
                 </div>

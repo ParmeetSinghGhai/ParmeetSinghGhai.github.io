@@ -12,653 +12,685 @@
     <link href="assets/css/main.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+
+    <style>
+        .spinning_parent {
+            position: relative;
+            left: 0px;
+            top: 0px;
+        }
+        .spinning_steady {
+            position: absolute;
+            left: 15px;
+            top: 40px;
+        }
+        .spinning_rotate {
+            animation: rotation 12s infinite linear;
+        }
+        @keyframes rotation {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(359deg);
+            }
+        }
+	</style>
+
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/smoothscroll.js"></script>
   </head>
 
   <body data-spy="scroll" data-offset="0" data-target="#navigation">
-
-    <!-- Fixed navbar -->
-	    <div id="navigation" class="navbar navbar-default navbar-fixed-top">
-			<div class="container">
-	        <div class="navbar-header">
-	          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-	            <span class="icon-bar"></span>
-	            <span class="icon-bar"></span>
-	            <span class="icon-bar"></span>
+	  <div id="navigation" class="navbar navbar-default navbar-fixed-top">
+		  <!-- Fixed navbar -->
+		  <div class="navbar-header">
+			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				  <span class="icon-bar"></span>
+				  <span class="icon-bar"></span>
+				  <span class="icon-bar"></span>
 			  </button>
-			  <table height = "60px">
-				<tr>
-					<td width = "30%">
-						<img src = "assets/img/applogo.png" width= "60px" height = "60px" style = "opacity: 0.8;">
-					</td>
-					<td width = "20%">
-
-					</td>
-					<td width = "50%">
-						<a class="navbar-brand" href="#"><b>PSGDriveSync</b></a>
-					</td>
-				</tr>
-			  </table>
-			</div>
-	        <div class="navbar-collapse collapse">
-	          <ul class="nav navbar-nav">
-	            <li class="active"><a href="#home" class="smothscroll">Home</a></li>
-				<li><a href="#quickintro" class="smothscroll">Quick Intro</a></li>
-	            <li><a href="#features" class="smothscroll">Features</a></li>
-	            <li><a href="#showcase" class="smothScroll">Showcase</a></li>
-				<li><a href="#pricing" class="smothScroll">Pricing</a></li>
-				<li><a href="https://github.com/ParmeetSinghGhai/PSGDriveSync/releases/tag/v0.3" class="smothScroll" target="_blank">Download</a></li>
-				<li><a href="help/index.html" class="smothScroll" target="_blank">User Guide</a></li>
-				<li><a href="assets/docs/EndUserLicenseAgreement.txt" class="smothScroll" target="_blank">Terms & Conditions</a></li>
-				<li><a href="#privacypolicy" class="smothScroll">Privacy Policy</a></li>
-				<li><a href="#contact" class="smothScroll">Contact</a></li>
-	          </ul>
-	        </div><!--/.nav-collapse -->
-	      </div>
-	    </div>
+			  <a class="navbar-brand" href="#">
+				  <span>
+					  <img src="assets/img/applogo_transparent.png" width="60px" height="60px">
+					  <b>PSGDriveSync</b>
+				  </span>
+			  </a>
+		  </div>
+		  <div class="container">
+			  <div class="navbar-collapse collapse">
+				  <ul class="nav navbar-nav">
+					  <li class="active"><a href="#home" class="smothscroll">Home</a></li>
+					  <li><a href="#quickintro" class="smothscroll">Quick Intro</a></li>
+					  <li><a href="#features" class="smothscroll">Features</a></li>
+					  <li><a href="#showcase" class="smothScroll">Showcase</a></li>
+					  <li><a href="#pricing" class="smothScroll">Pricing</a></li>
+					  <li><a href="https://github.com/ParmeetSinghGhai/PSGDriveSync/releases/tag/v0.3" class="smothScroll" target="_blank">Download</a></li>
+					  <li><a href="help/index.html" class="smothScroll" target="_blank">User Guide</a></li>
+					  <li><a href="assets/docs/EndUserLicenseAgreement.txt" class="smothScroll" target="_blank">Terms & Conditions</a></li>
+					  <li><a href="#privacypolicy" class="smothScroll">Privacy Policy</a></li>
+					  <li><a href="#contact" class="smothScroll">Contact</a></li>
+				  </ul>
+			  </div><!--/.nav-collapse -->
+		  </div>
+	  </div>
 
 
-	<section id="home" name="home"></section>
-	<div id="headerwrap">
-		<div class="container">
-	    	<div class="row centered">
-	    		<div class="col-lg-12">
-					<table>
-						<tr>
-							<td width = "20%">
-								<img src = "assets/img/applogo.png">
-							</td>
-							
-							<td width = "80%">
-								<h1><b>PSGDriveSync</b> Application</h1>
-							</td>
-						</tr>
-					</table>
-				</div>
-				<br/>
-				<br/>
-				<table>
-					<tr>
-						<td width = "5%">
-							<h5 style = "font-family: Verdana, Geneva, Tahoma, sans-serif;">AES-256 Encryption</h5>
-							<p>Keep all your files secure and protected</p>
-							<img class="hidden-xs hidden-sm hidden-md" src="assets/img/arrow1.png">
-						</td>
-						<td width = "40%">
-							<img class="img-responsive" src="assets/img/app-bg1.png" alt="" >
-						</td>
-						<td width = "5%">
-
-						</td>
-						<td width = "40%">
-							<img class="img-responsive" src="assets/img/app-bg2.png" alt="" >
-						</td>
-						<td width = "5%">
-							<img class="hidden-xs hidden-sm hidden-md" src="assets/img/arrow2.png">
-							<h5 style = "font-family: Verdana, Geneva, Tahoma, sans-serif;">Filters</h5>
-							<p>Automated Conditional Syncing</p>
-						</td>
-					</tr>
-				</table>
-	    	</div>
-			<hr>
-	    </div>
-	</div>
+	  <section id="home" name="home"></section>
+	  <div id="headerwrap">
+		  <div class="container">
+			  <div class="row centered">
+				  <div class="col-lg-12">
+					  <br />
+					  <br />
+					  <table>
+						  <tr>
+							  <td width="20%">
+								  <div id="spinning_parent">
+									  <img width="200px" src="./assets/img/applogo_wheel.png" class="spinning_rotate" />
+									  <img width="200px" src="./assets/img/applogo_body.png" class="spinning_steady"/>
+								  </div>
 
 
-	<section id="quickintro" name="quickintro"></section>
-	<!-- INTRO WRAP -->
-	<div id="intro">
-		<div class="container">
-			<div class="row centered">
-				<h1>Why You Should Use PSGDriveSync</h1>
-				<br>
-				<br>
-				<div class="col-lg-4">
-					<img src="assets/img/feature1.png" alt="">
-					<h3>AES-256 Encryption Standard</h3>
-					<p>Use Advanced Encryption Standard to Encrypt All Your Files and Folders On Local and Remote Drives</p>
-				</div>
-				<div class="col-lg-4">
-					<img src="assets/img/feature2.png" alt="">
-					<h3>Conditional Automated Syncing</h3>
-					<p>Create Filters Based On Time, Date, File Properties etc to Automatically Filter and Sync Files</p>
-				</div>
-				<div class="col-lg-4">
-					<img src="assets/img/feature3.png" alt="">
-					<h3>Real Time File Operations</h3>
-					<p>Perform Real-Time File Operations like Cut, Copy, Paste, Encrypt, Decrypt etc On the Spot</p>
-				</div>
-				<div class="col-lg-4">
-					<img src="assets/img/feature4.png" alt="">
-					<h3>Database Level Encryption</h3>
-					<p>Entire Database Gets Encrypted with AES-256 Standard Encryption With One Master Key That Only You Get To Keep</p>
-				</div>
-				<div class="col-lg-4">
-					<img src="assets/img/feature5.png" alt="">
-					<h3>No Restrictions On Number of Drives</h3>
-					<p>Add as Many Local and Google Drives as You Want. No Restrictions on Number Of Drives That Can be Added To The Application</p>
-				</div>
-				<div class="col-lg-4">
-					<img src="assets/img/feature6.png" alt="">
-					<h3>File Integrity Check For Encrypted File</h3>
-					<p>Use HMAC-SHA256 Hash Check to Simultaneously Verify Both Data Integrity and Authenticity</p>
-				</div>
-			</div>
-			<br>
-			<hr>
-	    </div>
-	</div>
-	
+								  <!--
+								  <div id="spinninglogo_in"><img width="200px" src="./assets/img/applogo_wheel.png" class="rotate" /></div>
+								  <div id="spinninglogo_out"><img width="200px" src="./assets/img/applogo_body.png" /></div>
+								  -->
+							  </td>
 
-	<div id="features">
-		<div class="container">
-			<div>
-				<h1 class="centered" style = "color:white;">Application Features</h1>
-				<br>
-				<div>
-					<img src="assets/img/application.png" alt="" style = "position:relative;left:0%">
-				</div>
-				
-				<div class="col-lg-6">
-					<br>
-				<!-- ACCORDION -->
-		            <div class="accordion ac" id="accordion2" style = "color:white">
-		                <div class="accordion-group">
-		                    <div class="accordion-heading" style = "color:white">
-		                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-		                        AES-256 Encryption Standard For Files
-		                        </a>
-		                    </div><!-- /accordion-heading -->
-		                    <div id="collapseOne" class="accordion-body collapse in">
-		                        <div class="accordion-inner">
-									<p>
-										Uses AES-256 Encryption Standard to Encrypt Your Files and Folders Which Makes Sure That Your Files and Folders Remain Secure and Protected<br/><br/>
-										Here is a quote from the <a href = "https://en.wikipedia.org/wiki/Advanced_Encryption_Standard" style ="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 15px;color:blue">Wikipedia pages</a> on AES Encryption:
-										"The National Security Agency (NSA) reviewed all the AES finalists, including Rijndael, and stated that all of them were secure enough for U.S. Government non-classified data. In June 2003, the U.S. Government announced that AES could be used to protect classified information:The design and strength of all key lengths of the AES algorithm (i.e., 128, 192 and 256) are sufficient to protect classified information up to the SECRET level. TOP SECRET information will require use of either the 192 or 256 key lengths. The implementation of AES in products intended to protect national security systems and/or information must be reviewed and certified by NSA prior to their acquisition and use."
-									</p>
-								</div><!-- /accordion-inner -->
-		                    </div><!-- /collapse -->
-		                </div><!-- /accordion-group -->
-		                <br>
-		
-		                <div class="accordion-group">
-		                    <div class="accordion-heading">
-		                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-		                        Automated Conditional File & Folder Syncing
-		                        </a>
-		                    </div>
-		                    <div id="collapseTwo" class="accordion-body collapse">
-		                        <div class="accordion-inner">
-									<p>
-										You Can Setup "Filters" Based On 
-										<ul>
-											<li>Current Date & Time</li>
-											<li>Drive Properties Like Name, Total Space, Available Space etc</li>
-											<li>File Properties like Name, Size, Hash, Last Modified Time etc</li>
-											<li>Folder Properties like Name, Last Modified Time, Type etc</li>
-										</ul>
-										Which Can Help You Sync Only Specific Files and Folders Thus Giving Your More Control Over The Automated Sync Process
-									</p>
-								</div><!-- /accordion-inner -->
-		                    </div><!-- /collapse -->
-		                </div><!-- /accordion-group -->
-		                <br>
-		
-		                 <div class="accordion-group">
-		                    <div class="accordion-heading">
-		                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
-		                        File Integrity Check Using HMAC-SHA256
-		                        </a>
-		                    </div>
-		                    <div id="collapseThree" class="accordion-body collapse">
-		                        <div class="accordion-inner">
-									<p>
-										As If Encrypting Files and Folder Using AES-256 Encryption Standard Was Not Enough, The Application Also Performs Data Integrity Check 
-										using HMAC-SHA256 (Hash-Based Message Authentication Code) Which Simultaneously Verifies Data Integrity and Authenticity
-									</p>
-								</div><!-- /accordion-inner -->
-		                    </div><!-- /collapse -->
-		                </div><!-- /accordion-group -->
-		                <br>
-		                
-		                <div class="accordion-group">
-		                    <div class="accordion-heading">
-		                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
-		                        Database Level Encryption
-		                        </a>
-		                    </div>
-		                    <div id="collapseFour" class="accordion-body collapse">
-		                        <div class="accordion-inner">
-									<p>
-										The Application Saves the Path Of Files and Folders That You Have Set For Automated Syncing In a Local Database along With 
-										Your Google Drive's Access Token Used To Access Files From Your Google Drive. In Order to Keep All This Information Safe and 
-										Protected, the Application Encrypts the Entire Database Using AES-256 Encryption Standard and a Master Key That Only You Know. 
-										<br/>
-										If Needed You can Always Change the Master Key by Using the Existing Master Key.
-									</p>
-								</div><!-- /accordion-inner -->
-		                    </div><!-- /collapse -->
-		                </div><!-- /accordion-group -->
-		                <br>			
-
-						<div class="accordion-group">
-		                    <div class="accordion-heading">
-		                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFive">
-		                        Perform Real Time File Operations Anytime
-		                        </a>
-		                    </div>
-		                    <div id="collapseFive" class="accordion-body collapse">
-		                        <div class="accordion-inner">
-									<p>
-										You Can Perform The Following Real Time File Operations On Any One of Your Local and Google Drives AnyTime<br/>
-										<ul>
-											<li>Create New File & Folder</li>
-											<li>Cut, Copy and Paste File(s) & Folder(s)</li>
-											<li>Delete File(s) & Folder(s)</li>
-											<li>Rename File(s) & Folder(s)</li>
-											<li>Select All File(s) & Folder(s)</li>
-											<li>View File & Folder Properties</li>
-											<li>Encrypt File(s) & Folder(s)</li>
-											<li>Decrypt File(s) & Folder(s)</li>
-											<li>Compare File(s) & Folder(s)</li>
-											<li>Search For Encrypted Files</li>
-											<li>Send Files & Folders to Filters Window</li>
-										<ul/>
-									</p>
-								</div><!-- /accordion-inner -->
-		                    </div><!-- /collapse -->
-		                </div><!-- /accordion-group -->
-		                <br>		
-
-						<div class="accordion-group">
-		                    <div class="accordion-heading">
-		                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSix">
-		                        No Restrictions On Number Of Drives
-		                        </a>
-		                    </div>
-		                    <div id="collapseSix" class="accordion-body collapse">
-		                        <div class="accordion-inner">
-									<p>
-										You Can Add As Many Google Drive(s) and Local Drives(s) As You Want.
-									</p>
-								</div><!-- /accordion-inner -->
-		                    </div><!-- /collapse -->
-		                </div><!-- /accordion-group -->
-		                <br>		
-
-						<div class="accordion-group">
-		                    <div class="accordion-heading">
-		                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSeven">
-		                        Verify Secure Login URL
-		                        </a>
-		                    </div>
-		                    <div id="collapseSeven" class="accordion-body collapse">
-		                        <div class="accordion-inner">
-									<p>
-										The Application Generates a Secure Login URL For You To Sign Into Your Google Drive Account With Your Google Drive Login 
-										Credentials However To Make Sure That the Login URL Is Authentic You Can Get the URL Verified Through 
-										The Application Itself thus Making Sure That You are Giving your Consent To Access Your Google Drive 
-										to the Right Guy. 
-									</p>
-								</div><!-- /accordion-inner -->
-		                    </div><!-- /collapse -->
-		                </div><!-- /accordion-group -->
-		                <br>	
-
-						<div class="accordion-group">
-		                    <div class="accordion-heading">
-		                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseEight">
-		                        Resume Interrupted Or Paused Uploads and Downloads
-		                        </a>
-		                    </div>
-		                    <div id="collapseEight" class="accordion-body collapse">
-		                        <div class="accordion-inner">
-									<p>
-										Whether You Are Downloading or Uploading a File or Folder Through Real-Time File Operations or Sync 
-										Operations, You can always go ahead and Resume Those Partial Downloads and Uploads Anytime thus Saving 
-										on Overall Network Bandwidth Usage.  
-									</p>
-								</div><!-- /accordion-inner -->
-		                    </div><!-- /collapse -->
-		                </div><!-- /accordion-group -->
-		                <br>	
-
-						<div class="accordion-group">
-		                    <div class="accordion-heading">
-		                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseNine">
-		                        On The Fly Data Encryption
-		                        </a>
-		                    </div>
-		                    <div id="collapseNine" class="accordion-body collapse">
-		                        <div class="accordion-inner">
-									<p>
-										The Application Supports On the Fly Encryption Which Prevents The Need to Download Or Upload Entire Files 
-										Or Folders In Order For Encryption or Decryption to Take Place thus Saving On Computer Resources Needed For
-										Encryption and Decryption Process.
-									</p>
-								</div><!-- /accordion-inner -->
-		                    </div><!-- /collapse -->
-		                </div><!-- /accordion-group -->
-		                <br>	
-
-						<div class="accordion-group">
-		                    <div class="accordion-heading">
-		                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTen">
-		                        Seamless File Transfer Between Multiple Google Drives
-		                        </a>
-		                    </div>
-		                    <div id="collapseTen" class="accordion-body collapse">
-		                        <div class="accordion-inner">
-									<p>
-										File Transfer From a Local Drive To a Google Drive is Generally Done by an Upload Operation 
-										and File Transfer From a Google Drive To a Local Drive is Generally Done by a Download Operation 
-										but What About File Transfer From a Google Drive To a Google Drive ? <br/>
-										The Application Has That Covered For You and Lets You Do File Transfers From One Google Drive 
-										to Another Google Drive Seamlessly In Just One Single Transfer Operation. 
-									</p>
-								</div><!-- /accordion-inner -->
-		                    </div><!-- /collapse -->
-		                </div><!-- /accordion-group -->
-		                <br>	
-
-						<div class="accordion-group">
-		                    <div class="accordion-heading">
-		                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseEleven">
-		                        User Friendly Application Interface
-		                        </a>
-		                    </div>
-		                    <div id="collapseEleven" class="accordion-body collapse">
-		                        <div class="accordion-inner">
-									<p>
-										The Application Uses a Familiar User Interface That Most Windows Operation System Applications Use Thus 
-										Making it Easier for The User To Use The Application With Familiar and Recognizable Mouse Gestures and 
-										Keyboard Commands. 
-									</p>
-								</div><!-- /accordion-inner -->
-		                    </div><!-- /collapse -->
-		                </div><!-- /accordion-group -->
-		                <br>	
+							  <td width="80%">
+								  <h1><b>PSGDriveSync</b></h1>
+								  <h3>Google Drive™ Sync Client</h3>
+							  </td>
+						  </tr>
+					  </table>
+				  </div>
+				  <br />
+				  <br />
+				  <table>
+					  <tr>
+						  <td width="5%">
+							  <h5 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">AES-256 Encryption</h5>
+							  <p>Keep all your files secure and protected</p>
+							  <img class="hidden-xs hidden-sm hidden-md" src="assets/img/arrow1.png">
+						  </td>
+						  <td width="40%">
+							  <img class="img-responsive" src="assets/img/app-bg1.png" alt="">
+						  </td>
+						  <td width="5%">
+						  </td>
+						  <td width="40%">
+							  <img class="img-responsive" src="assets/img/app-bg2.png" alt="">
+						  </td>
+						  <td width="5%">
+							  <img class="hidden-xs hidden-sm hidden-md" src="assets/img/arrow2.png">
+							  <h5 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Filters</h5>
+							  <p>Automated Conditional Syncing</p>
+						  </td>
+					  </tr>
+				  </table>
+			  </div>
+			  <hr>
+		  </div>
+	  </div>
+	 
 
 
-					</div><!-- Accordion -->
-				</div>
-			</div>
-		</div><!--/ .container -->
-	</div>
-	
-	
-	<section id="showcase" name="showcase"></section>
-	<div id="showcase">
-		<div class="container">
-			<div class="row">
-				<h1 class="centered">Application Tabs</h1>
-				<br>
-				<div class="col-lg-8 col-lg-offset-2">
-					<div id="carousel-example-generic" class="carousel slide">
-					  <!-- Indicators -->
-					  <ol class="carousel-indicators">
-					    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-					    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-						<li data-target="#carousel-example-generic" data-slide-to="2"></li>
-						<li data-target="#carousel-example-generic" data-slide-to="3"></li>
-						<li data-target="#carousel-example-generic" data-slide-to="4"></li>
-						<li data-target="#carousel-example-generic" data-slide-to="5"></li>
-					  </ol>
-					
-					  <!-- Wrapper for slides -->
-					  <div class="carousel-inner">
-					    <div class="item active">
-					      	<img src="assets/img/slide1.png" alt="">
-					    </div>
-					    <div class="item">
-					      	<img src="assets/img/slide2.png" alt="">
-					    </div>
-						<div class="item">
-							<img src="assets/img/slide3.png" alt="">
-						</div>
-						<div class="item">
-							<img src="assets/img/slide4.png" alt="">
-						</div>
-						<div class="item">
-							<img src="assets/img/slide5.png" alt="">
-						</div>
-						<div class="item">
-							<img src="assets/img/slide6.png" alt="">
-						</div>
+	  <section id="quickintro" name="quickintro"></section>
+	  <!-- INTRO WRAP -->
+	  <div id="intro">
+		  <div class="container">
+			  <div class="row centered">
+				  <h1>Why You Should Use PSGDriveSync ?</h1>
+				  <br>
+				  <br>
+				  <div class="col-lg-4">
+					  <img src="assets/img/feature1.png" alt="">
+					  <h3>AES-256 Encryption Standard</h3>
+					  <p>Use Advanced Encryption Standard to Encrypt All Your Files and Folders On Local and Remote Drives</p>
+				  </div>
+				  <div class="col-lg-4">
+					  <img src="assets/img/feature2.png" alt="">
+					  <h3>Conditional Automated Syncing</h3>
+					  <p>Create Filters Based On Time, Date, File Properties etc to Automatically Filter and Sync Files</p>
+				  </div>
+				  <div class="col-lg-4">
+					  <img src="assets/img/feature3.png" alt="">
+					  <h3>Real Time File Operations</h3>
+					  <p>Perform Real-Time File Operations like Cut, Copy, Paste, Encrypt, Decrypt etc On the Spot</p>
+				  </div>
+				  <div class="col-lg-4">
+					  <img src="assets/img/feature4.png" alt="">
+					  <h3>Database Level Encryption</h3>
+					  <p>Entire Database Gets Encrypted with AES-256 Standard Encryption With One Master Key That Only You Get To Keep</p>
+				  </div>
+				  <div class="col-lg-4">
+					  <img src="assets/img/feature5.png" alt="">
+					  <h3>No Restrictions On Number of Drives</h3>
+					  <p>Add as Many Local and Google Drives as You Want. No Restrictions on Number Of Drives That Can be Added To The Application</p>
+				  </div>
+				  <div class="col-lg-4">
+					  <img src="assets/img/feature6.png" alt="">
+					  <h3>File Integrity Check For Encrypted File</h3>
+					  <p>Use HMAC-SHA256 Hash Check to Simultaneously Verify Both Data Integrity and Authenticity</p>
+				  </div>
+			  </div>
+			  <br>
+			  <hr>
+		  </div>
+	  </div>
+
+
+	  <div id="features">
+		  <div class="container">
+			  <div>
+				  <h1 class="centered" style="color:white;">Application Features</h1>
+				  <br>
+				  <div>
+					  <img src="assets/img/application.png" alt="" style="position:relative;left:0%">
+				  </div>
+
+				  <div class="col-lg-6">
+					  <br>
+					  <!-- ACCORDION -->
+					  <div class="accordion ac" id="accordion2" style="color:white">
+						  <div class="accordion-group">
+							  <div class="accordion-heading" style="color:white">
+								  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+									  AES-256 Encryption Standard For Files
+								  </a>
+							  </div><!-- /accordion-heading -->
+							  <div id="collapseOne" class="accordion-body collapse in">
+								  <div class="accordion-inner">
+									  <p>
+										  Uses AES-256 Encryption Standard to Encrypt Your Files and Folders Which Makes Sure That Your Files and Folders Remain Secure and Protected<br /><br />
+										  Here is a quote from the <a href="https://en.wikipedia.org/wiki/Advanced_Encryption_Standard" style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 15px;color:blue">Wikipedia pages</a> on AES Encryption:
+										  "The National Security Agency (NSA) reviewed all the AES finalists, including Rijndael, and stated that all of them were secure enough for U.S. Government non-classified data. In June 2003, the U.S. Government announced that AES could be used to protect classified information:The design and strength of all key lengths of the AES algorithm (i.e., 128, 192 and 256) are sufficient to protect classified information up to the SECRET level. TOP SECRET information will require use of either the 192 or 256 key lengths. The implementation of AES in products intended to protect national security systems and/or information must be reviewed and certified by NSA prior to their acquisition and use."
+									  </p>
+								  </div><!-- /accordion-inner -->
+							  </div><!-- /collapse -->
+						  </div><!-- /accordion-group -->
+						  <br>
+
+						  <div class="accordion-group">
+							  <div class="accordion-heading">
+								  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+									  Automated Conditional File & Folder Syncing
+								  </a>
+							  </div>
+							  <div id="collapseTwo" class="accordion-body collapse">
+								  <div class="accordion-inner">
+									  <p>
+										  You Can Setup "Filters" Based On
+										  <ul>
+											  <li>Current Date & Time</li>
+											  <li>Drive Properties Like Name, Total Space, Available Space etc</li>
+											  <li>File Properties like Name, Size, Hash, Last Modified Time etc</li>
+											  <li>Folder Properties like Name, Last Modified Time, Type etc</li>
+										  </ul>
+										  Which Can Help You Sync Only Specific Files and Folders Thus Giving Your More Control Over The Automated Sync Process
+									  </p>
+								  </div><!-- /accordion-inner -->
+							  </div><!-- /collapse -->
+						  </div><!-- /accordion-group -->
+						  <br>
+
+						  <div class="accordion-group">
+							  <div class="accordion-heading">
+								  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+									  File Integrity Check Using HMAC-SHA256
+								  </a>
+							  </div>
+							  <div id="collapseThree" class="accordion-body collapse">
+								  <div class="accordion-inner">
+									  <p>
+										  As If Encrypting Files and Folder Using AES-256 Encryption Standard Was Not Enough, The Application Also Performs Data Integrity Check
+										  using HMAC-SHA256 (Hash-Based Message Authentication Code) Which Simultaneously Verifies Data Integrity and Authenticity
+									  </p>
+								  </div><!-- /accordion-inner -->
+							  </div><!-- /collapse -->
+						  </div><!-- /accordion-group -->
+						  <br>
+
+						  <div class="accordion-group">
+							  <div class="accordion-heading">
+								  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
+									  Database Level Encryption
+								  </a>
+							  </div>
+							  <div id="collapseFour" class="accordion-body collapse">
+								  <div class="accordion-inner">
+									  <p>
+										  The Application Saves the Path Of Files and Folders That You Have Set For Automated Syncing In a Local Database along With
+										  Your Google Drive's Access Token Used To Access Files From Your Google Drive. In Order to Keep All This Information Safe and
+										  Protected, the Application Encrypts the Entire Database Using AES-256 Encryption Standard and a Master Key That Only You Know.
+										  <br />
+										  If Needed You can Always Change the Master Key by Using the Existing Master Key.
+									  </p>
+								  </div><!-- /accordion-inner -->
+							  </div><!-- /collapse -->
+						  </div><!-- /accordion-group -->
+						  <br>
+
+						  <div class="accordion-group">
+							  <div class="accordion-heading">
+								  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFive">
+									  Perform Real Time File Operations Anytime
+								  </a>
+							  </div>
+							  <div id="collapseFive" class="accordion-body collapse">
+								  <div class="accordion-inner">
+									  <p>
+										  You Can Perform The Following Real Time File Operations On Any One of Your Local and Google Drives AnyTime<br />
+										  <ul>
+											  <li>Create New File & Folder</li>
+											  <li>Cut, Copy and Paste File(s) & Folder(s)</li>
+											  <li>Delete File(s) & Folder(s)</li>
+											  <li>Rename File(s) & Folder(s)</li>
+											  <li>Select All File(s) & Folder(s)</li>
+											  <li>View File & Folder Properties</li>
+											  <li>Encrypt File(s) & Folder(s)</li>
+											  <li>Decrypt File(s) & Folder(s)</li>
+											  <li>Compare File(s) & Folder(s)</li>
+											  <li>Search For Encrypted Files</li>
+											  <li>Send Files & Folders to Filters Window</li>
+											  <ul />
+									  </p>
+								  </div><!-- /accordion-inner -->
+							  </div><!-- /collapse -->
+						  </div><!-- /accordion-group -->
+						  <br>
+
+						  <div class="accordion-group">
+							  <div class="accordion-heading">
+								  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSix">
+									  No Restrictions On Number Of Drives
+								  </a>
+							  </div>
+							  <div id="collapseSix" class="accordion-body collapse">
+								  <div class="accordion-inner">
+									  <p>
+										  You Can Add As Many Google Drive(s) and Local Drives(s) As You Want.
+									  </p>
+								  </div><!-- /accordion-inner -->
+							  </div><!-- /collapse -->
+						  </div><!-- /accordion-group -->
+						  <br>
+
+						  <div class="accordion-group">
+							  <div class="accordion-heading">
+								  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSeven">
+									  Verify Secure Login URL
+								  </a>
+							  </div>
+							  <div id="collapseSeven" class="accordion-body collapse">
+								  <div class="accordion-inner">
+									  <p>
+										  The Application Generates a Secure Login URL For You To Sign Into Your Google Drive Account With Your Google Drive Login
+										  Credentials However To Make Sure That the Login URL Is Authentic You Can Get the URL Verified Through
+										  The Application Itself thus Making Sure That You are Giving your Consent To Access Your Google Drive
+										  to the Right Guy.
+									  </p>
+								  </div><!-- /accordion-inner -->
+							  </div><!-- /collapse -->
+						  </div><!-- /accordion-group -->
+						  <br>
+
+						  <div class="accordion-group">
+							  <div class="accordion-heading">
+								  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseEight">
+									  Resume Interrupted Or Paused Uploads and Downloads
+								  </a>
+							  </div>
+							  <div id="collapseEight" class="accordion-body collapse">
+								  <div class="accordion-inner">
+									  <p>
+										  Whether You Are Downloading or Uploading a File or Folder Through Real-Time File Operations or Sync
+										  Operations, You can always go ahead and Resume Those Partial Downloads and Uploads Anytime thus Saving
+										  on Overall Network Bandwidth Usage.
+									  </p>
+								  </div><!-- /accordion-inner -->
+							  </div><!-- /collapse -->
+						  </div><!-- /accordion-group -->
+						  <br>
+
+						  <div class="accordion-group">
+							  <div class="accordion-heading">
+								  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseNine">
+									  On The Fly Data Encryption
+								  </a>
+							  </div>
+							  <div id="collapseNine" class="accordion-body collapse">
+								  <div class="accordion-inner">
+									  <p>
+										  The Application Supports On the Fly Encryption Which Prevents The Need to Download Or Upload Entire Files
+										  Or Folders In Order For Encryption or Decryption to Take Place thus Saving On Computer Resources Needed For
+										  Encryption and Decryption Process.
+									  </p>
+								  </div><!-- /accordion-inner -->
+							  </div><!-- /collapse -->
+						  </div><!-- /accordion-group -->
+						  <br>
+
+						  <div class="accordion-group">
+							  <div class="accordion-heading">
+								  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTen">
+									  Seamless File Transfer Between Multiple Google Drives
+								  </a>
+							  </div>
+							  <div id="collapseTen" class="accordion-body collapse">
+								  <div class="accordion-inner">
+									  <p>
+										  File Transfer From a Local Drive To a Google Drive is Generally Done by an Upload Operation
+										  and File Transfer From a Google Drive To a Local Drive is Generally Done by a Download Operation
+										  but What About File Transfer From a Google Drive To a Google Drive ? <br />
+										  The Application Has That Covered For You and Lets You Do File Transfers From One Google Drive
+										  to Another Google Drive Seamlessly In Just One Single Transfer Operation.
+									  </p>
+								  </div><!-- /accordion-inner -->
+							  </div><!-- /collapse -->
+						  </div><!-- /accordion-group -->
+						  <br>
+
+						  <div class="accordion-group">
+							  <div class="accordion-heading">
+								  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseEleven">
+									  User Friendly Application Interface
+								  </a>
+							  </div>
+							  <div id="collapseEleven" class="accordion-body collapse">
+								  <div class="accordion-inner">
+									  <p>
+										  The Application Uses a Familiar User Interface That Most Windows Operation System Applications Use Thus
+										  Making it Easier for The User To Use The Application With Familiar and Recognizable Mouse Gestures and
+										  Keyboard Commands.
+									  </p>
+								  </div><!-- /accordion-inner -->
+							  </div><!-- /collapse -->
+						  </div><!-- /accordion-group -->
+						  <br>
+
+
+					  </div><!-- Accordion -->
+				  </div>
+			  </div>
+		  </div><!--/ .container -->
+	  </div>
+	 
+
+
+	  <section id="showcase" name="showcase"></section>
+	  <div id="showcase">
+		  <div class="container">
+			  <div class="row">
+				  <h1 class="centered">Application Tabs</h1>
+				  <br>
+				  <div class="col-lg-8 col-lg-offset-2">
+					  <div id="carousel-example-generic" class="carousel slide">
+						  <!-- Indicators -->
+						  <ol class="carousel-indicators">
+							  <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+							  <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+							  <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+							  <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+							  <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+							  <li data-target="#carousel-example-generic" data-slide-to="5"></li>
+						  </ol>
+
+						  <!-- Wrapper for slides -->
+						  <div class="carousel-inner">
+							  <div class="item active">
+								  <img src="assets/img/slide1.png" alt="">
+							  </div>
+							  <div class="item">
+								  <img src="assets/img/slide2.png" alt="">
+							  </div>
+							  <div class="item">
+								  <img src="assets/img/slide3.png" alt="">
+							  </div>
+							  <div class="item">
+								  <img src="assets/img/slide4.png" alt="">
+							  </div>
+							  <div class="item">
+								  <img src="assets/img/slide5.png" alt="">
+							  </div>
+							  <div class="item">
+								  <img src="assets/img/slide6.png" alt="">
+							  </div>
+						  </div>
 					  </div>
-					</div>
-				</div>
-			</div>
-			<hr>
-		</div><!-- /container -->
-	</div>	
+				  </div>
+			  </div>
+			  <hr>
+		  </div><!-- /container -->
+	  </div>
+	  
 
 
-	<section id="pricing" name="pricing"></section>
-	<div id="headerwrap">
-		<div class="container">
-			<div class = "row">
-				<h1 class = "centered" style = "font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: 30px;">Available License Plans</h1>
-				<br/>
-				<div style = "display:flex;justify-content: center;">
-					<table width="1000px" height = "300px" style = "align-self: center;">
-						<tr width = "100%" height = "100%">
-							<td width = "20%">
-								<div style = "width:100%;height:20%;background-color: lightblue;color:white;display:table;font-family: Verdana, Geneva, Tahoma, sans-serif;font-style: bold;font-size:20px" >
-									<p style = "text-align:center; vertical-align: middle; display: table-cell;">
-										Trial
-									</p>
-								</div>
-								<div style = "width:100%;height:80%;background-color: lightgray;display:table;font-family: Verdana, Geneva, Tahoma, sans-serif;font-style: bold;font-size:20px">
-									<p style = "text-align:center; vertical-align: middle; display: table-cell;">
-										<span style = "color:#34495e">
-											<b>Free</b>
-											<br/>
-											<br/>
-											<br/>
-											<span style = "font-family: Verdana, Geneva, Tahoma, sans-serif;font-style:normal;font-size:12px">
-												Includes All Functionalities
-												<br/>
-												Valid for 30 Days
-											</span>
-										</span>
-									</p>
-								</div>
-							</td>
-							<td width = "5%">
-
-							</td>
-							<td width = "20%">
-								<div style = "width:100%;height:20%;background-color: lightpink;color:white;display:table;font-family: Verdana, Geneva, Tahoma, sans-serif;font-style: bold;font-size:20px" >
-									<p style = "text-align:center; vertical-align: middle; display: table-cell;">
-										3 Months
-									</p>
-								</div>
-								<div style = "width:100%;height:80%;background-color: lightgray;display:table;font-family: Verdana, Geneva, Tahoma, sans-serif;font-style: bold;font-size:20px">
-									<p style = "text-align:center; vertical-align: middle; display: table-cell;">
-										<span style = "color:#34495e">
-											<b>$2.99 USD</b>
-											<br/>
-											<br/>
-											<br/>
-											<span style = "font-family: Verdana, Geneva, Tahoma, sans-serif;font-style:normal;font-size:12px">
-												Includes All Functionalities
-												<br/>
-												Valid for 90 Days
-											</span>
-										</span>
-									</p>
-								</div>
-							</td>
-							<td width = "5%">
-
-							</td>
-							<td width = "20%">
-								<div style = "width:100%;height:20%;background-color: lightgreen;color:white;display:table;font-family: Verdana, Geneva, Tahoma, sans-serif;font-style: bold;font-size:20px" >
-									<p style = "text-align:center; vertical-align: middle; display: table-cell;">
-										6 Months
-									</p>
-								</div>
-								<div style = "width:100%;height:80%;background-color: lightgray;display:table;font-family: Verdana, Geneva, Tahoma, sans-serif;font-style: bold;font-size:20px">
-									<p style = "text-align:center; vertical-align: middle; display: table-cell;">
-										<span style = "color:#34495e">
-											<b>$4.99 USD</b>
-											<br/>
-											<br/>
-											<br/>
-											<span style = "font-family: Verdana, Geneva, Tahoma, sans-serif;font-style:normal;font-size:12px">
-												Includes All Functionalities
-												<br/>
-												Valid for 180 Days
-											</span>
-										</span>
-									</p>
-								</div>
-							</td>
-							<td width = "5%">
-
-							</td>
-							<td width = "20%">
-								<div style = "width:100%;height:20%;background-color: burlywood;color:white;display:table;font-family: Verdana, Geneva, Tahoma, sans-serif;font-style: bold;font-size:20px" >
-									<p style = "text-align:center; vertical-align: middle; display: table-cell;">
-										12 Months
-									</p>
-								</div>
-								<div style = "width:100%;height:80%;background-color: lightgray;display:table;font-family: Verdana, Geneva, Tahoma, sans-serif;font-style: bold;font-size:20px">
-									<p style = "text-align:center; vertical-align: middle; display: table-cell;">
-										<span style = "color:#34495e">
-											<b>$6.99 USD</b>
-											<br/>
-											<br/>
-											<br/>
-											<span style = "font-family: Verdana, Geneva, Tahoma, sans-serif;font-style:normal;font-size:12px">
-												Includes All Functionalities
-												<br/>
-												Valid for 365 Days
-											</span>
-										</span>
-									</p>
-								</div>
-							</td>
-						</tr>
-					</table>
-				</div>
-				<br/>
-				<br/>
-				<br/>
-				<div style = "display:flex;justify-content: center">
-					<p style = "font-family: Verdana, Geneva, Tahoma, sans-serif;font-style: bold;font-size:15px"><img src = "assets/img/paypallogo.jpg">&nbsp;&nbsp;Please Make All Payments to Paypal Account: <b>parmeet.s.ghai@gmail.com</b></p>
-				</div>
-				<div style = "display:flex;justify-content: center">
-					<p style = "font-family: Verdana, Geneva, Tahoma, sans-serif;font-style: italic;font-size:15px">Donations are always welcome. Thank you for all your Support.</p>
-				</div>
-				<br>
-			</div>
-			<hr>
-		</div>
-	</div>
+	  <section id="pricing" name="pricing"></section>
+	  <div id="headerwrap">
+		  <div class="container">
+			  <div class="row">
+				  <h1 class="centered" style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: 30px;">Available License Plans</h1>
+				  <br />
+				  <div style="display:flex;justify-content: center;">
+					  <table width="1000px" height="300px" style="align-self: center;">
+						  <tr width="100%" height="100%">
+							  <td width="20%">
+								  <div style="width:100%;height:20%;background-color: lightblue;color:white;display:table;font-family: Verdana, Geneva, Tahoma, sans-serif;font-style: bold;font-size:20px">
+									  <p style="text-align:center; vertical-align: middle; display: table-cell;">
+										  Trial
+									  </p>
+								  </div>
+								  <div style="width:100%;height:80%;background-color: lightgray;display:table;font-family: Verdana, Geneva, Tahoma, sans-serif;font-style: bold;font-size:20px">
+									  <p style="text-align:center; vertical-align: middle; display: table-cell;">
+										  <span style="color:#34495e">
+											  <b>Free</b>
+											  <br />
+											  <br />
+											  <br />
+											  <span style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-style:normal;font-size:12px">
+												  Includes All Functionalities
+												  <br />
+												  Valid for 30 Days
+											  </span>
+										  </span>
+									  </p>
+								  </div>
+							  </td>
+							  <td width="5%">
+							  </td>
+							  <td width="20%">
+								  <div style="width:100%;height:20%;background-color: lightpink;color:white;display:table;font-family: Verdana, Geneva, Tahoma, sans-serif;font-style: bold;font-size:20px">
+									  <p style="text-align:center; vertical-align: middle; display: table-cell;">
+										  3 Months
+									  </p>
+								  </div>
+								  <div style="width:100%;height:80%;background-color: lightgray;display:table;font-family: Verdana, Geneva, Tahoma, sans-serif;font-style: bold;font-size:20px">
+									  <p style="text-align:center; vertical-align: middle; display: table-cell;">
+										  <span style="color:#34495e">
+											  <b>$2.99 USD</b>
+											  <br />
+											  <br />
+											  <br />
+											  <span style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-style:normal;font-size:12px">
+												  Includes All Functionalities
+												  <br />
+												  Valid for 90 Days
+											  </span>
+										  </span>
+									  </p>
+								  </div>
+							  </td>
+							  <td width="5%">
+							  </td>
+							  <td width="20%">
+								  <div style="width:100%;height:20%;background-color: lightgreen;color:white;display:table;font-family: Verdana, Geneva, Tahoma, sans-serif;font-style: bold;font-size:20px">
+									  <p style="text-align:center; vertical-align: middle; display: table-cell;">
+										  6 Months
+									  </p>
+								  </div>
+								  <div style="width:100%;height:80%;background-color: lightgray;display:table;font-family: Verdana, Geneva, Tahoma, sans-serif;font-style: bold;font-size:20px">
+									  <p style="text-align:center; vertical-align: middle; display: table-cell;">
+										  <span style="color:#34495e">
+											  <b>$4.99 USD</b>
+											  <br />
+											  <br />
+											  <br />
+											  <span style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-style:normal;font-size:12px">
+												  Includes All Functionalities
+												  <br />
+												  Valid for 180 Days
+											  </span>
+										  </span>
+									  </p>
+								  </div>
+							  </td>
+							  <td width="5%">
+							  </td>
+							  <td width="20%">
+								  <div style="width:100%;height:20%;background-color: burlywood;color:white;display:table;font-family: Verdana, Geneva, Tahoma, sans-serif;font-style: bold;font-size:20px">
+									  <p style="text-align:center; vertical-align: middle; display: table-cell;">
+										  12 Months
+									  </p>
+								  </div>
+								  <div style="width:100%;height:80%;background-color: lightgray;display:table;font-family: Verdana, Geneva, Tahoma, sans-serif;font-style: bold;font-size:20px">
+									  <p style="text-align:center; vertical-align: middle; display: table-cell;">
+										  <span style="color:#34495e">
+											  <b>$6.99 USD</b>
+											  <br />
+											  <br />
+											  <br />
+											  <span style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-style:normal;font-size:12px">
+												  Includes All Functionalities
+												  <br />
+												  Valid for 365 Days
+											  </span>
+										  </span>
+									  </p>
+								  </div>
+							  </td>
+						  </tr>
+					  </table>
+				  </div>
+				  <br />
+				  <br />
+				  <br />
+				  <div style="display:flex;justify-content: center">
+					  <p style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-style: bold;font-size:15px"><img src="assets/img/paypallogo.jpg">&nbsp;&nbsp;Please Make All Payments to Paypal Account: <b>parmeet.s.ghai@gmail.com</b></p>
+				  </div>
+				  <div style="display:flex;justify-content: center">
+					  <p style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-style: italic;font-size:15px">Donations are always welcome. Thank you for all your Support.</p>
+				  </div>
+				  <br>
+			  </div>
+			  <hr>
+		  </div>
+	  </div>
+	 
 
 
-	<section id="privacypolicy" name="privacypolicy"></section>
-	<div id="intro">
-		<div class="container">
-			<div>
-				<h1 class = "row centered">Privacy Policy</h1>
-				<br>
-				<br>
-				<div>
+	  <section id="privacypolicy" name="privacypolicy"></section>
+	  <div id="intro">
+		  <div class="container">
+			  <div>
+				  <h1 class="row centered">Privacy Policy</h1>
+				  <br>
+				  <br>
+				  <div>
+					  <p>
+					  <p>We value your privacy. In this Privacy Policy (&quot;Policy&quot;), we describe how we collect, use, and disclose information that we obtain about the users of the Program.</p>
+					  <p class="row centered">WHICH COUNTRIES ARE CURRENTLY NOT SUPPORTED?</p>
+					  <p class="row centered">India, Afghanistan, United Arab Emirates (the), &Aring;land Islands, Albania, Algeria, Armenia, Azerbaijan, Bahrain, Bangladesh, Bhutan, Cyprus, Egypt, Iran (Islamic Republic of), Iraq, Israel, Jordan, Kazakhstan, Kyrgyzstan, Kuwait, Lao People's Democratic Republic (the), Latvia, Lebanon, Liberia, Oman, State of Palestine, Pakistan, Qatar, Sri Lanka, Syrian Arab Republic, Saudi Arabia, Turkey,Turkmenistan,Yemen.</p>
+					  <p class="row centered">WHAT IS THE ROLE OF THIRD PARTY SERVICES?</p>
+					  <p>We not provide any warranties with respect to any Third Party Applications or services, whether or not such Third Party Applications are listed on or accessed in or through the Product, or designated by us as &ldquo;certified&rdquo;, &ldquo;approved&rdquo;, &ldquo;recommended&rdquo; or otherwise, or the services are provided by a third party that is a member of our partner program. Any use by You of any Third-Party Applications or services is solely between You and/or your organization and the applicable third-party provider.</p>
+					  <p class="row centered">WHAT DATA WE COLLECT?</p>
+					  <p>
+						  Data is collected only during the license installation process. Listed below are the data items which are collected during the license activation process along with the life span of that data item.
+						  <ol style="text-align: left;">
+							  <li>Your Google Email Address, linked to your google drive account, is saved in persistent storage only to keep track of your current license which is required for continual usage of the Program. When you choose to delete or remove your license then that data gets removed from persistent storage as well.</li>
+							  <br>
+							  <li>Your Paypal Transaction Details namely: Transaction Id, Transaction Start Date, Transaction Amount and Payer Email Address are saved in persistent storage only to keep track of your current license which is required for continual usage of the Program. When you choose to delete or remove your license then that data gets removed from persistent storage as well.</li>
+						  </ol>
+					  </p>
+					  <p class="row centered">WHAT DATA WE USE BUT NEVER COLLECT?</p>
+					  <p>
+						  This Data is also used during the license installation process but unlike the data that we collect, this data is never saved in persistent storage. Listed below are the data items which are used during the license activation process along with the life span of that data item.
+						  <ol style="text-align: left;">
+							  <li>Your Public IP Address is obtained from a 3rd party service namely <a style="font-size:12px;font-family: Verdana, Geneva, Tahoma, sans-serif; color:blue" href="http://checkip.dyndns.org">http://checkip.dyndns.org</a> when you try to sign in into your google account either to install a new license or download an existing license from persistent storage. This IP Address is then sent to <a style="font-size:12px;font-family: Verdana, Geneva, Tahoma, sans-serif; color:blue" href="http://proxycheck.io">http://proxycheck.io</a>, another 3rd party service, to check if your machine is connected to a VPN (Virtual Private Network) or a Proxy Server which is not allowed during license installation. Finally the IP Address is sent to <a style="font-size:12px;font-family: Verdana, Geneva, Tahoma, sans-serif; color:blue" href="https://ipinfo.io">https://ipinfo.io</a>, another 3rd party service, to check if this IP Address's originating country is not one of the unsupported countries mentioned above.</li>
+							  <br>
+							  <li>Your Paypal Transaction's Payer Country Code found under the 'payer_info' section of transaction details . This information is used to check if the transaction's originating country is not one of the unsupported countries mentioned above.</li>
+						  </ol>
+					  </p>
+					  <p class="row centered">WHEN IS MY DATA COLLECTED?</p>
+					  <p>Your data is collected only during the license activation process to keep track of your current license which is required for continual usage of the Program.</p>
+					  <p class="row centered">HOW WE USE YOUR DATA?</p>
+					  <p>Your data is only used to keep track of your current license which is required for continual usage of the Program. Program's functions are disabled as soon as the license expires, in which case you are requested to purchase another license if you choose to continue using the Program.</p>
+					  <p class="row centered">WHERE IS MY DATA STORED?</p>
+					  <p>Persistent storage mentioned above is our personal Google Drive Account which is backed up by Google's 2 Factor Authentication Login Process.</p>
+					  <p class="row centered">HOW LONG DO WE RETAIN YOUR DATA?</p>
+					  <p>As long as you are using our licensed product. When you choose to delete or remove your license then that data gets removed from persistent storage as well.</p>
+					  <p class="row centered">WHEN WILL YOU CHANGE YOUR PRIVACY POLICY?</p>
+					  <p>We may update the privacy policy from time to time. Any changes we make to our privacy policy in the future will be posted on this page and, where appropriate, notified to you by e-mail or post. Please check back frequently to see any updates or changes to our privacy policy.</p>
+					  <p class="row centered"> HOW DO I CONTACT YOU WITH FEEDBACK?</p>
+					  <p class="row centered">Questions, comments and requests regarding this privacy policy are welcomed and should be addressed to <a href="mailto:parmeet.s.ghai@gmail.com">parmeet.s.ghai@gmail.com</a></p></p>
+					  <p class="row centered">
+						  <a href="assets/docs/PrivacyPolicy.txt" target="_blank" style="font-size:12px; font-family: Verdana, Geneva, Tahoma, sans-serif; color:blue">Click here to download privacy policy</a>
+					  </p>
+				  </div>
+			  </div>
+			  <br>
+			  <hr>
+		  </div>
+	  </div>
+	  
+
+
+	  <section id="contact" name="contact"></section>
+		<div id="footerwrap">
+			<div class="container">
+				<div class="col-lg-5">
+					<h3>Email Address</h3>
 					<p>
-					<p>We value your privacy. In this Privacy Policy (&quot;Policy&quot;), we describe how we collect, use, and disclose information that we obtain about the users of the Program.</p>
-					<p class = "row centered">WHICH COUNTRIES ARE CURRENTLY NOT SUPPORTED?</p>
-		     		<p class = "row centered">India, Afghanistan, United Arab Emirates (the), &Aring;land Islands, Albania, Algeria, Armenia, Azerbaijan, Bahrain, Bangladesh, Bhutan, Cyprus, Egypt, Iran (Islamic Republic of), Iraq, Israel, Jordan, Kazakhstan, Kyrgyzstan, Kuwait, Lao People's Democratic Republic (the), Latvia, Lebanon, Liberia, Oman, State of Palestine, Pakistan, Qatar, Sri Lanka, Syrian Arab Republic, Saudi Arabia, Turkey,Turkmenistan,Yemen.</p>
-					<p class = "row centered">WHAT IS THE ROLE OF THIRD PARTY SERVICES?</p>
-					<p>We not provide any warranties with respect to any Third Party Applications or services, whether or not such Third Party Applications are listed on or accessed in or through the Product, or designated by us as &ldquo;certified&rdquo;, &ldquo;approved&rdquo;, &ldquo;recommended&rdquo; or otherwise, or the services are provided by a third party that is a member of our partner program. Any use by You of any Third-Party Applications or services is solely between You and/or your organization and the applicable third-party provider.</p>
-					<p class = "row centered">WHAT DATA WE COLLECT?</p>
-					<p>
-						Data is collected only during the license installation process. Listed below are the data items which are collected during the license activation process along with the life span of that data item.
-						<ol style = "text-align: left;">
-							<li>Your Google Email Address, linked to your google drive account, is saved in persistent storage only to keep track of your current license which is required for continual usage of the Program. When you choose to delete or remove your license then that data gets removed from persistent storage as well.</li>
-							<br>
-							<li>Your Paypal Transaction Details namely: Transaction Id, Transaction Start Date, Transaction Amount and Payer Email Address are saved in persistent storage only to keep track of your current license which is required for continual usage of the Program. When you choose to delete or remove your license then that data gets removed from persistent storage as well.</li>
-						</ol>
+						<img src="assets/img/architect.png" width="100px" height="100px"><br />
+						parmeet.s.ghai@gmail.com<br />
+						parmeet.s.ghai.businesssolutions@gmail.com<br />
 					</p>
-					<p class = "row centered">WHAT DATA WE USE BUT NEVER COLLECT?</p>
+					<h3>Address</h3>
 					<p>
-						This Data is also used during the license installation process but unlike the data that we collect, this data is never saved in persistent storage. Listed below are the data items which are used during the license activation process along with the life span of that data item.
-						<ol style = "text-align: left;">
-							<li>Your Public IP Address is obtained from a 3rd party service namely <a style = "font-size:12px;font-family: Verdana, Geneva, Tahoma, sans-serif; color:blue" href="http://checkip.dyndns.org">http://checkip.dyndns.org</a> when you try to sign in into your google account either to install a new license or download an existing license from persistent storage. This IP Address is then sent to <a style = "font-size:12px;font-family: Verdana, Geneva, Tahoma, sans-serif; color:blue" href="http://proxycheck.io">http://proxycheck.io</a>, another 3rd party service, to check if your machine is connected to a VPN (Virtual Private Network) or a Proxy Server which is not allowed during license installation. Finally the IP Address is sent to <a style = "font-size:12px;font-family: Verdana, Geneva, Tahoma, sans-serif; color:blue" href ="https://ipinfo.io">https://ipinfo.io</a>, another 3rd party service, to check if this IP Address's originating country is not one of the unsupported countries mentioned above.</li>
-							<br>
-							<li>Your Paypal Transaction's Payer Country Code found under the 'payer_info' section of transaction details . This information is used to check if the transaction's originating country is not one of the unsupported countries mentioned above.</li>
-						</ol>
-					</p>
-					<p class = "row centered">WHEN IS MY DATA COLLECTED?</p>
-					<p>Your data is collected only during the license activation process to keep track of your current license which is required for continual usage of the Program.</p>
-					<p class = "row centered">HOW WE USE YOUR DATA?</p>
-					<p>Your data is only used to keep track of your current license which is required for continual usage of the Program. Program's functions are disabled as soon as the license expires, in which case you are requested to purchase another license if you choose to continue using the Program.</p>
-					<p class = "row centered">WHERE IS MY DATA STORED?</p>
-					<p>Persistent storage mentioned above is our personal Google Drive Account which is backed up by Google's 2 Factor Authentication Login Process.</p>
-					<p class = "row centered">HOW LONG DO WE RETAIN YOUR DATA?</p>
-					<p>As long as you are using our licensed product. When you choose to delete or remove your license then that data gets removed from persistent storage as well.</p>
-					<p class = "row centered">WHEN WILL YOU CHANGE YOUR PRIVACY POLICY?</p>
-					<p>We may update the privacy policy from time to time. Any changes we make to our privacy policy in the future will be posted on this page and, where appropriate, notified to you by e-mail or post. Please check back frequently to see any updates or changes to our privacy policy.</p>
-					<p class = "row centered"> HOW DO I CONTACT YOU WITH FEEDBACK?</p>
-					<p class = "row centered">Questions, comments and requests regarding this privacy policy are welcomed and should be addressed to <a href="mailto:parmeet.s.ghai@gmail.com">parmeet.s.ghai@gmail.com</a></p></p>
-					<p class = "row centered">
-						<a href="assets/docs/PrivacyPolicy.txt" target="_blank" style = "font-size:12px; font-family: Verdana, Geneva, Tahoma, sans-serif; color:blue">Click here to download privacy policy</a>
+						New Delhi <br />
+						India
 					</p>
 				</div>
-			</div>
-			<br>
-			<hr>
-	    </div>
-	</div>
-
-
-	<section id="contact" name="contact"></section>
-	<div id="footerwrap">
-		<div class="container">
-			<div class="col-lg-5">
-				<h3>Email Address</h3>
-				<p>
-				<img src = "assets/img/architect.png" width = "100px" height = "100px"><br/>
-				parmeet.s.ghai@gmail.com<br/>
-				parmeet.s.ghai.businesssolutions@gmail.com<br/>
-				</p>
-				<h3>Address</h3>
-				<p>
-				New Delhi <br/>
-				India
-				</p>
-			</div>
-		</div>
-	</div>
-	
-	<div id="c">
-		<div class="container">
-			<div style = "display:flex; text-align: left; font-family: 'Courier New', Courier, monospace; font-size: 12px;">
-				<p>Thanks you for your support</p><br/>
-				<a href="https://www.flaticon.com/free-icons/encrypt" title="encrypt icons">Encrypt icons created by Smashicons - Flaticon</a><br/>
-				<a href="https://www.flaticon.com/free-icons/data-modelling" title="data modelling icons">Data modelling icons created by Eucalyp - Flaticon</a><br/>
-				<a href="https://www.flaticon.com/free-icons/data-exchange" title="data exchange icons">Data exchange icons created by Eucalyp - Flaticon</a><br/>
-				<a href="https://www.flaticon.com/free-icons/encryption" title="encryption icons">Encryption icons created by Flat-icons-com - Flaticon</a><br/>
-				<a href="https://www.flaticon.com/free-icons/hdd" title="hdd icons">Hdd icons created by Freepik - Flaticon</a><br/>
-				<a href="https://www.flaticon.com/free-icons/folder-icon" title="folder icon icons">Folder icon icons created by Iconjam - Flaticon</a><br/>
-				<a href="http://www.blacktie.co">Theme Created By - BLACKTIE.CO</a>
 			</div>
 		</div>
-	</div>
+
+		<div id="c">
+			<div class="container">
+				<div style="display:flex; text-align: left; font-family: 'Courier New', Courier, monospace; font-size: 12px;">
+					<p>Thanks you for your support</p><br />
+					<a href="https://www.flaticon.com/free-icons/encrypt" title="encrypt icons">Encrypt icons created by Smashicons - Flaticon</a><br />
+					<a href="https://www.flaticon.com/free-icons/data-modelling" title="data modelling icons">Data modelling icons created by Eucalyp - Flaticon</a><br />
+					<a href="https://www.flaticon.com/free-icons/data-exchange" title="data exchange icons">Data exchange icons created by Eucalyp - Flaticon</a><br />
+					<a href="https://www.flaticon.com/free-icons/encryption" title="encryption icons">Encryption icons created by Flat-icons-com - Flaticon</a><br />
+					<a href="https://www.flaticon.com/free-icons/hdd" title="hdd icons">Hdd icons created by Freepik - Flaticon</a><br />
+					<a href="https://www.flaticon.com/free-icons/folder-icon" title="folder icon icons">Folder icon icons created by Iconjam - Flaticon</a><br />
+					<a href="http://www.blacktie.co">Theme Created By - BLACKTIE.CO</a>
+				</div>
+			</div>
+		</div>
+	  
 
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="assets/js/bootstrap.js"></script>
-	<script>
-	$('.carousel').carousel({
-	  interval: 3500
-	})
-	</script>
+	  <!-- Bootstrap core JavaScript
+	================================================== -->
+	  <!-- Placed at the end of the document so the pages load faster -->
+	  <script src="assets/js/bootstrap.js"></script>
+	  <script>
+		$('.carousel').carousel({
+			interval: 3500
+		})
+	  </script>
   </body>
 </html>
