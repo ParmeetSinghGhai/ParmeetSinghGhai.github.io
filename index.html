@@ -15,6 +15,8 @@
         var isMenuOpened = false;
         var showTimer = null;
         var showInProgress = false;
+        var ellipses = [];
+        var ellipseIndex = 0;
 
         function StartSinWave() {
             sinwaveWorker = new Worker("assets/js/sinwave.js");
@@ -124,8 +126,29 @@
                 sidebar.style.backgroundColor = "black";
             }
         }
+        function SwitchEllipse()
+        {
+            for (let i = 0; i < ellipses.length; i++) {
+                if (i == ellipseIndex) {
+                    ellipses[i].style.animation = "project-feature-animation 6s ease-out";
+                }
+                else {
+                    ellipses[i].style.animation = "none";
+                }
+            }
 
+            if (ellipseIndex >= ellipses.length)
+                ellipseIndex = 0;
+            else
+                ellipseIndex = ellipseIndex + 1;
+        }
+
+
+
+        //Javascript Boot Code
         StartSinWave();
+        ellipses = document.getElementsByTagName("ellipse");
+        setInterval(SwitchEllipse, 6000);
     </script>
     <style>
         .my-menubar-container {
@@ -294,6 +317,35 @@
             text-align: left;
         }
 
+        .project-feature {
+            border-style: none;
+            position:relative;
+        }
+
+        .project-feature-svg {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            height: 100%;
+            width: 100%;
+        }
+
+        .project-feature-ellipse {
+            fill: blue;
+        }
+
+        @keyframes project-feature-animation {
+            from {
+                rx: 1%;
+                opacity: .8;
+            }
+
+            to {
+                rx: 20%;
+                opacity: 0;
+            }
+        }
+
         .progresscounter {
             color: black;
             padding: 5px;
@@ -313,7 +365,7 @@
             background-color: rgb(220, 232, 248);
             width: 100%;
         }
-
+        
         .norton-sidebar {
             background-color: black;
             color: white;
@@ -336,6 +388,9 @@
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-size: 12px;
         }
+
+        
+
     </style>
 </head>
 <body onload="SkillShow();WindowResized();" onresize="WindowResized()">
@@ -409,94 +464,95 @@
 
         <!--********************************************************************-->
         <!--CONTENT COLUMN -->
-        <div class="col" >
+        <div class="col">
 
             <!-- MENU TOGGLE BUTTON -->
-            <img id="menuButton" class = "my-menubutton" src="assets/img/menu.png" onclick="ShowMenu()">
+            <img id="menuButton" class="my-menubutton" src="assets/img/menu.png" onclick="ShowMenu()">
 
             <!-- ABOUT ME -->
             <section>
-                <div class="container-fluid section-light pb-5" id ="aboutmeDisplay" onmouseenter = "Glow(aboutme.id)">
+                <div class="container-fluid section-light pb-5" id="aboutmeDisplay" onmouseenter="Glow(aboutme.id)">
                     <h2 class="section-header">
                         About Me
-                        <br/>
+                        <br />
                         <img src="assets/img/line.png" class="section-header-image">
                     </h2>
                     <p>
-                        I Have Worked in the BPO Industry for more than 5 Years and after Acquiring my Masters Degree in Computer Applications, I decided to Dedicate My Time and Efforts towards Software Development 
+                        I Have Worked in the BPO Industry for more than 5 Years and after Acquiring my Masters Degree in Computer Applications, I decided to Dedicate My Time and Efforts towards Software Development
                         which is something that I always wanted to do since High School.Three <a href="#projectsDisplay"> Successful Projects</a> later, Here I am Hoping to use the Valuable Experience that I have acquired in the IT Industry.
                     </p>
-                  
-            
+
+
                     <div class="row">
-                      <div class="col-lg-4" data-aos="fade-right">
-                        <img src="assets/img/photo-normal.png" class="img-fluid" alt="">
-                      </div>
-                      <div class="col-lg-8 pt-4 pt-lg-0 content">
-                        <h3>Customer Service Professional (5+ Years) &amp; Freelance Software Developer</h3>
-                        <div class="row">
-                          <div class="col-lg-6">
-                            <p>Personal Information</p>
-                            <ul style="list-style-type: none">
-                              <li> <i class="arr-right"></i> <strong>Age:</strong> <span>36</span></li>
-                              <li> <i class="arr-right"></i> <strong>Degree:</strong> <span>Master of Computer Applications</span></li>
-                              <li> <i class="arr-right"></i> <strong>Work Experience:</strong>  <span>5+ Years</span></li>
-                              <li> <i class="arr-right"></i> <strong>City:</strong>  <span>New Delhi, India</span></li>
-                            </ul>
-                          </div>
-                          <div class="col">
-                            <p>Contact Details</p>
-                            <ul style="list-style-type: none">
-                              <li> <i class="arr-right"></i> <strong>Email:</strong> <span>parmeet.s.ghai@gmail.com</span></li>
-                              <li> <i class="arr-right"></i> <strong>Phone:</strong> <span>+91-9871287905</span></li>
-                              <li> <i class="arr-right"></i> <strong>Website:</strong> <span>parmeetsinghghai.github.io</span></li>
-                              <li> <i class="arr-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
-                            </ul>
-                          </div>
+                        <div class="col-lg-4" data-aos="fade-right">
+                            <img src="assets/img/photo-normal.png" class="img-fluid" alt="">
                         </div>
-                        
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <p>Languages</p>
-                                <ul style="list-style-type: none">
-                                    <li> <i class="arr-right"></i> <strong>Hindi:</strong> <span>Native (ILR Level 5)</span></li>
-                                    <li> <i class="arr-right"></i> <strong>English:</strong> <span>Full Professional Proficiency (ILR Level 4+)</span></li>
-                                    <li> <i class="arr-right"></i> <strong>Punjabi:</strong> <span>Basic (ILR Level 3)</span></li>
-                                </ul>
+                        <div class="col-lg-8 pt-4 pt-lg-0 content">
+                            <h3>Customer Service Professional (5+ Years) &amp; Freelance Software Developer</h3>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <p>Personal Information</p>
+                                    <ul style="list-style-type: none">
+                                        <li> <i class="arr-right"></i> <strong>Age:</strong> <span>36</span></li>
+                                        <li> <i class="arr-right"></i> <strong>Degree:</strong> <span>Master of Computer Applications</span></li>
+                                        <li> <i class="arr-right"></i> <strong>Work Experience:</strong>  <span>5+ Years</span></li>
+                                        <li> <i class="arr-right"></i> <strong>City:</strong>  <span>New Delhi, India</span></li>
+                                    </ul>
+                                </div>
+                                <div class="col">
+                                    <p>Contact Details</p>
+                                    <ul style="list-style-type: none">
+                                        <li> <i class="arr-right"></i> <strong>Email:</strong> <span>parmeet.s.ghai@gmail.com</span></li>
+                                        <li> <i class="arr-right"></i> <strong>Phone:</strong> <span>+91-9871287905</span></li>
+                                        <li> <i class="arr-right"></i> <strong>Website:</strong> <span>parmeetsinghghai.github.io</span></li>
+                                        <li> <i class="arr-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="col">
-                                <p>Hobbies &amp; Interests</p>
-                                <ul style="list-style-type: none">
-                                    <li><i class="arr-right"></i> <span>Playing &amp; Reviewing Video Games</span></li>
-                                    <li><i class="arr-right"></i> <span>Game Development &amp; Coding</span></li>
-                                    <li><i class="arr-right"></i> <span>3D Modelling with Blender</span></li>
-                                    <li><i class="arr-right"></i> <span>Binge Watching TV Shows</span></li>
-                                    <li><i class="arr-right"></i> <span>Listening to Music &amp; Podcasts</span></li>
-                                    <li><i class="arr-right"></i> <span>Keeping Fit with Physical Exercise</span></li>
-                                </ul>
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <p>Languages</p>
+                                    <ul style="list-style-type: none">
+                                        <li> <i class="arr-right"></i> <strong>Hindi:</strong> <span>Native (ILR Level 5)</span></li>
+                                        <li> <i class="arr-right"></i> <strong>English:</strong> <span>Full Professional Proficiency (ILR Level 4+)</span></li>
+                                        <li> <i class="arr-right"></i> <strong>Punjabi:</strong> <span>Basic (ILR Level 3)</span></li>
+                                    </ul>
+                                </div>
+                                <div class="col">
+                                    <p>Hobbies &amp; Interests</p>
+                                    <ul style="list-style-type: none">
+                                        <li><i class="arr-right"></i> <span>Playing &amp; Reviewing Video Games</span></li>
+                                        <li><i class="arr-right"></i> <span>Game Development &amp; Coding</span></li>
+                                        <li><i class="arr-right"></i> <span>3D Modelling with Blender</span></li>
+                                        <li><i class="arr-right"></i> <span>Binge Watching TV Shows</span></li>
+                                        <li><i class="arr-right"></i> <span>Listening to Music &amp; Podcasts</span></li>
+                                        <li><i class="arr-right"></i> <span>Keeping Fit with Physical Exercise</span></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                      </div>
                     </div>
-            
+
                 </div>
             </section><!--Section End-->
-            
+
+
             <!-- EDUCATION -->
             <section>
-                <div class="container-fluid section-light pb-5" id ="educationDisplay"  onmouseenter = "Glow(education.id,false)">
+                <div class="container-fluid section-light pb-5" id="educationDisplay" onmouseenter="Glow(education.id,false)">
                     <h2 class="section-header">
                         Education
-                        <br/>
+                        <br />
                         <img src="assets/img/line.png" class="section-header-image">
                     </h2>
 
-                    <div class ="row">
+                    <div class="row">
                         <div class="col">
                             <div class="col section-title1">Master Of Computer Applications</div>
                             <div class="section-title2">2016-2021</div>
                             <div class="col section-title3">Lovely Professional University, Phagware, Punjab</div>
-                            <hr/>
+                            <hr />
 
                             <ul style="list-style-type: none" class="section-info">
                                 <li><i class="arr-right"></i> <span>CGPA 8.15%</span></li>
@@ -505,54 +561,56 @@
                             </ul>
                         </div>
                     </div>
-                    <br/>
-                    <div class ="row">
+                    <br />
+                    <div class="row">
                         <div class="col">
                             <div class="col section-title1">Foundation Level Certification in Software Testing</div>
                             <div class="section-title2">2014</div>
                             <div class="col section-title3">International Software Testing Qualifications Board</div>
-                            <hr/>
-                            
+                            <hr />
+
                             <ul style="list-style-type: none">
                                 <li><i class="arr-right"></i> <span>Passing Percentage of 75%</span></li>
                             </ul>
                         </div>
                     </div>
-                    <br/>
-                    <div class ="row">
+                    <br />
+                    <div class="row">
                         <div class="col">
                             <div class="col section-title1">Bachelor Of Computer Applications</div>
                             <div class="section-title2">2006-2010</div>
                             <div class="col section-title3">Guru Gobind Singh Indraprashtha University, Dwarka, New Delhi</div>
-                            <hr/>
+                            <hr />
                             <ul style="list-style-type: none">
                                 <li><i class="arr-right"></i> <span>CPI 66.42%</span></li>
                                 <li><i class="arr-right"></i> <span>First Division</span></li>
                             </ul>
                         </div>
                     </div>
-                    <br/>
+                    <br />
                 </div>
             </section><!--Section End-->
 
+
             <!-- WORK EXPERIENCE -->
             <section>
-                <div class="container-fluid section-dark pb-5" id ="workexperienceDisplay" onmouseenter = "Glow(workexperience.id,false)">
+                <div class="container-fluid section-dark pb-5" id="workexperienceDisplay" onmouseenter="Glow(workexperience.id,false)">
                     <h2 class="section-header">
                         Work Experience
-                        <br/>
+                        <br />
                         <img src="assets/img/line.png" class="section-header-image">
                     </h2>
 
-                    <div class ="row">
+                    <div class="row">
                         <div class="col">
                             <div class="col section-title1">Client Technical Support Associate</div>
                             <div class="section-title2">2008 - 2012</div>
                             <div class="col section-title3">Dell International Services Pvt Ltd</div>
-                            <hr/>
+                            <hr />
                             <div class="col section-info">
                                 <ul style="list-style-type: none;" class="section-info">
-                                    <li><i class="arr-right"></i>
+                                    <li>
+                                        <i class="arr-right"></i>
                                         <span>
                                             Provided Efficient and Consistent Technical Support to Dell &#39; s
                                             U.S based B2C Clientele via Phone on Issues Related to Dell
@@ -561,14 +619,16 @@
                                         </span>
                                     </li>
 
-                                    <li><i class="arr-right"></i>
+                                    <li>
+                                        <i class="arr-right"></i>
                                         <span>
                                             Got Promoted to the Position of Technical Support Expert
                                             (Grade: A5) within 2 Months of Joining the Company.
                                         </span>
                                     </li>
 
-                                    <li><i class="arr-right"></i>
+                                    <li>
+                                        <i class="arr-right"></i>
                                         <span>
                                             Moved up to Dell&#39;s Premium Fee Based Support Called &quot; Dell
                                             Solution Station &quot; where Supported Customers on all Kind of
@@ -588,16 +648,17 @@
                             </div>
                         </div>
                     </div>
-                    <br/>
-                    <div class ="row">
+                    <br />
+                    <div class="row">
                         <div class="col">
                             <div class="col section-title1">Senior Associate</div>
                             <div class="section-title2">2007 - 2008</div>
                             <div class="col section-title3">Wipro BPO Pvt Ltd</div>
-                            <hr/>
+                            <hr />
                             <div class="section-info">
                                 <ul style="list-style-type: none;">
-                                    <li><i class="arr-right"></i>
+                                    <li>
+                                        <i class="arr-right"></i>
                                         <span>
                                             Started Work as an Associate in Dell Expired Hardware
                                             Warranty Support (EWS) where Provided Efficient and
@@ -606,7 +667,8 @@
                                         </span>
                                     </li>
 
-                                    <li><i class="arr-right"></i>
+                                    <li>
+                                        <i class="arr-right"></i>
                                         <span>
                                             Got Promoted to Senior Associate and Started Working in
                                             Active Warranty Support Which involved Troubleshooting Dell
@@ -621,63 +683,78 @@
                 </div><!--Container End-->
             </section><!--Section End-->
 
+            
             <!-- PROJECTS -->
             <section>
-                <div class="container-fluid section-light pb-5" id = "projectsDisplay"  onmouseenter = "Glow(projects.id,false)" >
+                <div class="container-fluid section-light pb-5" id="projectsDisplay" onmouseenter="Glow(projects.id,false)">
                     <h2 class="section-header">
                         Projects
-                        <br/>
+                        <br />
                         <img src="assets/img/line.png" class="section-header-image">
                     </h2>
 
                     <div class="row">
                         <div class="col">
-                            <div class="col section-title1">PSGDriveSync Application</div>
+                            <div class="col section-title1">PSGDriveSync - A Powerful Sync Client For Google Drive™</div>
                             <div class="col section-title3">
-                                <i class="arr-right"></i> <a href="https://parmeetsinghghai.github.io/psgdrivesync" target="_blank">PSGDriveSync Home Page</a><br/>
+                                <i class="arr-right"></i> <a href="https://parmeetsinghghai.github.io/psgdrivesync" target="_blank">PSGDriveSync Home Page</a><br />
                                 <i class="arr-right"></i> <a href="https://github.com/ParmeetSinghGhai/PSGDriveSync" target="_blank">PSGDriveSync Github Page</a>
                             </div>
-                            <hr/>
+                            <hr />
                             <div class="col section-info">
                                 PSGDriveSync application has been build on Dot Net Framework 4.8 and was programmed in C#. It is currently only supported on Windows Operation System. The Application
-                                allows users to perform real-time file transfer operations and automated sync operations between<br/><br/>
+                                allows users to perform real-time file transfer operations and automated sync operations between<br /><br />
                                 <ul style="list-style-type: none">
                                     <li><i class="arr-right"></i> <strong>Local Drive to Local Drive</strong></li>
                                     <li><i class="arr-right"></i> <strong>Local Drive to Google Drive</strong></li>
                                     <li><i class="arr-right"></i> <strong>Google Drive to Local Drive</strong></li>
                                     <li><i class="arr-right"></i> <strong>Google Drive to Google Drive</strong></li>
                                 </ul>
-                                <br/>
+                                <br />
                                 The Application also offers AES-256 encryption standard for file and folder encryption along with conditional automated syncing among many other features.
                                 Few of the Important Features are listed below
-                                <br/>
-                                <br/>
+                                <br />
+                                <br />
 
-                                <div class = "row">
-                                    <div class="col-sm-3" style="border-style:solid;">
-                                        <img src="./psgdrivesync/assets/img/feature1.png" width="64px" height="64px"><br/><span class="section-title3">AES-256 Encryption Standard</span>
+                                <div class="row project-feature">
+                                    <div class="col-sm-3">
+                                        <img src="./psgdrivesync/assets/img/feature1.png" width="64px" height="64px"><br /><span class="section-title3">AES-256 Encryption Standard</span>
                                     </div>
                                     <div class="col section-info">
                                         Uses Advanced Encryption Standard to Encrypt All Your Files and Folders On Local and Remote Drives. Doing so Makes Sure That Your Files and Folders Remain Secure and Protected.
                                     </div>
+
+                                    <svg class="project-feature-svg">
+                                        <filter id="filter" x="0" y="0">
+                                            <feGaussianBlur in="SourceGraphic" stdDeviation="25" />
+                                        </filter>
+                                        <ellipse class="project-feature-ellipse" cx="0" cy="50%" rx="0" ry="100%" filter="url(#filter)" />
+                                    </svg>
                                 </div>
 
-                                <br/>
-                                <div class = "row">
-                                    <div class="col-sm-3" style="border-style:solid;">
-                                        <img src="./psgdrivesync/assets/img/feature2.png" width="64px" height="64px"><br/><span class="section-title3">Conditional Automated Syncing</span>
+                                <br />
+                                <div class="row project-feature">
+                                    <div class="col-sm-3">
+                                        <img src="./psgdrivesync/assets/img/feature2.png" width="64px" height="64px"><br /><span class="section-title3">Conditional Automated Syncing</span>
                                     </div>
                                     <div class="col section-info">
                                         Create Filters Based On Time, Date, File Properties etc to Automatically Filter and Sync Files. You Can Setup "Filters" Based On
-                                            Current Date & Time, Drive Properties Like Name, Total Space & Available Space on the drive, File Properties like Name, Size, Hash, Last Modified Time of the file,
-                                            and Folder Properties like Name, Last Modified Time, Type etc of the folder Which Can Help You Sync Only Specific Files and Folders thus Giving You More Control Over The Automated Sync Process.
+                                        Current Date & Time, Drive Properties Like Name, Total Space & Available Space on the drive, File Properties like Name, Size, Hash, Last Modified Time of the file,
+                                        and Folder Properties like Name, Last Modified Time, Type etc of the folder Which Can Help You Sync Only Specific Files and Folders thus Giving You More Control Over The Automated Sync Process.
                                     </div>
-                                </div>                                
 
-                                <br/>
-                                <div class = "row">
-                                    <div class="col-sm-3" style="border-style:solid;">
-                                        <img src="./psgdrivesync/assets/img/feature3.png" width="64px" height="64px"><br/><span class="section-title3">Real Time File Operations</span>
+                                    <svg class="project-feature-svg">
+                                        <filter id="filter" x="0" y="0">
+                                            <feGaussianBlur in="SourceGraphic" stdDeviation="25" />
+                                        </filter>
+                                        <ellipse class="project-feature-ellipse" cx="0" cy="50%" rx="0" ry="100%" filter="url(#filter)" />
+                                    </svg>
+                                </div>
+
+                                <br />
+                                <div class="row project-feature">
+                                    <div class="col-sm-3">
+                                        <img src="./psgdrivesync/assets/img/feature3.png" width="64px" height="64px"><br /><span class="section-title3">Real Time File Operations</span>
                                     </div>
                                     <div class="col section-info">
                                         Perform Real-Time File Operations like Cut, Copy, Paste, Encrypt, Decrypt etc On the Spot. You Can Perform The Following Real Time File Operations On Any One of Your Local and Google Drives AnyTime
@@ -696,71 +773,99 @@
                                             <li><i class="arr-right"></i> <span>Send Files & Folders to Filters Window</span></li>
                                         </ul>
                                     </div>
-                                </div>   
 
-                                <br/>
-                                <div class = "row">
-                                    <div class="col-sm-3" style="border-style:solid;">
-                                        <img src="./psgdrivesync/assets/img/feature4.png" width="64px" height="64px"><br/><span class="section-title3">Database Level Encryption</span>
+                                    <svg class="project-feature-svg">
+                                        <filter id="filter" x="0" y="0">
+                                            <feGaussianBlur in="SourceGraphic" stdDeviation="25" />
+                                        </filter>
+                                        <ellipse class="project-feature-ellipse" cx="0" cy="50%" rx="0" ry="100%" filter="url(#filter)" />
+                                    </svg>
+                                </div>
+
+                                <br />
+                                <div class="row project-feature">
+                                    <div class="col-sm-3">
+                                        <img src="./psgdrivesync/assets/img/feature4.png" width="64px" height="64px"><br /><span class="section-title3">Database Level Encryption</span>
                                     </div>
                                     <div class="col section-info">
                                         Entire Database Gets Encrypted with AES-256 Standard Encryption With One Master Key That Only You Get To Keep. The Application Saves the Path Of Files and Folders That You Have Set For Automated Syncing In a Local Database along With Your Google Drive's Access Token Used To Access Files From Your Google Drive. In Order to Keep All This Information Safe and Protected, the Application Encrypts the Entire Database Using AES-256 Encryption Standard and a Master Key That Only You Know.
-                                        <br/>If Needed You can Always Change the Master Key by Using the Existing Master Key.
+                                        <br />If Needed You can Always Change the Master Key by Using the Existing Master Key.
                                     </div>
-                                </div>   
 
-                                <br/>
-                                <div class = "row">
-                                    <div class="col-sm-3" style="border-style:solid;">
-                                        <img src="./psgdrivesync/assets/img/feature6.png" width="64px" height="64px"><br/><span class="section-title3">File Integrity Check For Encrypted File</span>
+                                    <svg class="project-feature-svg">
+                                        <filter id="filter" x="0" y="0">
+                                            <feGaussianBlur in="SourceGraphic" stdDeviation="25" />
+                                        </filter>
+                                        <ellipse class="project-feature-ellipse" cx="0" cy="50%" rx="0" ry="100%" filter="url(#filter)" />
+                                    </svg>
+                                </div>
+
+                                <br />
+                                <div class="row project-feature">
+                                    <div class="col-sm-3">
+                                        <img src="./psgdrivesync/assets/img/feature6.png" width="64px" height="64px"><br /><span class="section-title3">File Integrity Check For Encrypted File</span>
                                     </div>
                                     <div class="col section-info">
                                         Use HMAC-SHA256 Hash Check to Simultaneously Verify Both Data Integrity and Authenticity
                                     </div>
-                                </div> 
 
-                                <br/>
-                                <div class = "row">
-                                    <div class="col-sm-3" style="border-style:solid;">
-                                        <img src="./psgdrivesync/assets/img/feature5.png" width="64px" height="64px"><br/><span class="section-title3">No Restrictions On Number of Drives</span>
+                                    <svg class="project-feature-svg">
+                                        <filter id="filter" x="0" y="0">
+                                            <feGaussianBlur in="SourceGraphic" stdDeviation="25" />
+                                        </filter>
+                                        <ellipse class="project-feature-ellipse" cx="0" cy="50%" rx="0" ry="100%" filter="url(#filter)" />
+                                    </svg>
+                                </div>
+
+                                <br />
+                                <div class="row  project-feature">
+                                    <div class="col-sm-3">
+                                        <img src="./psgdrivesync/assets/img/feature5.png" width="64px" height="64px"><br /><span class="section-title3">No Restrictions On Number of Drives</span>
                                     </div>
                                     <div class="col section-info">
                                         Add as Many Local and Google Drives as You Want. No Restrictions on Number Of Drives That Can be Added To The Application
                                     </div>
-                                </div> 
+
+                                    <svg class="project-feature-svg">
+                                        <filter id="filter" x="0" y="0">
+                                            <feGaussianBlur in="SourceGraphic" stdDeviation="25" />
+                                        </filter>
+                                        <ellipse class="project-feature-ellipse" cx="0" cy="50%" rx="0" ry="100%" filter="url(#filter)" />
+                                    </svg>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    
-                    <br/>
-                    <br/>
-                    <br/>
-                  
-                    <div class ="row">
+
+                    <br />
+                    <br />
+                    <br />
+
+                    <div class="row">
                         <div class="col">
                             <div class="col section-title1">DoomBuggies-3D-Game </div>
                             <div class="col section-title3">
                                 <i class="arr-right"></i> <a href="https://github.com/ParmeetSinghGhai/DoomBuggies-3D-Game" target="_blank">DoomBuggies Github Page</a>
                             </div>
-                            <hr/>
+                            <hr />
                             <div class="col section-info">
                                 A Simple 3D Game based on OpenGL 4.6 Graphics Library and programmed in C++. This game has been designed and built without the use of any Game Engine(s). I do admit that programming this game was a lot like re-inventing the "wheel" but I sure did learn a lot about making games
-                                from this experience.<br/><br/>
-                                The Game uses the "where's waldo" kind of effect to make the game play bit difficult as the Ground and the Game Objects look quite the Same. Its a simple 3rd person shooter game where you try to shoot all the enemy players 
+                                from this experience.<br /><br />
+                                The Game uses the "where's waldo" kind of effect to make the game play bit difficult as the Ground and the Game Objects look quite the Same. Its a simple 3rd person shooter game where you try to shoot all the enemy players
                                 down before they shoot you down and to make things more challenging, the more time you take, the faster your enemies get. Here is a few screenshots from the Game Play.
-                                <br/>
-                                <br/>
+                                <br />
+                                <br />
                                 <div class="row">
                                     <div class="col">
                                         <img src="./doombuggies/buggy1.png" width="400px" height="300px">
                                     </div>
-                                    <br/>
-                                    <br/>
+                                    <br />
+                                    <br />
                                     <div class="col">
                                         <img src="./doombuggies/buggy2.png" width="400px" height="300px">
                                     </div>
-                                    <br/>
-                                    <br/>
+                                    <br />
+                                    <br />
                                     <div class="col">
                                         <img src="./doombuggies/buggy3.png" width="400px" height="300px">
                                     </div>
@@ -769,79 +874,114 @@
                         </div>
                     </div>
 
-                    <br/>
-                    <br/>
-                    <br/>
+                    <br />
+                    <br />
+                    <br />
 
-                    <div class ="row">
+                    <div class="row">
                         <div class="col">
                             <div class="col section-title1">PSG Password Manager </div>
                             <div class="col section-title3">
                                 <i class="arr-right"></i> <a href="https://github.com/ParmeetSinghGhai/PSGPasswordManager" target="_blank">PSG Password Manager Github Page</a>
                             </div>
-                            <hr/>
+                            <hr />
                             <div class="col section-info">
-                                PSGPasswordManager application has also been built on Dot Net Framework 4.8 using C# as the programming language. Its currently only supported in Windows Operating System and Requires Dot Net 4.8 Runtime to be installed on the end user's machine. it allow users to 
+                                PSGPasswordManager application has also been built on Dot Net Framework 4.8 using C# as the programming language. Its currently only supported in Windows Operating System and Requires Dot Net 4.8 Runtime to be installed on the end user's machine. it allow users to
                                 <ul style="list-style-type: none">
                                     <li><i class="arr-right"></i> <strong>Create Secure and Random Passwords upto 2000 Characters Long for One Time Use.</strong></li>
                                     <li><i class="arr-right"></i> <strong>Save Those Password in Secure Local Files called 'Vaults' which are themselves encrypted with AES-256 Encryption Standard using a Master Password that only the User knows.</strong></li>
-                                </ul> 
-                                <br/>
+                                </ul>
+                                <br />
                                 Few of the Important Features are listed below
-                                <br/>
-                                <br/>
+                                <br />
+                                <br />
 
-                                <div class = "row">
-                                    <div class="col-sm-3" style="border-style:solid;">
-                                        <img src="./psgpasswordmanager/assets/img/encryption.png" width="64px" height="64px"><br/><span class="section-title3">AES-256 Encryption Based 'Vaults'</span>
+                                <div class="row project-feature">
+                                    <div class="col-sm-3">
+                                        <img src="./psgpasswordmanager/assets/img/encryption.png" width="64px" height="64px"><br /><span class="section-title3">AES-256 Encryption Based 'Vaults'</span>
                                     </div>
                                     <div class="col section-info">
-                                        Offers AES-256 Encryption Based 'Vaults'. You can save Password(s) or any Other Security Sensitive Data like Bank Account Numbers, Social Security Number etc in these 'Vaults' which are encrypted with AES-256 Encryption Standard. The Master Password used 
+                                        Offers AES-256 Encryption Based 'Vaults'. You can save Password(s) or any Other Security Sensitive Data like Bank Account Numbers, Social Security Number etc in these 'Vaults' which are encrypted with AES-256 Encryption Standard. The Master Password used
                                         to Encrupt these 'Vaults' is Only know to the End User and is Not Saved Anywhere by the application.
                                     </div>
+
+                                    <svg class="project-feature-svg">
+                                        <filter id="filter" x="0" y="0">
+                                            <feGaussianBlur in="SourceGraphic" stdDeviation="25" />
+                                        </filter>
+                                        <ellipse class="project-feature-ellipse" cx="0" cy="50%" rx="0" ry="100%" filter="url(#filter)" />
+                                    </svg>
                                 </div>
-                                
-                                <br/>
-                                <div class = "row">
-                                    <div class="col-sm-3" style="border-style:solid;">
-                                        <img src="./psgpasswordmanager/assets/img/protected.png" width="64px" height="64px"><br/><span class="section-title3">Hidden and System Protected 'Vaults'</span>
+
+                                <br />
+                                <div class="row project-feature">
+                                    <div class="col-sm-3">
+                                        <img src="./psgpasswordmanager/assets/img/protected.png" width="64px" height="64px"><br /><span class="section-title3">Hidden and System Protected 'Vaults'</span>
                                     </div>
                                     <div class="col section-info">
                                         All Vault Files are Hidden and System Protected to keep these Files From Getting Accessed by Other Applications. If any one of these Attributes is Changed then the Application will Stop Processing those Vault Files as a Security Measure.
                                     </div>
-                                </div> 
 
-                                <br/>
-                                <div class = "row">
-                                    <div class="col-sm-3" style="border-style:solid;">
-                                        <img src="./psgpasswordmanager/assets/img/password.png" width="64px" height="64px"><br/><span class="section-title3">Generate Strong Password</span>
+                                    <svg class="project-feature-svg">
+                                        <filter id="filter" x="0" y="0">
+                                            <feGaussianBlur in="SourceGraphic" stdDeviation="25" />
+                                        </filter>
+                                        <ellipse class="project-feature-ellipse" cx="0" cy="50%" rx="0" ry="100%" filter="url(#filter)" />
+                                    </svg>
+                                </div>
+
+                                <br />
+                                <div class="row project-feature">
+                                    <div class="col-sm-3">
+                                        <img src="./psgpasswordmanager/assets/img/password.png" width="64px" height="64px"><br /><span class="section-title3">Generate Strong Password</span>
                                     </div>
                                     <div class="col section-info">
                                         Generate Strong Password of Upto 2000 Characters Long where you get Full Control over how many Lower Case Characters, Upper Case Characters, Special Symbols and Numbers will be present in those Password(s).
                                     </div>
+
+                                    <svg class="project-feature-svg">
+                                        <filter id="filter" x="0" y="0">
+                                            <feGaussianBlur in="SourceGraphic" stdDeviation="25" />
+                                        </filter>
+                                        <ellipse class="project-feature-ellipse" cx="0" cy="50%" rx="0" ry="100%" filter="url(#filter)" />
+                                    </svg>
                                 </div>
 
-                                <br/>
-                                <div class = "row">
-                                    <div class="col-sm-3" style="border-style:solid;">
-                                        <img src="./psgpasswordmanager/assets/img/camouflage.png" width="64px" height="64px"><br/><span class="section-title3">Camouflage Your 'Vaults'</span>
+                                <br />
+                                <div class="row project-feature">
+                                    <div class="col-sm-3">
+                                        <img src="./psgpasswordmanager/assets/img/camouflage.png" width="64px" height="64px"><br /><span class="section-title3">Camouflage Your 'Vaults'</span>
                                     </div>
                                     <div class="col section-info">
                                         The 'Camouflage Vault' Feature under Vault Management tab Allows You to Create upto 100 Random Vaults at a Time in the Same Folder or Directory as your own Vault. This is Done to Make Things Difficult for People Wanting to Decrypt Your Vault Files By Guessing the Master
                                         Password that you have used for Your Vaults. Due to the Camouflage feature they would first have to Differentiate between Your Vault File and the "Dummy" Vault Files which Could take Time, Time which you can use To Change all Your Vaults and Password(s).
                                     </div>
-                                </div> 
 
-                                <br/>
-                                <div class = "row">
-                                    <div class="col-sm-3" style="border-style:solid;">
-                                        <img src="./psgpasswordmanager/assets/img/autotype.png" width="64px" height="64px"><br/><span class="section-title3">Automated Typing Of Long Passwords</span>
+                                    <svg class="project-feature-svg">
+                                        <filter id="filter" x="0" y="0">
+                                            <feGaussianBlur in="SourceGraphic" stdDeviation="25" />
+                                        </filter>
+                                        <ellipse class="project-feature-ellipse" cx="0" cy="50%" rx="0" ry="100%" filter="url(#filter)" />
+                                    </svg>
+                                </div>
+
+                                <br />
+                                <div class="row project-feature">
+                                    <div class="col-sm-3">
+                                        <img src="./psgpasswordmanager/assets/img/autotype.png" width="64px" height="64px"><br /><span class="section-title3">Automated Typing Of Long Passwords</span>
                                     </div>
                                     <div class="col section-info">
-                                        The "Send To Window" Features Allows You to Get the Application to Type in those Super Long Complex Passwords, that the Application Generates, in Windows Where its Not Allowed to Copy and Paste Password like a Bank's Website thus Saving You From the Trouble of Typing in 
+                                        The "Send To Window" Features Allows You to Get the Application to Type in those Super Long Complex Passwords, that the Application Generates, in Windows Where its Not Allowed to Copy and Paste Password like a Bank's Website thus Saving You From the Trouble of Typing in
                                         those Passwords By Yourself.
                                     </div>
-                                </div> 
+
+                                    <svg class="project-feature-svg">
+                                        <filter id="filter" x="0" y="0">
+                                            <feGaussianBlur in="SourceGraphic" stdDeviation="25" />
+                                        </filter>
+                                        <ellipse class="project-feature-ellipse" cx="0" cy="50%" rx="0" ry="100%" filter="url(#filter)" />
+                                    </svg>
+                                </div>
 
                             </div>
                         </div>
@@ -850,24 +990,25 @@
                 </div><!---CONTAINER END-->
             </section><!--SECTION END-->
 
+
             <!-- SKILLS -->
             <section>
                 <div class="container-fluid section-dark pb-5" id="skillsDisplay" onmouseenter="Glow(skills.id,false);SkillShow();">
                     <h2 class="section-header">
                         Skills
-                        <br/>
+                        <br />
                         <img src="assets/img/line.png" class="section-header-image">
                     </h2>
 
                     <div class="row">
                         <div class="col">
                             <div class="section-title1">Personal Skills</div>
-                            
-                            <br/>
+
+                            <br />
                             <div class="section-title3">
                                 Excellent Communication Skills
                             </div>
-                            <hr/>
+                            <hr />
                             <div class="section-info">
                                 Ability to Deal With Both B2C and B2B Clientele
                                 via Phone, Email and Chat and Ensure
@@ -875,30 +1016,30 @@
                                 Listening, Building Report and Trust and
                                 Showing Clarity in My Ideas and Solutions.
                             </div>
-                            
-                            <br/>
+
+                            <br />
                             <div class="section-title3">
                                 Creative Thinking
                             </div>
-                            <hr/>
+                            <hr />
                             <div class="section-info">
                                 Ability to Make Critical Decisions in Stressful Situations.
                             </div>
 
-                            <br/>
+                            <br />
                             <div class="section-title3">
                                 Self Motivated
                             </div>
-                            <hr/>
+                            <hr />
                             <div class="section-info">
                                 Make Use of Every Opportunity to Take on New Challenges and Learn on My Own.
                             </div>
 
-                            <br/>
+                            <br />
                             <div class="section-title3">
                                 Planning and Organizing
                             </div>
-                            <hr/>
+                            <hr />
                             <div class="section-info">
                                 Refined Planning and Organizational Skills that
                                 Balance Work, Team Support and Ad hoc
@@ -906,11 +1047,11 @@
                                 Manner.
                             </div>
 
-                            <br/>
+                            <br />
                             <div class="section-title3">
                                 Team Player
                             </div>
-                            <hr/>
+                            <hr />
                             <div class="section-info">
                                 Enjoys Sharing Knowledge and Encouraging Development of Others to Achieve Specific Team Goals.
                             </div>
@@ -978,14 +1119,13 @@
                     </div><!--Row End-->
                 </div><!--Container End-->
             </section><!--Section End-->
-           
             <!-- CONTACT -->
             <section>
                 <div class="container-fluid section-light pb-5" id="contactDisplay" onmouseenter="Glow(contact.id,false)">
                     <div>
                         <h2 class="section-header">
                             Contact
-                            <br/>
+                            <br />
                             <img src="assets/img/line.png" class="section-header-image">
                         </h2>
                     </div>
@@ -1006,7 +1146,7 @@
                                     </tr>
                                 </table>
                             </div>
-                
+
                             <div>
                                 <table style="border-collapse: separate;border-spacing:20px;">
                                     <tr>
@@ -1021,7 +1161,7 @@
                                     </tr>
                                 </table>
                             </div>
-                
+
                             <div>
                                 <table style="border-collapse: separate;border-spacing:20px;">
                                     <tr>
@@ -1036,14 +1176,14 @@
                                 </table>
                             </div>
 
-                            <br/>
+                            <br />
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28026.725704300155!2d77.2192948629115!3d28.589553858771!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce2fca374b37d%3A0xfb139b03fed79971!2sNew%20Delhi%2C%20Delhi%20110003!5e0!3m2!1sen!2sin!4v1679058826561!5m2!1sen!2sin" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
                         </div>
 
                         <div class="col px-5 pt-5 pb-5">
                             <form action="https://script.google.com/macros/s/AKfycbyKhPPv6Bjko5cBVSXqXR4hCaqnxEEvaC_tHL5Tj54fSC6zPp9ip2-K89Cs6X83dmHW9g/exec" method="post" target="_blank" style="background: url(assets/img/telephone.png);background-repeat: no-repeat;">
                                 <div class="section-title1">Contact Us</div>
-                                <br/>
+                                <br />
                                 <table>
                                     <tr>
                                         <td>
@@ -1055,21 +1195,21 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <input  name="name"  type="text"></input>
+                                            <input name="name" type="text"></input>
                                         </td>
                                         <td>
-                                            <input  name="email" type="text"></input>
+                                            <input name="email" type="text"></input>
                                         </td>
                                     </tr>
                                 </table>
-                                <br/>
+                                <br />
                                 <label>Subject</label>
                                 <br>
-                                <textarea name ="subject" rows="1" cols="42"></textarea>
-                                <br><br/>
+                                <textarea name="subject" rows="1" cols="42"></textarea>
+                                <br><br />
                                 <label>Message</label>
                                 <br>
-                                <textarea name ="message" rows="10" cols="42"></textarea>
+                                <textarea name="message" rows="10" cols="42"></textarea>
                                 <br><br>
                                 <input type="submit" value="Submit">
                             </form>
@@ -1078,46 +1218,45 @@
                     </div><!---Row End-->
                 </div><!--Container End-->
             </section><!--Section End-->
-
             <!-- CREDITS -->
             <div class="modal fade" id="creditDisplay" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Thank You</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Thank You</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div>
+                                <i>Thanks to all the artists mentioned below from flaticon.com for letting me use their icons in this website</i><br /><br />
+                                <a href="https://www.flaticon.com/free-icons/home-button" title="home button icons">Home button icons created by Freepik - Flaticon</a><br />
+                                <a href="https://www.flaticon.com/free-icons/education" title="education icons">Education icons created by amonrat rungreangfangsai - Flaticon</a><br />
+                                <a href="https://www.flaticon.com/free-icons/bag" title="bag icons">Bag icons created by Dimitry Miroliubov - Flaticon</a><br />
+                                <a href="https://www.flaticon.com/free-icons/c-sharp" title="c sharp icons">C sharp icons created by Freepik - Flaticon</a><br />
+                                <a href="https://www.flaticon.com/free-icons/skills" title="skills icons">Skills icons created by Freepik - Flaticon</a><br />
+                                <a href="https://www.flaticon.com/free-icons/game-boy-advance" title="game boy advance icons">Game boy advance icons created by mynamepong - Flaticon</a><br />
+                                <a href="https://www.flaticon.com/free-icons/language" title="language icons">Language icons created by Freepik - Flaticon</a><br />
+                                <a href="https://www.flaticon.com/free-icons/contact" title="contact icons">Contact icons created by Cuputo - Flaticon</a><br />
+                                <a href="https://www.flaticon.com/free-icons/line" title="line icons">Line icons created by Freepik - Flaticon</a><br />
+                                <a href="https://www.flaticon.com/free-icons/location" title="location icons">Location icons created by Freepik - Flaticon</a><br />
+                                <a href="https://www.flaticon.com/free-icons/gmail" title="gmail icons">Gmail icons created by Pixel perfect - Flaticon</a><br />
+                                <a href="https://www.flaticon.com/free-icons/phone" title="phone icons">Phone icons created by Pixel perfect - Flaticon</a><br />
+                                <a href="https://www.flaticon.com/free-icons/thank-you" title="thank you icons">Thank you icons created by Freepik - Flaticon</a><br />
+                                <a href="https://www.flaticon.com/free-icons/ui" title="ui icons">Ui icons created by Freepik - Flaticon</a><br />
+                                <a href="https://www.flaticon.com/free-icons/close" title="close icons">Close icons created by Freepik - Flaticon</a><br />
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
                     </div>
-                    <div class="modal-body">
-                      <div>
-                        <i>Thanks to all the artists mentioned below from flaticon.com for letting me use their icons in this website</i><br/><br/>
-                        <a href="https://www.flaticon.com/free-icons/home-button" title="home button icons">Home button icons created by Freepik - Flaticon</a><br/>
-                        <a href="https://www.flaticon.com/free-icons/education" title="education icons">Education icons created by amonrat rungreangfangsai - Flaticon</a><br/>
-                        <a href="https://www.flaticon.com/free-icons/bag" title="bag icons">Bag icons created by Dimitry Miroliubov - Flaticon</a><br/>
-                        <a href="https://www.flaticon.com/free-icons/c-sharp" title="c sharp icons">C sharp icons created by Freepik - Flaticon</a><br/>
-                        <a href="https://www.flaticon.com/free-icons/skills" title="skills icons">Skills icons created by Freepik - Flaticon</a><br/>
-                        <a href="https://www.flaticon.com/free-icons/game-boy-advance" title="game boy advance icons">Game boy advance icons created by mynamepong - Flaticon</a><br/>
-                        <a href="https://www.flaticon.com/free-icons/language" title="language icons">Language icons created by Freepik - Flaticon</a><br/>
-                        <a href="https://www.flaticon.com/free-icons/contact" title="contact icons">Contact icons created by Cuputo - Flaticon</a><br/>
-                        <a href="https://www.flaticon.com/free-icons/line" title="line icons">Line icons created by Freepik - Flaticon</a><br/>
-                        <a href="https://www.flaticon.com/free-icons/location" title="location icons">Location icons created by Freepik - Flaticon</a><br/>
-                        <a href="https://www.flaticon.com/free-icons/gmail" title="gmail icons">Gmail icons created by Pixel perfect - Flaticon</a><br/>
-                        <a href="https://www.flaticon.com/free-icons/phone" title="phone icons">Phone icons created by Pixel perfect - Flaticon</a><br/>
-                        <a href="https://www.flaticon.com/free-icons/thank-you" title="thank you icons">Thank you icons created by Freepik - Flaticon</a><br/>
-                        <a href="https://www.flaticon.com/free-icons/ui" title="ui icons">Ui icons created by Freepik - Flaticon</a><br/>
-                        <a href="https://www.flaticon.com/free-icons/close" title="close icons">Close icons created by Freepik - Flaticon</a><br/>
-                      </div>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
-                  </div>
                 </div>
             </div>
 
             <!-- HOME BUTTON -->
-            <img id="homeButton" class = "my-homebutton" src="assets/img/uparrow.png" onclick="NavigateSection(undefined)">
+            <img id="homeButton" class="my-homebutton" src="assets/img/uparrow.png" onclick="NavigateSection(undefined)">
 
         </div>
    </div>
